@@ -5,10 +5,9 @@ from django.http import HttpResponse
 import json
 from django.contrib import messages
 from user_profile.models import UserProfile
-#
 
 def login_view(request):
-    return render(request, 'templates/registration/login.html')
+    return render(request, 'registration/login.html')
 
 
 def register_login(request):
