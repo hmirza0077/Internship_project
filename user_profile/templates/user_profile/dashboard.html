@@ -1,0 +1,124 @@
+{% extends "details/base.html" %} {% load static crispy_forms_tags %} {% block content %}
+<main class="main">
+    <div class="page-header " style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
+        <div class="container text-center">
+            <h1 class="page-title">داشبورد<span>فروشگاه</span></h1>
+        </div>
+        <!-- End .container -->
+    </div>
+    <!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">داشبورد</li>
+            </ol>
+        </div>
+        <!-- End .container -->
+    </nav>
+    <!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="dashboard">
+            <div class="container">
+                <div class="row">
+
+                    {% include "user_profile/sidebar.html" %}
+
+                    <div class="col-md-8 col-lg-9">
+                        <div class="tab-content">
+                            <div class="tab-pane show active" id="tab-account" role="tabpanel" aria-labelledby="tab-account-link">
+
+                                {% if messages %}
+                                <ul class="success-message">
+                                    {% for message in messages %}
+                                    <p>
+                                        <strong class="text-success">{{ message|escape }}</strong>
+                                    </p>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+
+                                <div class="row">
+
+                                    <!-- <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>نام : </strong></label> {{ user.first_name }}
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>نام خانوادگی : </strong></label> {{ user.last_name }}
+                                    </div> -->
+
+                                    <div></div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>نام کاربری : </strong></label> {{ user.username|default:"وارد نشده است" }}
+                                        <!-- <input type="text" class="form-control" required> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>نام و نام خانوادگی :‌ </strong></label> {{ user.get_full_name|default:"وارد نشده است" }}
+                                        <!-- <input type="text" class="form-control" required> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>ایمیل : </strong></label> {{ user.email|default:"وارد نشده است" }}
+                                        <!-- <input type="email" class="form-control" required> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>شماره تلفن همراه : </strong></label> {{ user.userprofile.phone_number|default:"وارد نشده است" }}
+                                        <!-- <input type="phone_number" class="form-control"> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>شماره تلفن ثابت : </strong></label> {{ user.userprofile.home_telephone|default:"وارد نشده است" }}
+                                        <!-- <input type="phone" class="form-control"> -->
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>کد پستی : </strong></label> {{ user.userprofile.postal_code|default:"وارد نشده است" }}
+                                        <!-- <input type="city" class="form-control mb-2"> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>جنسیت : </strong></label> {{ user.userprofile.gender|default:"وارد نشده است" }}
+                                        <!-- <input type="city" class="form-control mb-2"> -->
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label><strong>شهر محل سکونت : </strong></label> {{ user.userprofile.city|default:"وارد نشده است" }}
+                                        <!-- <input type="city" class="form-control mb-2"> -->
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 text-right">
+                                        <label class="ml-4"><strong>آدرس : </strong>{{ user.userprofile.address|default:"وارد نشده است" }}</label>
+
+                                        <!-- <input type="city" class="form-control mb-2"> -->
+                                    </div>
+
+
+                                </div>
+
+
+                                <a href="{% url 'user_profile:edit_profile' %}"><button type="submit" class="btn btn-outline-primary-2 float-right">
+                                        <span>ویرایش</span>
+                                        <i class="icon-long-arrow-left"></i>
+                                    </button></a>
+
+                            </div>
+                            <!-- .End .tab-pane -->
+                        </div>
+                    </div>
+                    <!-- End .col-lg-9 -->
+                </div>
+                <!-- End .row -->
+            </div>
+            <!-- End .container -->
+        </div>
+        <!-- End .dashboard -->
+    </div>
+    <!-- End .page-content -->
+</main>
+<!-- End .main -->
+{% endblock content %}

@@ -1,0 +1,150 @@
+{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block title %} {{ STATIC_URL }}{% endblock title %} {% block content %}
+<!-- Sign in / Register Modal -->
+{% comment %} {% endcomment %}
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/static/details/assets/images/backgrounds/login-bg.jpg')">
+    <div class="container">
+        <div class="form-box">
+            <div class="form-tab">
+                <ul class="nav nav-pills nav-fill" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link {{ change2 }}" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="true">ورود</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if change2 == None %} active {% endif %}" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab" aria-controls="register-2" aria-selected="false">ثبت نام</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade  {{ change }}" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                        <form action="." method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="singin-email-2">نام کاربری یا آدرس ایمیل </label> {{ login_form.username|as_crispy_field }}
+                            </div>
+                            <!-- End .form-group -->
+
+                            <div class="form-group">
+                                <label for="singin-password-2">رمز عبور </label> {{ login_form.password|as_crispy_field }}
+                                <input type="hidden" name="form_type" value="login" id="id_login_value">
+                            </div>
+                            <!-- End .form-group -->
+
+                            {% if messages %}
+                            <ul class="error-message">
+                                {% for message in messages %}
+                                <p>
+                                    <strong class="text-danger">{{ message|escape }}</strong>
+                                </p>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-outline-primary-2" value="login">
+                                <span>ورود</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="signin-remember-2">
+                                    <label class="custom-control-label" for="signin-remember-2">مرا به خاطر
+                                    بسپار</label>
+                                </div>
+                                <!-- End .custom-checkbox -->
+
+                                <a href="{% url 'password_reset' %}" class="forgot-link">رمز عبور خود را فراموش کرده اید؟</a>
+                            </div>
+                            <!-- End .form-footer -->
+                        </form>
+                        <div class="form-choice">
+                            <p class="text-center">یا ورود با </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-login btn-g">
+                                        <i class="icon-google"></i> حساب کاربری گوگل
+                                    </a>
+                                </div>
+                                <!-- End .col-6 -->
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-login btn-f">
+                                        <i class="icon-facebook-f"></i> حساب کاربری فیسبوک
+                                    </a>
+                                </div>
+                                <!-- End .col-6 -->
+                            </div>
+                            <!-- End .row -->
+                        </div>
+                        <!-- End .form-choice -->
+                    </div>
+
+                    <!-- .End .tab-pane -->
+                    <div class="tab-pane fade  {% if change == None %} active show {% endif %}" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                        <form action="." method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="register-email-2">آدرس ایمیل شما </label> {{ register_form.email|as_crispy_field }}
+                            </div>
+                            <!-- End .form-group -->
+
+                            <div class="form-group">
+                                <label for="register-email-2">نام کاربری شما </label> {{ register_form.username|as_crispy_field }}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password-2">رمز عبور </label> {{ register_form.password1|as_crispy_field }}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password-2">تکرار رمز عبور </label> {{ register_form.password2|as_crispy_field }}
+                                <!-- <input type="hidden" name="form_type" value="register" id="id_register_value"> -->
+                            </div>
+                            <!-- End .form-group -->
+
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-outline-primary-2" value="register">
+                                <span>ثبت نام</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
+                                    <label class="custom-control-label" for="register-policy-2">من با <a
+                                        href="#">قوانین و مقررات</a> موافقم </label>
+                                </div>
+                                <!-- End .custom-checkbox -->
+                            </div>
+                            <!-- End .form-footer -->
+                        </form>
+                        <div class="form-choice">
+                            <p class="text-center">یا ورود با </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-login btn-g">
+                                        <i class="icon-google"></i> حساب کاربری گوگل
+                                    </a>
+                                </div>
+                                <!-- End .col-6 -->
+                                <div class="col-sm-6">
+                                    <a href="#" class="btn btn-login  btn-f">
+                                        <i class="icon-facebook-f"></i> حساب کاربری فیسبوک
+                                    </a>
+                                </div>
+                                <!-- End .col-6 -->
+                            </div>
+                            <!-- End .row -->
+                        </div>
+                        <!-- End .form-choice -->
+                    </div>
+                    <!-- .End .tab-pane -->
+                </div>
+                <!-- End .tab-content -->
+            </div>
+            <!-- End .form-tab -->
+        </div>
+        <!-- End .form-box -->
+    </div>
+    <!-- End .container -->
+</div>
+<!-- End .login-page section-bg -->
+
+{% endblock content %}

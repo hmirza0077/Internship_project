@@ -1,0 +1,101 @@
+{% extends "details/base.html" %} {% load static crispy_forms_tags %} {% block content %}
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
+        <div class="container">
+            <h1 class="page-title">داشبورد<span>فروشگاه</span></h1>
+        </div>
+        <!-- End .container -->
+    </div>
+    <!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">داشبورد</li>
+            </ol>
+        </div>
+        <!-- End .container -->
+    </nav>
+    <!-- End .breadcrumb-nav -->
+
+    {% comment %} {% endcomment %}
+
+    <div class="page-content">
+        <div class="dashboard">
+            <div class="container">
+                <div class="row">
+                    {% include "user_profile/sidebar.html" %}
+
+                    <div class="col-md-8 col-lg-9">
+                        <div class="form-tab text-right">
+                            <h1 class="h4">{{ user.username }} خوش آمدید</h1>
+                        </div>
+                        <div class="tab-content">
+
+                            {% if messages %}
+                            <ul class="success-message">
+                                {% for message in messages %}
+                                <p>
+                                    <strong class="text-danger">{{ message|escape }}</strong>
+                                </p>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+
+                            <div class="tab-pane show active" id="tab-account" role="tabpanel" aria-labelledby="tab-account-link">
+                                <form action="." method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>نام</label> {{ user_form.first_name|as_crispy_field }}
+                                        </div>
+                                        <!-- End .col-sm-6 -->
+
+                                        <div class="col-sm-6">
+                                            <label>نام خانوادگی</label> {{ user_form.last_name|as_crispy_field }}
+                                        </div>
+                                        <!-- End .col-sm-6 -->
+                                    </div>
+                                    <!-- End .row -->
+
+                                    <!-- <label>نام کاربری</label>
+                                    <input type="text" class="form-control" required>
+                                    <small class="form-text">این نام در قسمت بازدیدها، نظرات و حساب کاربری شما
+                                        نمایش داده می شود.</small> -->
+
+                                    <label>ایمیل</label> {{ user_form.email|as_crispy_field }}
+
+                                    <label>شماره تلفن همراه</label> {{ user_profile.phone_number|as_crispy_field }}
+
+                                    <label>شماره تلفن ثابت</label> {{ user_profile.home_telephone|as_crispy_field }}
+
+                                    <label>شهر محل سکونت</label> {{ user_profile.city|as_crispy_field }}
+
+                                    <label>کد پستی</label> {{ user_profile.postal_code|as_crispy_field }}
+
+                                    <label>جنسیت</label> {{ user_profile.gender|as_crispy_field }}
+
+                                    <label>آدرس</label> {{ user_profile.address|as_crispy_field }}
+
+                                    <button type="submit" class="btn btn-outline-primary-2 float-right">
+                                        <span>ذخیره تغییرات</span>
+                                        <i class="icon-long-arrow-left"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- .End .tab-pane -->
+                        </div>
+                    </div>
+                    <!-- End .col-lg-9 -->
+                </div>
+                <!-- End .row -->
+            </div>
+            <!-- End .container -->
+        </div>
+        <!-- End .dashboard -->
+    </div>
+    <!-- End .page-content -->
+</main>
+<!-- End .main -->
+{% endblock content %}
