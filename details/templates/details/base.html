@@ -6,7 +6,6 @@
 <!-- molla/404.html  22 Nov 2019 10:04:04 GMT -->
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +28,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="{% static 'details/assets/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'details/assets/css/bootstrap-rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'details/assets/css/bootstrap-rtl.min.css' %}"> {% block head %} {% endblock head %}
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{% static 'details/assets/css/style.css' %}">
 </head>
@@ -64,8 +63,8 @@
                                     <li><a href="tel:#"><i class="icon-phone"></i>تلفن تماس : 02155667788</a></li>
                                     <li><a href="wishlist.html"><i class="icon-heart-o"></i>لیست علاقه مندی
                                             <span>(3)</span></a></li>
-                                    <li><a href="about.html">درباره ما</a></li>
-                                    <li><a href="contact.html">تماس با ما</a></li>
+                                    <li><a href="{% url 'details:about_us' %}">درباره ما</a></li>
+                                    <li><a href="{% url 'details:contact_us' %}">تماس با ما</a></li>
                                     <li><a href="{% url 'register' %}" data-toggle="modal"><i class="icon-user"></i>ورود</a>
                                     </li>
                                 </ul>
@@ -397,7 +396,7 @@
                                     <!-- End .megamenu megamenu-md -->
                                 </li>
                                 <li>
-                                    <a href="product.html" class="sf-with-ul">درباره ما</a>
+                                    <a href="{% url 'details:about_us' %}" class="sf-with-ul">درباره ما</a>
 
                                     <div class="megamenu megamenu-sm">
                                         <div class="row no-gutters">
@@ -444,7 +443,7 @@
 
                                 </li>
                                 <li>
-                                    <a href="#" class="sf-with-ul">تماس با ما </a>
+                                    <a href="{% url 'details:contact_us' %}" class="sf-with-ul">تماس با ما </a>
 
                                     <!-- <ul>
                                         <li>
@@ -470,7 +469,7 @@
                                     </ul> -->
                                 </li>
                                 <li>
-                                    <a href="blog.html" class="sf-with-ul">وبلاگ</a>
+                                    <a href="{% url 'blog:main' %}" class="sf-with-ul">وبلاگ</a>
 
                                     <!-- <ul>
                                         <li><a href="blog.html">کلاسیک</a></li>
@@ -717,11 +716,11 @@
                                     <!-- End .widget-title -->
 
                                     <ul class="widget-list">
-                                        <li><a href="about.html">درباره ما</a></li>
+                                        <li><a href="{% url 'details:about_us' %}">درباره ما</a></li>
                                         <li><a href="#">خدمات</a></li>
                                         <li><a href="#">نحوه خرید</a></li>
                                         <li><a href="faq.html">سوالات متداول</a></li>
-                                        <li><a href="contact.html">تماس با ما</a></li>
+                                        <li><a href="{% url 'details:contact_us' %}">تماس با ما</a></li>
                                     </ul>
                                     <!-- End .widget-list -->
                                 </div>
@@ -851,7 +850,7 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="#" class="sf-with-ul">درباره ما</a>
+                                <a href="{% url 'details:about_us' %}" class="sf-with-ul">درباره ما</a>
                                 <!-- <ul>
                                     <li><a href="product.html">پیش فرض</a></li>
                                     <li><a href="product-centered.html">توضیحات وسط چین</a></li>
@@ -865,7 +864,7 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="#">تماس با ما</a>
+                                <a href="{% url 'details:contact_us' %}">تماس با ما</a>
                                 <!-- <ul>
                                     <li>
                                         <a href="about.html" class="sf-with-ul">درباره ما</a>
@@ -890,7 +889,7 @@
                                 </ul> -->
                             </li>
                             <li>
-                                <a href="#">وبلاگ</a>
+                                <a href="{% url 'blog:main' %}">وبلاگ</a>
 
                                 <!-- <ul>
                                     <li class=""><a href="blog.html">کلاسیک</a></li>

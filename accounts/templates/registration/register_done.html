@@ -1,0 +1,14 @@
+{% extends 'details/base.html' %} {% block meta %}
+<meta name="keywords" content="">
+<meta name="description" content=""> {% endblock meta %} {% block title %}خوش آمدید{% endblock %} {% block content %}
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/static/details/assets/images/backgrounds/login-bg.jpg')">
+    <div class="tab-content">
+        <div class="form-box">
+            <div class="form-group">
+                <h1 class="h4 text-right">خوش آمدید {{ new_user.username }}</h1><br>
+                <p>اکانت شما با موفقیت ساخته شد. اکنون میتوانید <a href="{% url 'register' %}">وارد </a>شوید.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

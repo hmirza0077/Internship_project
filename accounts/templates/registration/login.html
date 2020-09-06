@@ -1,6 +1,7 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block title %} {{ STATIC_URL }}{% endblock title %} {% block content %}
+{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+<meta name="keywords" content="">
+<meta name="description" content=""> {% endblock meta %} {% block title %} ورود یا ثبت نام {% endblock title %} {% block content %}
 <!-- Sign in / Register Modal -->
-{% comment %} {% endcomment %}
 <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/static/details/assets/images/backgrounds/login-bg.jpg')">
     <div class="container">
         <div class="form-box">

@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 #Login Form
 class UserLogin(forms.Form):
-    username = forms.CharField(label=False, widget=TextInput(attrs={'class':'validate','placeholder': 'نام کاربری یا ایمیل خود را وارد کنید...'}))
+    username = forms.CharField(label=False, strip=False, widget=TextInput(attrs={'class':'validate','placeholder': 'نام کاربری یا ایمیل خود را وارد کنید...'}))
     password = forms.CharField(label=False, widget=PasswordInput(attrs={'placeholder': 'رمز عبور'}))
 
 
@@ -32,7 +32,7 @@ class UserRegistration(UserCreationForm):
     username = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'نام کاربری'}))
     email = forms.EmailField(label=False, widget=forms.TextInput(attrs={'placeholder':'ایمیل'}))
     password1 = forms.CharField(label=False, widget=forms.PasswordInput(attrs={'placeholder': "رمز عبور"}))
-    password2 = forms.CharField(label=False, widget=forms.PasswordInput(attrs={'placeholder':"تایید رمز عبور"}))
+    password2 = forms.CharField(label=False, widget=forms.PasswordInput(attrs={'placeholder':"تکرار رمز عبور"}))
 
     class Meta:
 	    model = get_user_model()
@@ -47,5 +47,5 @@ class UserRegistration(UserCreationForm):
 
 
 #Create UserProfile Form
-class PasswordResetRequestForm(forms.Form):
-    mobile_phone = forms.CharField(label=False, widget=forms.TextInput(attrs={'placeholder':'شماره تماس همراه'}))
+# class PasswordResetRequestForm(forms.Form):
+#     mobile_phone = forms.CharField(label=False, widget=forms.TextInput(attrs={'placeholder':'شماره تماس همراه'}))
