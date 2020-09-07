@@ -7,12 +7,13 @@ class UserProfileForm(forms.ModelForm):
     phone_number = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'شماره تلفن همراه'}))
     postal_code = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'کد پستی'}))
     address = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'آدرس'}))
-    home_telephone = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'شماره تلفن ثابت'}))
+    home_telephone = forms.CharField(max_length=50, label=False, required=False, widget=forms.TextInput(attrs={'placeholder': 'شماره تلفن ثابت'}))
     city = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'شهر'}))
-    gender = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'جنسیت'}))
+    gender = forms.CharField(max_length=50, label=False, required=False, widget=forms.TextInput(attrs={'placeholder': 'جنسیت'}))
+    photo = forms.ImageField(label=False, required=False, widget=forms.TextInput(attrs={'placeholder': 'عکس پروفایل'}))
     class Meta:
         model = UserProfile
-        fields = ('phone_number', 'postal_code', 'address', 'home_telephone', 'city', 'gender')
+        fields = ('phone_number', 'postal_code', 'address', 'home_telephone', 'city', 'gender', 'photo')
 
 class UserForm(forms.ModelForm):
     first_name = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'نام'}))
