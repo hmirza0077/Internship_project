@@ -1,0 +1,117 @@
+{% load static %}
+
+<aside class="col-lg-3">
+    <div class="sidebar">
+        <div class="widget widget-search">
+            <h3 class="widget-title">جستجو</h3>
+            <!-- End .widget-title -->
+
+            <form action="#">
+                <label for="ws" class="sr-only">جستجوی اخبار</label>
+                <input type="search" class="form-control" name="ws" id="ws" placeholder="جستجوی خبر مورد نظر" required>
+                <button type="submit" class="btn"><i class="icon-search"></i><span
+                                class="sr-only">جستجو</span></button>
+            </form>
+        </div>
+        <!-- End .widget -->
+
+        <div class="widget widget-cats">
+            <h3 class="widget-title">دسته بندی ها</h3>
+            <!-- End .widget-title -->
+
+            <ul>
+                {% for category in categories %} <a href="{% url 'blog:post_list_by_category' category.slug %}"> {{ category.name }} <span>{{ category.posts.count }}</span> </a> {% if not forloop.last %} {% endif %} {% endfor %}
+            </ul>
+        </div>
+        <!-- End .widget -->
+
+        <div class="widget">
+            <h3 class="widget-title">پست های اخیر</h3>
+            <!-- End .widget-title -->
+
+            <ul class="posts-list">
+                {% for post in three_latest_posts %}
+                <li>
+                    <figure>
+                        <a href="#">
+                            <img src="{{ post.image.url }}" alt="post">
+                        </a>
+                    </figure>
+
+                    <div>
+                        <span>{{ post.publish }}</span>
+                        <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+                    </div>
+                </li>
+                {% endfor %}
+                <!-- <li>
+                    <figure>
+                        <a href="#">
+                            <img src="{% static 'details/assets/images/blog/sidebar/post-2.jpg' %}" alt="post">
+                        </a>
+                    </figure>
+
+                    <div>
+                        <span>19 فروردین 1399</span>
+                        <h4><a href="#">لورم ایپسوم متن ساختگی</a></h4>
+                    </div>
+                </li>
+                <li>
+                    <figure>
+                        <a href="#">
+                            <img src="{% static 'details/assets/images/blog/sidebar/post-3.jpg' %}" alt="post">
+                        </a>
+                    </figure>
+
+                    <div>
+                        <span>12 فروردین 1399</span>
+                        <h4><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a></h4>
+                    </div>
+                </li>
+                <li>
+                    <figure>
+                        <a href="#">
+                            <img src="{% static 'details/assets/images/blog/sidebar/post-4.jpg' %}" alt="post">
+                        </a>
+                    </figure>
+
+                    <div>
+                        <span>25 فروردین 1399</span>
+                        <h4><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a></h4>
+                    </div>
+                </li> -->
+            </ul>
+            <!-- End .posts-list -->
+        </div>
+        <!-- End .widget -->
+
+        <!-- <div class="widget widget-banner-sidebar">
+            <div class="banner-sidebar-title">قسمت تبلیغات 280 در 280</div>
+
+            <div class="banner-sidebar banner-overlay">
+                <a href="#">
+                    <img src="{% static 'details/assets/images/blog/sidebar/banner.jpg' %}" alt="بنر">
+                </a>
+            </div>
+        </div> -->
+
+        <div class="widget">
+            <h3 class="widget-title">برچسب ها</h3>
+
+            <div class="tagcloud">
+                {% for tag in tags %} <a href="{% url 'blog:post_list_by_tag' tag.slug %}"> {{ tag.name }} </a> {% if not forloop.last %} {% endif %} {% endfor %}
+            </div>
+        </div>
+
+        <!-- <div class="widget widget-text">
+            <h3 class="widget-title">درباره بخش اخبار</h3>
+
+            <div class="widget-text-content">
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p>
+            </div>
+        </div> -->
+        <!-- End .widget -->
+    </div>
+    <!-- End .sidebar -->
+</aside>
+<!-- End .col-lg-3 -->

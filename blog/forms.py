@@ -1,13 +1,19 @@
 from django import forms
-from .models import Comment
+from .models import Post
+from .models import Comments
 
-class EmailPostForm(forms.Form):
-    name = forms.CharField(max_length=25)
-    email = forms.EmailField()
-    to = forms.EmailField()
-    comments = forms.CharField(required=False, widget=forms.Textarea)
+class CommentsForm(forms.ModelForm):
+    first_name = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'نام شما'}))
+    email = forms.EmailField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'ایمیل شما'}))
+    body = forms.CharField(max_length=50, label=False, widget=forms.Textarea(attrs={'placeholder': 'دیدگاه شما'}))
+    #content_type = forms.CharField(max_length=50, label=False, widget=forms.TextInput(attrs={'placeholder': 'موضوع'}))
 
-class CommentForm(forms.ModelForm):
+    
+    def get_comment_create_data(self, site_id=None):
+        data = super(CommentsForm, self).get_comment_create_data()
+        data.update({'title': self.cleaned_data['title']})
+        return data
+
     class Meta:
-        model = Comment
-        fields = ('name', 'email', 'body')
+        model = Comments
+        fields = ('first_name', 'email', 'body',)

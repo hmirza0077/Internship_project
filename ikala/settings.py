@@ -45,12 +45,15 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_extensions',
     'social_django',
+    'django.contrib.sites',
     # apps
     'accounts',
     'details',
     'user_profile',
     'blog',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 

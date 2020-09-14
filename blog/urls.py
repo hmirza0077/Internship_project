@@ -4,9 +4,12 @@ from . import views
 app_name = 'blog'
 
 urlpatterns = [
-    path('blog/', views.blog, name="main"),
-    path('', views.post_list, name='post_list'),
+    path('', views.post_list, name="main"),
+
+    path('single_post/', views.single_post, name='single_post'),
+    
+    #path('', views.post_list, name='post_list'),
     path('tag/<slug:tag_slug>/', views.post_list, name='post_list_by_tag'),
-    path('<int:post_id>/share/', views.post_share, name='post_share'),
+    path('category/<slug:category_slug>/', views.post_list, name='post_list_by_category'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail'),
 ]

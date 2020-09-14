@@ -93,7 +93,7 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="{% url 'details:home' %}" class="sf-with-ul">خانه</a>
+                                    <a href="{% url 'details:home' %}">خانه</a>
 
                                     <!-- <div class="megamenu demo">
                                         <div class="menu-col">
@@ -310,7 +310,7 @@
                                     <!-- End .megamenu -->
                                 </li>
                                 <li>
-                                    <a href="category.html" class="sf-with-ul">فروشگاه</a>
+                                    <a href="category.html">فروشگاه</a>
 
                                     <!-- <div class="megamenu megamenu-md">
                                         <div class="row no-gutters">
@@ -396,15 +396,15 @@
                                     <!-- End .megamenu megamenu-md -->
                                 </li>
                                 <li>
-                                    <a href="{% url 'details:about_us' %}" class="sf-with-ul">درباره ما</a>
+                                    <a href="{% url 'details:about_us' %}">درباره ما</a>
 
-                                    <div class="megamenu megamenu-sm">
+                                    <!-- <div class="megamenu megamenu-sm">
                                         <div class="row no-gutters">
-                                            <div class="col-md-6">
-                                                <!-- <div class="menu-col"> -->
-                                                <!-- <div class="menu-title">جزئیات محصول</div> -->
-                                                <!-- End .menu-title -->
-                                                <!-- <ul>
+                                            <div class="col-md-6"> -->
+                                    <!-- <div class="menu-col"> -->
+                                    <!-- <div class="menu-title">جزئیات محصول</div> -->
+                                    <!-- End .menu-title -->
+                                    <!-- <ul>
                                                         <li><a href="product.html">پیش فرض</a></li>
                                                         <li><a href="product-centered.html">توضیحات وسط چین</a></li>
                                                         <li><a href="product-extended.html"><span>توضیحات گسترده<span
@@ -416,11 +416,11 @@
                                                         <li><a href="product-masonry.html">اطلاعات چسبیده</a></li>
                                                     </ul>
                                                 </div> -->
-                                                <!-- End .menu-col -->
-                                                <!-- </div> -->
-                                                <!-- End .col-md-6 -->
+                                    <!-- End .menu-col -->
+                                    <!-- </div> -->
+                                    <!-- End .col-md-6 -->
 
-                                                <!-- <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                                     <div class="banner banner-overlay">
                                                         <a href="category.html">
                                                             <img src="{% static 'details/assets/images/menu/banner-2.jpg' %}" alt="بنر">
@@ -443,7 +443,7 @@
 
                                 </li>
                                 <li>
-                                    <a href="{% url 'details:contact_us' %}" class="sf-with-ul">تماس با ما </a>
+                                    <a href="{% url 'details:contact_us' %}">تماس با ما </a>
 
                                     <!-- <ul>
                                         <li>
@@ -469,7 +469,7 @@
                                     </ul> -->
                                 </li>
                                 <li>
-                                    <a href="{% url 'blog:main' %}" class="sf-with-ul">وبلاگ</a>
+                                    <a href="{% url 'blog:main' %}">وبلاگ</a>
 
                                     <!-- <ul>
                                         <li><a href="blog.html">کلاسیک</a></li>
@@ -530,126 +530,126 @@
                             <!-- End .menu -->
                         </nav>
                         <!-- End .main-nav -->
-                        </div>
-                        <!-- End .header-left -->
+                    </div>
+                    <!-- End .header-left -->
 
-                        <div class="header-right">
-                            <div class="header-search">
-                                <a href="#" class="search-toggle" role="button" title="جستجو"><i
+                    <div class="header-right">
+                        <div class="header-search">
+                            <a href="#" class="search-toggle" role="button" title="جستجو"><i
                                     class="icon-search"></i></a>
-                                <form action="#" method="get">
-                                    <div class="header-search-wrapper">
-                                        <label for="q" class="sr-only">جستجو</label>
-                                        <input type="search" class="form-control" name="q" id="q" placeholder="جستجو در ..." required>
-                                    </div>
-                                    <!-- End .header-search-wrapper -->
-                                </form>
-                            </div>
-                            <!-- End .header-search -->
-                            <div class="dropdown compare-dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
-                                    <i class="icon-random"></i>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="compare-products">
-                                        <li class="compare-product">
-                                            <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
-                                            <h4 class="compare-product-title"><a href="product.html">Blue Night Dress</a>
-                                            </h4>
-                                        </li>
-                                        <li class="compare-product">
-                                            <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
-                                            <h4 class="compare-product-title"><a href="product.html">White Long Skirt</a>
-                                            </h4>
-                                        </li>
-                                    </ul>
-
-                                    <div class="compare-actions">
-                                        <a href="#" class="action-link">پاک کردن همه</a>
-                                        <a href="#" class="btn btn-outline-primary-2"><span>مقایسه</span><i
-                                            class="icon-long-arrow-left"></i></a>
-                                    </div>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper">
+                                    <label for="q" class="sr-only">جستجو</label>
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="جستجو در ..." required>
                                 </div>
-                                <!-- End .dropdown-menu -->
+                                <!-- End .header-search-wrapper -->
+                            </form>
+                        </div>
+                        <!-- End .header-search -->
+                        <div class="dropdown compare-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
+                                <i class="icon-random"></i>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul class="compare-products">
+                                    <li class="compare-product">
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                        <h4 class="compare-product-title"><a href="product.html">Blue Night Dress</a>
+                                        </h4>
+                                    </li>
+                                    <li class="compare-product">
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                        <h4 class="compare-product-title"><a href="product.html">White Long Skirt</a>
+                                        </h4>
+                                    </li>
+                                </ul>
+
+                                <div class="compare-actions">
+                                    <a href="#" class="action-link">پاک کردن همه</a>
+                                    <a href="#" class="btn btn-outline-primary-2"><span>مقایسه</span><i
+                                            class="icon-long-arrow-left"></i></a>
+                                </div>
                             </div>
-                            <!-- End .compare-dropdown -->
+                            <!-- End .dropdown-menu -->
+                        </div>
+                        <!-- End .compare-dropdown -->
 
-                            <div class="dropdown cart-dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                    <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">2</span>
-                                </a>
+                        <div class="dropdown cart-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <i class="icon-shopping-cart"></i>
+                                <span class="cart-count">2</span>
+                            </a>
 
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-cart-products">
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a href="product.html">کتونی ورزشی مخصوص دویدن رنگ بژ</a>
-                                                </h4>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-cart-products">
+                                    <div class="product">
+                                        <div class="product-cart-details">
+                                            <h4 class="product-title">
+                                                <a href="product.html">کتونی ورزشی مخصوص دویدن رنگ بژ</a>
+                                            </h4>
 
-                                                <span class="cart-product-info">
+                                            <span class="cart-product-info">
                                                 <span class="cart-product-qty">1 x </span> 84,000 تومان
-                                                </span>
-                                            </div>
-                                            <!-- End .product-cart-details -->
-
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{% static 'details/assets/images/products/cart/product-1.jpg' %}" alt="محصول">
-                                                </a>
-                                            </figure>
-                                            <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                            </span>
                                         </div>
-                                        <!-- End .product -->
+                                        <!-- End .product-cart-details -->
 
-                                        <div class="product">
-                                            <div class="product-cart-details">
-                                                <h4 class="product-title">
-                                                    <a href="product.html">لباس زنانه آبی</a>
-                                                </h4>
+                                        <figure class="product-image-container">
+                                            <a href="product.html" class="product-image">
+                                                <img src="{% static 'details/assets/images/products/cart/product-1.jpg' %}" alt="محصول">
+                                            </a>
+                                        </figure>
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                    </div>
+                                    <!-- End .product -->
 
-                                                <span class="cart-product-info">
+                                    <div class="product">
+                                        <div class="product-cart-details">
+                                            <h4 class="product-title">
+                                                <a href="product.html">لباس زنانه آبی</a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
                                                 <span class="cart-product-qty">1 x </span> 76,000 تومان
-                                                </span>
-                                            </div>
-                                            <!-- End .product-cart-details -->
-
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{% static 'details/assets/images/products/cart/product-2.jpg' %}" alt="محصول">
-                                                </a>
-                                            </figure>
-                                            <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                            </span>
                                         </div>
-                                        <!-- End .product -->
-                                    </div>
-                                    <!-- End .cart-product -->
+                                        <!-- End .product-cart-details -->
 
-                                    <div class="dropdown-cart-total">
-                                        <span>مجموع</span>
-
-                                        <span class="cart-total-price">160,000 تومان</span>
+                                        <figure class="product-image-container">
+                                            <a href="product.html" class="product-image">
+                                                <img src="{% static 'details/assets/images/products/cart/product-2.jpg' %}" alt="محصول">
+                                            </a>
+                                        </figure>
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
                                     </div>
-                                    <!-- End .dropdown-cart-total -->
-
-                                    <div class="dropdown-cart-action">
-                                        <a href="cart.html" class="btn btn-primary">مشاهده سبد خرید</a>
-                                        <a href="checkout.html" class="btn btn-outline-primary-2"><span>پرداخت</span><i
-                                            class="icon-long-arrow-left"></i></a>
-                                    </div>
-                                    <!-- End .dropdown-cart-total -->
+                                    <!-- End .product -->
                                 </div>
-                                <!-- End .dropdown-menu -->
+                                <!-- End .cart-product -->
+
+                                <div class="dropdown-cart-total">
+                                    <span>مجموع</span>
+
+                                    <span class="cart-total-price">160,000 تومان</span>
+                                </div>
+                                <!-- End .dropdown-cart-total -->
+
+                                <div class="dropdown-cart-action">
+                                    <a href="cart.html" class="btn btn-primary">مشاهده سبد خرید</a>
+                                    <a href="checkout.html" class="btn btn-outline-primary-2"><span>پرداخت</span><i
+                                            class="icon-long-arrow-left"></i></a>
+                                </div>
+                                <!-- End .dropdown-cart-total -->
                             </div>
-                            <!-- End .cart-dropdown -->
+                            <!-- End .dropdown-menu -->
                         </div>
-                        <!-- End .header-right -->
-                        </div>
-                        <!-- End .container -->
-                        </div>
-                        <!-- End .header-middle -->
+                        <!-- End .cart-dropdown -->
+                    </div>
+                    <!-- End .header-right -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End .header-middle -->
         </header>
         <!-- End .header -->
         {% block content %} {% endblock content %}
@@ -780,30 +780,30 @@
                 <!-- End .footer-bottom -->
             </footer>
             <!-- End .footer -->
-            </div>
-            <!-- End .page-wrapper -->
-            <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+    </div>
+    <!-- End .page-wrapper -->
+    <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
 
-            <!-- Mobile Menu -->
-            <div class="mobile-menu-overlay"></div>
-            <!-- End .mobil-menu-overlay -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay"></div>
+    <!-- End .mobil-menu-overlay -->
 
-            <div class="mobile-menu-container">
-                <div class="mobile-menu-wrapper">
-                    <span class="mobile-menu-close"><i class="icon-close"></i></span>
+    <div class="mobile-menu-container">
+        <div class="mobile-menu-wrapper">
+            <span class="mobile-menu-close"><i class="icon-close"></i></span>
 
-                    <form action="#" method="get" class="mobile-search">
-                        <label for="mobile-search" class="sr-only">جستجو</label>
-                        <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="جستجو در ..." required>
-                        <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
-                    </form>
+            <form action="#" method="get" class="mobile-search">
+                <label for="mobile-search" class="sr-only">جستجو</label>
+                <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="جستجو در ..." required>
+                <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+            </form>
 
-                    <nav class="mobile-nav">
-                        <ul class="mobile-menu">
-                            <li class="active">
-                                <a href="{% url 'details:home' %}">خانه</a>
+            <nav class="mobile-nav">
+                <ul class="mobile-menu">
+                    <li class="active">
+                        <a href="{% url 'details:home' %}">خانه</a>
 
-                                <!-- <ul>
+                        <!-- <ul>
                                     <li><a href="index.html">01 - فروشگاه لوازم الکترونیکی</a></li>
                                     <li><a href="index-2.html">02 - فروشگاه مبلمان</a></li>
                                     <li><a href="index-3.html">03 - فروشگاه مبلمان</a></li>
@@ -829,10 +829,10 @@
                                     <li><a href="index-23.html">23- فروشگاه مد با نوبار سمت راست</a></li>
                                     <li><a href="index-24.html">24 - فروشگاه ورزشی</a></li>
                                 </ul> -->
-                            </li>
-                            <li>
-                                <a href="#">فروشگاه</a>
-                                <!-- <ul>
+                    </li>
+                    <li>
+                        <a href="#">فروشگاه</a>
+                        <!-- <ul>
                                     <li><a href="category-list.html">فروشگاه لیست</a></li>
                                     <li><a href="category-2cols.html">2 ستونه</a></li>
                                     <li><a href="category.html">3 ستونه</a></li>
@@ -848,10 +848,10 @@
                                     <li><a href="wishlist.html">لیست علاقه مندی</a></li>
                                     <li><a href="#">داشبورد</a></li>
                                 </ul> -->
-                            </li>
-                            <li>
-                                <a href="{% url 'details:about_us' %}" class="sf-with-ul">درباره ما</a>
-                                <!-- <ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'details:about_us' %}" class="sf-with-ul">درباره ما</a>
+                        <!-- <ul>
                                     <li><a href="product.html">پیش فرض</a></li>
                                     <li><a href="product-centered.html">توضیحات وسط چین</a></li>
                                     <li><a href="product-extended.html"><span>توضیحات گسترده<span
@@ -862,10 +862,10 @@
                                     <li><a href="product-fullwidth.html">تمام صفحه</a></li>
                                     <li><a href="product-masonry.html">اطلاعات چسبیده</a></li>
                                 </ul> -->
-                            </li>
-                            <li>
-                                <a href="{% url 'details:contact_us' %}">تماس با ما</a>
-                                <!-- <ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'details:contact_us' %}">تماس با ما</a>
+                        <!-- <ul>
                                     <li>
                                         <a href="about.html" class="sf-with-ul">درباره ما</a>
 
@@ -887,11 +887,11 @@
                                     <li><a href="404.html">خطای 404</a></li>
                                     <li><a href="coming-soon.html">به زودی</a></li>
                                 </ul> -->
-                            </li>
-                            <li>
-                                <a href="{% url 'blog:main' %}">وبلاگ</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog:main' %}">وبلاگ</a>
 
-                                <!-- <ul>
+                        <!-- <ul>
                                     <li class=""><a href="blog.html">کلاسیک</a></li>
                                     <li><a href="blog-listing.html">لیست</a></li>
                                     <li>
@@ -929,50 +929,50 @@
                                         </ul>
                                     </li>
                                 </ul> -->
-                            </li>
-                            <li>
-                                <li>
-                                    <a href="#" class="sf-with-ul">کاربری</a> {% if user.is_authenticated %}
+                    </li>
+                    <li>
+                        <li>
+                            <a href="#" class="sf-with-ul">کاربری</a> {% if user.is_authenticated %}
 
-                                    <ul>
-                                        <li><a href="{% url 'user_profile:profile_detail_view' %}">داشبورد</a></li>
-                                    </ul>
+                            <ul>
+                                <li><a href="{% url 'user_profile:profile_detail_view' %}">داشبورد</a></li>
+                            </ul>
 
-                                    {% else %}
+                            {% else %}
 
-                                    <ul>
-                                        <li><a href="{% url 'register' %}">ورود و ثبت نام</a></li>
-                                    </ul>
+                            <ul>
+                                <li><a href="{% url 'register' %}">ورود و ثبت نام</a></li>
+                            </ul>
 
-                                    {% endif %}
+                            {% endif %}
 
-                                </li>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- End .mobile-nav -->
+                        </li>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End .mobile-nav -->
 
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" target="_blank" title="فیسبوک"><i class="icon-facebook-f"></i></a>
-                        <a href="#" class="social-icon" target="_blank" title="توییتر"><i class="icon-twitter"></i></a>
-                        <a href="#" class="social-icon" target="_blank" title="اینستاگرام"><i class="icon-instagram"></i></a>
-                        <a href="#" class="social-icon" target="_blank" title="یوتیوب"><i class="icon-youtube"></i></a>
-                    </div>
-                    <!-- End .social-icons -->
-                </div>
-                <!-- End .mobile-menu-wrapper -->
+            <div class="social-icons">
+                <a href="#" class="social-icon" target="_blank" title="فیسبوک"><i class="icon-facebook-f"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="توییتر"><i class="icon-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="اینستاگرام"><i class="icon-instagram"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="یوتیوب"><i class="icon-youtube"></i></a>
             </div>
-            <!-- End .mobile-menu-container -->
+            <!-- End .social-icons -->
+        </div>
+        <!-- End .mobile-menu-wrapper -->
+    </div>
+    <!-- End .mobile-menu-container -->
 
-            <!-- Plugins JS File -->
-            <script src="{% static 'details/assets/js/jquery.min.js' %}"></script>
-            <script src="{% static 'details/assets/js/bootstrap.bundle.min.js' %}"></script>
-            <script src="{% static 'details/assets/js/jquery.hoverIntent.min.js' %}"></script>
-            <script src="{% static 'details/assets/js/jquery.waypoints.min.js' %}"></script>
-            <script src="{% static 'details/assets/js/superfish.min.js' %}"></script>
-            <script src="{% static 'details/assets/js/owl.carousel.min.js' %}"></script>
-            <!-- Main JS File -->
-            <script src="{% static 'details/assets/js/main.js' %}"></script>
+    <!-- Plugins JS File -->
+    <script src="{% static 'details/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'details/assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'details/assets/js/jquery.hoverIntent.min.js' %}"></script>
+    <script src="{% static 'details/assets/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'details/assets/js/superfish.min.js' %}"></script>
+    <script src="{% static 'details/assets/js/owl.carousel.min.js' %}"></script>
+    <!-- Main JS File -->
+    <script src="{% static 'details/assets/js/main.js' %}"></script>
 </body>
 
 
