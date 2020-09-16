@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'accounts',
     'details',
     'user_profile',
+    'shop',
+    'cart',
     'blog',
 ]
 
@@ -79,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -155,3 +158,5 @@ AUTHENTICATION_BACKENDS = [
     'accounts.authentication.EmailAuthBackend',
     'social_core.backends.google.GoogleOAuth2',
 ]
+
+CART_SESSION_ID = 'cart'

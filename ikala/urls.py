@@ -23,6 +23,8 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('user_profile/', include('user_profile.urls')),
     path('blog/', include('blog.urls')),
+    path('shop/', include('shop.urls')),
+    path('cart/', include('cart.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('', include('details.urls')),
 ]
