@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Category(models.Model):
 
@@ -8,8 +9,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = 'دسته بندی محصولات'
+        verbose_name_plural = 'دسته بندی محصولات'
 
     def __str__(self):
         return self.name
@@ -37,12 +38,35 @@ class Product(models.Model):
         ('زمستان', 'زمستان')
     )
 
+    # COLOR_CHOICES = (
+    #     ('red', 'قرمز'),
+    #     ('brown', 'قهوه ای'),
+    #     ('yellow', 'زرد'),
+    #     ('black', 'مشکی'),
+    #     ('blue', 'آبی'),
+    #     ('green', 'سبز'),
+    #     ('pink', 'صورتی'),
+    #     ('gray', 'خاکستری'),
+    # )
+
+    # SIZE_CHOICES = (
+    #     ('XS', 'XS'),
+    #     ('S', 'S'),
+    #     ('M', 'M'),
+    #     ('L', 'L'),
+    #     ('XL', 'XL'),
+    #     ('XXL', 'XXL'),
+    # )
+
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-    description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    # description = models.TextField(blank=True)
+    short_description = RichTextUploadingField('توضیحات مختصر', blank=True, null=True)
+    long_description = RichTextUploadingField('توضیحات جامع', blank=True, null=True)
+    visit_num = models.PositiveIntegerField(default=0)
+    price = models.PositiveIntegerField(default=0)
     is_available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -52,7 +76,7 @@ class Product(models.Model):
     color = models.CharField(max_length=50)
     material = models.CharField(max_length=50)
     season = models.CharField(max_length=50, choices=SEASON_CHOICES)
-    #supplier = models.CharField(max_length=200)
+    #supplier = models.ForeignKet(Supplier, related_name='suppliers', on_delete=models.CASCADE)
 
     objects = models.Manager()  # The default manager
     available = AvailableProductManager()  # Our custom manager

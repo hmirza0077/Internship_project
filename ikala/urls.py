@@ -24,9 +24,11 @@ urlpatterns = [
     path('user_profile/', include('user_profile.urls')),
     path('blog/', include('blog.urls')),
     path('shop/', include('shop.urls')),
+    path('orders/', include('orders.urls')),
     path('cart/', include('cart.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('', include('details.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,45 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        {% if products.has_other_pages %} {% if products.has_previous %}
+        <li class="page-item">
+            <a class="page-link page-link-prev" href="?page={{ products.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+            </a>
+        </li>
+        {% endif %} {% if products.number != 1 %}
+        <li class="page-item" aria-current="page">
+            <a class="page-link" href="?page=1">1</a>
+        </li>
+        {% endif %} {% if products.number != 1 and products.number != 2 and products.number != 3 %}
+        <li class="page-item" aria-current="page">
+            ...
+        </li>
+        {% endif %} {% if products.has_previous and products.number != 2 %}
+        <li class="page-item" aria-current="page">
+            <a class="page-link" href="?page={{ products.number|add:-1 }}">{{ products.number|add:-1 }}</a>
+        </li>
+        {% endif %}
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">{{ products.number}}</a>
+        </li>
+        {% if products.has_next and products.number != products.paginator.num_pages|add:-1 %}
+        <li class="page-item" aria-current="page">
+            <a class="page-link" href="?page={{ products.number|add:1 }}">{{ products.number|add:1 }}</a>
+        </li>
+        {% endif %} {% if products.number != products.paginator.num_pages and products.number != products.paginator.num_pages|add:-1 and products.number != products.paginator.num_pages|add:-2 %}
+        <li class="page-item" aria-current="page">
+            ...
+        </li>
+        {% endif %} {% if products.number != products.paginator.num_pages %}
+        <li class="page-item" aria-current="page">
+            <a class="page-link" href="?page={{ products.paginator.num_pages }}">{{ products.paginator.num_pages }}</a>
+        </li>
+        {% endif %} {% if products.has_next %}
+        <li class="page-item">
+            <a class="page-link page-link-next" href="?page={{ products.next_page_number }}" aria-label="Next">
+                        بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+            </a>
+        </li>
+        {% endif %} {% endif %}
+    </ul>
+</nav>

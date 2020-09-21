@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'social_django',
     'django.contrib.sites',
     # apps
+    'orders',
     'accounts',
     'details',
     'user_profile',

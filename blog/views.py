@@ -52,7 +52,7 @@ def post_list(request, tag_slug=None, category_slug=None):
         object_list = object_list.filter(tags__in=[tag])
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(object_list, 1) # 3 posts in each page
+    paginator = Paginator(object_list, 3) # 3 posts in each page
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
@@ -61,7 +61,11 @@ def post_list(request, tag_slug=None, category_slug=None):
     except EmptyPage:
         # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
-    return render(request, 'blog/list.html', {'posts': posts, 'tag': tag, 'category': category, 'three_latest_posts': latest_posts, 'tags': get_all_tags(), 'categories': get_all_categories()})
+
+    context =  {'posts': posts, 'tag': tag, 'category': category, 'three_latest_posts': latest_posts,
+                'tags': get_all_tags(), 'categories': get_all_categories()}
+                
+    return render(request, 'blog/list.html', context=context)
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post, status='منتشر شده',
@@ -84,7 +88,12 @@ def post_detail(request, year, month, day, post):
             new_comment.save()
     else:
         comment_form = forms.CommentsForm()
-    return render(request, 'blog/detail.html', {'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form, 'three_latest_posts': get_three_latest_posts(), 'tags': get_all_tags(), 'categories': get_all_categories()})
+
+    context = {'post': post, 'comments': comments, 'new_comment': new_comment,
+                'comment_form': comment_form, 'three_latest_posts': get_three_latest_posts(),
+                'tags': get_all_tags(), 'categories': get_all_categories()}
+
+    return render(request, 'blog/detail.html')
 
     
 
