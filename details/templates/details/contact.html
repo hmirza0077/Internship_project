@@ -1,13 +1,13 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %} تماس با ما{% endblock title %} {% block content %}
+<meta name="description" content=""> {% endblock meta %} {% block title %} {% trans "تماس با ما" %} {% endblock title %} {% block content %}
 <main class="main">
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">صفحات</a></li>
-                <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+                <li class="breadcrumb-item"><a href="index.html">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="#">{% trans "صفحات" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "تماس با ما" %}</li>
             </ol>
         </div>
         <!-- End .container -->
@@ -15,8 +15,7 @@
     <!-- End .breadcrumb-nav -->
     <div class="container">
         <div class="page-header page-header-big text-center" style="background-image: url('/static/details/assets/images/contact-header-bg.jpg')">
-            <h1 class="page-title text-white">تماس با ما<span class="text-white">ارتباط خود را با ما حفظ
-                            کنید</span></h1>
+            <h1 class="page-title text-white">{% trans "تماس با ما" %}<span class="text-white">{% trans "ارتباط خود را با ما حفظ کنید" %}</span></h1>
         </div>
         <!-- End .page-header -->
     </div>
@@ -26,17 +25,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-2 mb-lg-0">
-                    <h2 class="title mb-1">اطلاعات تماس</h2>
+                    <h2 class="title mb-1">{% trans "اطلاعات تماس" %}</h2>
                     <!-- End .title mb-2 -->
-                    <p class="mb-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
+                    <p class="mb-3">{% trans "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم" %}.</p>
                     <div class="row">
                         <div class="col-sm-7">
                             <div class="contact-info">
-                                <h3>دفتر</h3>
+                                <h3>{% trans "دفتر" %}</h3>
 
                                 <ul class="contact-list">
                                     <li>
-                                        <i class="icon-map-marker"></i> تهران، میدان آزادی، خیابان آزادی، پلاک 7
+                                        <i class="icon-map-marker"></i>{% trans " تهران، میدان آزادی، خیابان آزادی، پلاک 7" %}
                                     </li>
                                     <li>
                                         <i class="icon-phone"></i>
@@ -55,16 +54,16 @@
 
                         <div class="col-sm-5">
                             <div class="contact-info">
-                                <h3>ساعت کار دفتر</h3>
+                                <h3>{% trans "ساعت کار دفتر" %}</h3>
 
                                 <ul class="contact-list">
                                     <li>
                                         <i class="icon-clock-o"></i>
-                                        <span class="text-dark">شنبه تا چهارشنبه</span> <br>11 صبح تا 7 عصر
+                                        <span class="text-dark">{% trans "شنبه تا چهارشنبه" %}</span> <br>{% trans "11 صبح تا 7 عصر" %}
                                     </li>
                                     <li>
                                         <i class="icon-calendar"></i>
-                                        <span class="text-dark">پنج شنبه</span> <br>11 صبح تا 5 عصر
+                                        <span class="text-dark">{% trans "پنج شنبه" %}</span> <br>{% trans "11 صبح تا 5 عصر" %}
                                     </li>
                                 </ul>
                                 <!-- End .contact-list -->
@@ -77,21 +76,21 @@
                 </div>
                 <!-- End .col-lg-6 -->
                 <div class="col-lg-6">
-                    <h2 class="title mb-1">سوالی دارید؟</h2>
+                    <h2 class="title mb-1">{% trans "سوالی دارید؟" %}</h2>
                     <!-- End .title mb-2 -->
-                    <p class="mb-2">با استفاده از فرم زیر می توانید با ما ارتباط برقرار کنید</p>
+                    <p class="mb-2">{% trans "با استفاده از فرم زیر می توانید با ما ارتباط برقرار کنید" %}</p>
 
                     <form action="." method="POST">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-sm-6">
-                                <label for="cname" class="sr-only">نام</label> {{ feedback.name|as_crispy_field }}
+                                <label for="cname" class="sr-only">{% trans "نام" %}</label> {{ feedback.name|as_crispy_field }}
                                 <!-- <input type="text" class="form-control" id="cname" placeholder="نام خود را وارد کنید *" required> -->
                             </div>
                             <!-- End .col-sm-6 -->
 
                             <div class="col-sm-6">
-                                <label for="cemail" class="sr-only">ایمیل</label> {{ feedback.email|as_crispy_field }}
+                                <label for="cemail" class="sr-only">{% trans "ایمیل" %}</label> {{ feedback.email|as_crispy_field }}
                                 <!-- <input type="email" class="form-control" id="cemail" placeholder="ایمیل خود را وارد کنید *" required> -->
                             </div>
                             <!-- End .col-sm-6 -->
@@ -100,20 +99,20 @@
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <label for="cphone" class="sr-only">شماره موبایل</label> {{ feedback.phone_number|as_crispy_field }}
+                                <label for="cphone" class="sr-only">{% trans "شماره موبایل" %}</label> {{ feedback.phone_number|as_crispy_field }}
                                 <!-- <input type="tel" class="form-control" id="cphone" placeholder="شماره موبایل خود را وارد کنید"> -->
                             </div>
                             <!-- End .col-sm-6 -->
 
                             <div class="col-sm-6">
-                                <label for="csubject" class="sr-only">موضوع</label> {{ feedback.subject|as_crispy_field }}
+                                <label for="csubject" class="sr-only">{% trans "موضوع" %}</label> {{ feedback.subject|as_crispy_field }}
                                 <!-- <input type="text" class="form-control" id="csubject" placeholder="موضوع پیام شما"> -->
                             </div>
                             <!-- End .col-sm-6 -->
                         </div>
                         <!-- End .row -->
 
-                        <label for="cmessage" class="sr-only">پیام</label> {{ feedback.body|as_crispy_field }}
+                        <label for="cmessage" class="sr-only">{% trans "پیام" %}</label> {{ feedback.body|as_crispy_field }}
                         <!-- <textarea class="form-control" cols="30" rows="4" id="cmessage" required placeholder="متن پیام شما *"></textarea> -->
 
                         {% if messages %}
@@ -127,7 +126,7 @@
                         {% endif %}
 
                         <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm float-right">
-                                    <span>تایید و ارسال</span>
+                                    <span>{% trans "تایید و ارسال" %}</span>
                                     <i class="icon-long-arrow-left"></i>
                         </button>
                     </form>
@@ -140,7 +139,7 @@
             <hr class="mt-4 mb-5">
 
             <div class="stores mb-4 mb-lg-5">
-                <h2 class="title text-center mb-3">فروشگاه های ما</h2>
+                <h2 class="title text-center mb-3">{% trans "فروشگاه های ما" %}</h2>
                 <!-- End .title text-center mb-2 -->
 
                 <div class="row">
@@ -156,18 +155,17 @@
                                 <!-- End .col-xl-6 -->
                                 <div class="col-sm-7 col-xl-6">
                                     <div class="store-content">
-                                        <h3 class="store-title">فروشگاه شماره 1</h3>
+                                        <h3 class="store-title">{% trans "فروشگاه شماره 1" %}</h3>
                                         <!-- End .store-title -->
-                                        <address>تهران، میدان تجریش</address>
+                                        <address>{% trans "تهران، میدان تجریش" %}</address>
                                         <div><a href="tel:#">88776655</a></div>
 
-                                        <h4 class="store-subtitle">ساعت کاری فروشگاه :</h4>
+                                        <h4 class="store-subtitle">{% trans "ساعت کاری فروشگاه" %} :</h4>
                                         <!-- End .store-subtitle -->
-                                        <div>شنبه-چهارشنبه 11صبح تا 7 عصر</div>
-                                        <div>پنج شنبه 11 صبح تا 6 عصر</div>
+                                        <div>{% trans "شنبه-چهارشنبه 11صبح تا 7 عصر" %}</div>
+                                        <div>{% trans "پنج شنبه 11 صبح تا 6 عصر" %}</div>
 
-                                        <a href="#" class="btn btn-link" target="_blank"><span>مشاهده روی
-                                                        نقشه</span><i class="icon-long-arrow-left"></i></a>
+                                        <a href="#" class="btn btn-link" target="_blank"><span>{% trans "مشاهده روی نقشه" %}</span><i class="icon-long-arrow-left"></i></a>
                                     </div>
                                     <!-- End .store-content -->
                                 </div>
@@ -179,6 +177,7 @@
                     </div>
                     <!-- End .col-lg-6 -->
 
+                    {% comment %}
                     <div class="col-lg-6">
                         <div class="store">
                             <div class="row">
@@ -209,11 +208,12 @@
                                     <!-- End .store-content -->
                                 </div>
                                 <!-- End .col-xl-6 -->
+
                             </div>
                             <!-- End .row -->
                         </div>
                         <!-- End .store -->
-                    </div>
+                    </div>{% endcomment %}
                     <!-- End .col-lg-6 -->
                 </div>
                 <!-- End .row -->

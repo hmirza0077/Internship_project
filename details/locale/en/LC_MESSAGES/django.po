@@ -1,0 +1,546 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: 2020-10-14 14:56+0326\n"
+"Last-Translator: b'  <hmirza0077@localhost>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
+
+#: details/templates/details/about.html:9
+#: details/templates/details/base.html:105
+#: details/templates/details/base.html:705
+#: details/templates/details/contact.html:8
+msgid "خانه"
+msgstr "Home"
+
+#: details/templates/details/about.html:10
+#: details/templates/details/contact.html:9
+msgid "صفحات"
+msgstr "Pages"
+
+#: details/templates/details/about.html:11
+#: details/templates/details/about.html:19
+#: details/templates/details/base.html:75
+#: details/templates/details/base.html:408
+#: details/templates/details/base.html:620
+#: details/templates/details/base.html:711
+msgid "درباره ما"
+msgstr "About Us"
+
+#: details/templates/details/about.html:19
+msgid "درباره فروشگاه ما"
+msgstr "About Us"
+
+#: details/templates/details/about.html:29
+msgid "دید ما"
+msgstr "Our Sight"
+
+#: details/templates/details/about.html:31
+msgid "ما اینجا گرد هم آمده ایم تا یه حرکتی بزنیم"
+msgstr "We are here to do something"
+
+#: details/templates/details/about.html:36
+msgid "ماموریت ما"
+msgstr "Our Mission"
+
+#: details/templates/details/about.html:38
+msgid "همون حرکتی که قرار بود بزنیم!"
+msgstr "The magic move that we are doing"
+
+#: details/templates/details/about.html:53
+msgid "ما که هستیم"
+msgstr "Who Are We?"
+
+#: details/templates/details/about.html:55
+msgid "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم"
+msgstr "Lorem Ipsum with this simple that we bla bla bla"
+
+#: details/templates/details/about.html:55
+msgid "لورم ایپسوم متن ساختگی با تولید سادگی"
+msgstr "Lorem Ipsum with this simple that we bla bla bla"
+
+#: details/templates/details/about.html:57
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم "
+"ایپسوم متن ساختگی با تولید سادگی نامفهوم"
+msgstr "Lorem Ipsum with this simple that we bla bla bla"
+
+#: details/templates/details/about.html:60
+msgid "مشاهده دیگر خبرها"
+msgstr "Other news"
+
+#: details/templates/details/about.html:85
+msgid "برند های معروفی که با ما در حال همکاری هستند"
+msgstr "Popular brands that working with us"
+
+#: details/templates/details/about.html:87
+#: details/templates/details/about.html:234
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم"
+msgstr "Lorem Ipsum with this simple that we bla bla bla"
+
+#: details/templates/details/about.html:168
+msgid "آشنایی با تیم ما"
+msgstr "Get familiar with us"
+
+#: details/templates/details/about.html:217
+msgid "نظرات مشتری های فروشگاه"
+msgstr "Customers Opinio"
+
+#: details/templates/details/about.html:237
+msgid "مشتری"
+msgstr "Customer"
+
+#: details/templates/details/base.html:45
+msgid "انتخاب زبان"
+msgstr "Choose Language"
+
+#: details/templates/details/base.html:70
+msgid "لینک ها"
+msgstr "Links"
+
+#: details/templates/details/base.html:72
+msgid "تلفن تماس"
+msgstr "Contact Us"
+
+#: details/templates/details/base.html:73
+msgid "لیست علاقه مندی"
+msgstr "Favorites"
+
+#: details/templates/details/base.html:76
+#: details/templates/details/base.html:455
+#: details/templates/details/base.html:624
+#: details/templates/details/base.html:714
+#: details/templates/details/contact.html:3
+#: details/templates/details/contact.html:10
+#: details/templates/details/contact.html:18
+msgid "تماس با ما"
+msgstr "Contact Us"
+
+#: details/templates/details/base.html:77
+#: details/templates/details/base.html:656
+#: details/templates/details/base.html:789
+msgid "ورود"
+msgstr "Login"
+
+#: details/templates/details/base.html:94
+msgid "فهرست"
+msgstr "Content"
+
+#: details/templates/details/base.html:322
+#: details/templates/details/base.html:708
+msgid "فروشگاه"
+msgstr "Shop"
+
+#: details/templates/details/base.html:458
+#: details/templates/details/base.html:717
+msgid "وبلاگ"
+msgstr "Weblog"
+
+#: details/templates/details/base.html:461
+#: details/templates/details/base.html:721
+msgid "کاربری"
+msgstr "User"
+
+#: details/templates/details/base.html:464
+#: details/templates/details/base.html:724
+msgid "داشبورد"
+msgstr "Dashboard"
+
+#: details/templates/details/base.html:470
+#: details/templates/details/base.html:730
+msgid "ورود و ثبت نام"
+msgstr "Login or Register"
+
+#: details/templates/details/base.html:489
+#: details/templates/details/base.html:697
+msgid "جستجو"
+msgstr "Search"
+
+#: details/templates/details/base.html:490
+#: details/templates/details/base.html:698
+msgid "جستجو در ..."
+msgstr "Search in..."
+
+#: details/templates/details/base.html:516
+msgid "پاک کردن همه"
+msgstr "Clear All"
+
+#: details/templates/details/base.html:517
+msgid "مقایسه"
+msgstr "Compare"
+
+#: details/templates/details/base.html:559
+msgid "مجموع"
+msgstr "Summation"
+
+#: details/templates/details/base.html:568
+msgid "مشاهده سبد خرید"
+msgstr "Cart Detail"
+
+#: details/templates/details/base.html:569
+msgid "پرداخت"
+msgstr "Pay"
+
+#: details/templates/details/base.html:594
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوم"
+msgstr "Lorem Ipsum with this simple that we bla bla bla"
+
+#: details/templates/details/base.html:616
+msgid "لینک های مفید"
+msgstr "Useful Links"
+
+#: details/templates/details/base.html:621
+msgid "خدمات"
+msgstr "Products"
+
+#: details/templates/details/base.html:622
+msgid "نحوه خرید"
+msgstr "How to shop?"
+
+#: details/templates/details/base.html:623
+msgid "سوالات متداول"
+msgstr "FQ"
+
+#: details/templates/details/base.html:634
+msgid "خدمات مشتری"
+msgstr "Customer"
+
+#: details/templates/details/base.html:638
+msgid "شیوه پرداخت"
+msgstr "How to Pay"
+
+#: details/templates/details/base.html:639
+msgid "گارانتی بازگشت وجه"
+msgstr "Gaurantee"
+
+#: details/templates/details/base.html:640
+msgid "شیوه ارسال محصولات"
+msgstr "How to ship"
+
+#: details/templates/details/base.html:641
+#: details/templates/details/base.html:845
+msgid "قوانین و مقررات"
+msgstr "Terms and Conditions"
+
+#: details/templates/details/base.html:642
+msgid "خط مشی"
+msgstr "ٌWhat we do"
+
+#: details/templates/details/base.html:652
+msgid "حساب کاربری"
+msgstr "User Profile"
+
+#: details/templates/details/base.html:657
+msgid "سبد خرید"
+msgstr "Cart"
+
+#: details/templates/details/base.html:658
+msgid "لیست علاقه مندی ها"
+msgstr "Favorites"
+
+#: details/templates/details/base.html:659
+msgid "پیگیری سفارشات"
+msgstr "Orders"
+
+#: details/templates/details/base.html:660
+msgid "راهنما"
+msgstr "Guidence"
+
+#: details/templates/details/base.html:676
+msgid "تمامی حقوق محفوظ است"
+msgstr "All the content are protected"
+
+#: details/templates/details/base.html:776
+msgid "نام کاربری یا آدرس ایمیل"
+msgstr "Username or Email Adress"
+
+#: details/templates/details/base.html:782
+#: details/templates/details/base.html:831
+msgid "رمز عبور"
+msgstr "Password"
+
+#: details/templates/details/base.html:795
+msgid "مرا به خاطر بسپار"
+msgstr "Remember Me"
+
+#: details/templates/details/base.html:798
+msgid "فراموشی رمز عبور؟"
+msgstr "Forgot Password?"
+
+#: details/templates/details/base.html:803
+msgid "یا ورود با"
+msgstr "Login with"
+
+#: details/templates/details/base.html:825
+msgid "آدرس ایمیل شما"
+msgstr "Email Adress"
+
+#: details/templates/details/base.html:838
+msgid "ثبت نام"
+msgstr "Register"
+
+#: details/templates/details/base.html:845
+msgid "موافقم"
+msgstr "Agree"
+
+#: details/templates/details/base.html:852
+msgid "یا عضویت با"
+msgstr "or Register with"
+
+#: details/templates/details/base.html:856
+msgid " حساب گوگل"
+msgstr "Google Account"
+
+#: details/templates/details/base.html:862
+msgid "حساب فیسبوک"
+msgstr "Facebook Account"
+
+#: details/templates/details/contact.html:18
+msgid "ارتباط خود را با ما حفظ کنید"
+msgstr "Keep in touch with us"
+
+#: details/templates/details/contact.html:28
+msgid "اطلاعات تماس"
+msgstr "Contact Information"
+
+#: details/templates/details/contact.html:30
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم"
+msgstr "Lorem Ipsum and some other stuff and bla bla bla"
+
+#: details/templates/details/contact.html:34
+msgid "دفتر"
+msgstr "Office"
+
+#: details/templates/details/contact.html:38
+msgid " تهران، میدان آزادی، خیابان آزادی، پلاک 7"
+msgstr "Tehran, Azadi st."
+
+#: details/templates/details/contact.html:57
+msgid "ساعت کار دفتر"
+msgstr "Work Time"
+
+#: details/templates/details/contact.html:62
+msgid "شنبه تا چهارشنبه"
+msgstr "Saturday to Wednesday"
+
+#: details/templates/details/contact.html:62
+msgid "11 صبح تا 7 عصر"
+msgstr "7 a.m to 11 p.m"
+
+#: details/templates/details/contact.html:66
+msgid "پنج شنبه"
+msgstr "Thursday"
+
+#: details/templates/details/contact.html:66
+msgid "11 صبح تا 5 عصر"
+msgstr "5 a.m to 11 p.m"
+
+#: details/templates/details/contact.html:79
+msgid "سوالی دارید؟"
+msgstr "Any Question?"
+
+#: details/templates/details/contact.html:81
+msgid "با استفاده از فرم زیر می توانید با ما ارتباط برقرار کنید"
+msgstr "With the form below you can contact with us"
+
+#: details/templates/details/contact.html:87
+msgid "نام"
+msgstr "First Name"
+
+#: details/templates/details/contact.html:93
+msgid "ایمیل"
+msgstr "Email"
+
+#: details/templates/details/contact.html:102
+msgid "شماره موبایل"
+msgstr "Phone Number"
+
+#: details/templates/details/contact.html:108
+msgid "موضوع"
+msgstr "Subject"
+
+#: details/templates/details/contact.html:115
+msgid "پیام"
+msgstr "Message"
+
+#: details/templates/details/contact.html:129
+msgid "تایید و ارسال"
+msgstr "Submit & Send"
+
+#: details/templates/details/contact.html:142
+msgid "فروشگاه های ما"
+msgstr "Our Shop"
+
+#: details/templates/details/contact.html:158
+msgid "فروشگاه شماره 1"
+msgstr "Shop No. 1"
+
+#: details/templates/details/contact.html:160
+msgid "تهران، میدان تجریش"
+msgstr "Tehran, Tajrish sq."
+
+#: details/templates/details/contact.html:163
+msgid "ساعت کاری فروشگاه"
+msgstr "Working Time"
+
+#: details/templates/details/contact.html:165
+msgid "شنبه-چهارشنبه 11صبح تا 7 عصر"
+msgstr "Saturday to Wednesday, 7 a.m "
+
+#: details/templates/details/contact.html:166
+msgid "پنج شنبه 11 صبح تا 6 عصر"
+msgstr "Thursday 11 a.m to 6 p.m"
+
+#: details/templates/details/contact.html:168
+msgid "مشاهده روی نقشه"
+msgstr "Location"
+
+#: details/templates/details/home.html:29
+#: details/templates/details/home.html:48
+msgid "کالکشن جدید"
+msgstr "New Collections"
+
+#: details/templates/details/home.html:31
+msgid "فروشگاه زنانه"
+msgstr "Women Shop"
+
+#: details/templates/details/home.html:33
+#: details/templates/details/home.html:52
+msgid "مشاهده"
+msgstr "Detail"
+
+#: details/templates/details/home.html:50
+msgid "فروشگاه مردانه"
+msgstr "Men Shop"
+
+#: details/templates/details/home.html:70
+msgid "شکستن قیمت ها"
+msgstr "Break the Prices"
+
+#: details/templates/details/home.html:72
+msgid "تابستان"
+msgstr "Summer"
+
+#: details/templates/details/home.html:72
+#, fuzzy, python-format
+#| msgid "70% تخفیف"
+msgid "70%% تخفیف"
+msgstr "70% Off"
+
+#: details/templates/details/home.html:74
+#: details/templates/details/home.html:93
+#: details/templates/details/home.html:112
+msgid "خرید"
+msgstr "Buy"
+
+#: details/templates/details/home.html:89
+msgid "لوازم جانبی"
+msgstr "Accessories"
+
+#: details/templates/details/home.html:91
+msgid "زمستان 2019"
+msgstr "Winter 2019"
+
+#: details/templates/details/home.html:91
+#, fuzzy, python-format
+#| msgid "تا 50% تخفیف"
+msgid "تا 50%% تخفیف"
+msgstr "to 50% Off"
+
+#: details/templates/details/home.html:108
+msgid "محصولات جدید"
+msgstr "New Products"
+
+#: details/templates/details/home.html:110
+msgid "زنانه"
+msgstr "Women"
+
+#: details/templates/details/home.html:110
+msgid "گرمکن ورزشی"
+msgstr "Sport Clothes"
+
+#: details/templates/details/home.html:135
+msgid "پرداخت و ارسال "
+msgstr "Submit & Send"
+
+#: details/templates/details/home.html:136
+msgid "ارسال رایگان برای سفارشات بالای 50 هزار تومان "
+msgstr "Free shipment for shopping more than 50.000 dollar"
+
+#: details/templates/details/home.html:148
+msgid "مرجوع کردن سفارشات "
+msgstr "Send back Orders"
+
+#: details/templates/details/home.html:149
+msgid "گارانتی بازگرداندن وجه به صورت کامل "
+msgstr "Gaurantee to give back your money"
+
+#: details/templates/details/home.html:161
+msgid "پشتیبانی حرفه ای "
+msgstr "Professional Supports"
+
+#: details/templates/details/home.html:162
+msgid "پشتبانی آنلاین به صورت 7روز هفته/24ساعته "
+msgstr "Online Supports 24hr"
+
+#: details/templates/details/home.html:175
+msgid "محصولات جدید "
+msgstr "New Products"
+
+#: details/templates/details/home.html:180
+msgid "زنانه لباس "
+msgstr "Women Clothes"
+
+#: details/templates/details/home.html:184
+msgid "مردانه لباس "
+msgstr "Men Clothes"
+
+#: details/templates/details/home.html:199
+msgid "فروش ویژه "
+msgstr "Special Shopping"
+
+#: details/templates/details/home.html:208
+msgid "افزودن به لیست علاقه مندی "
+msgstr "Add to Favorites"
+
+#: details/templates/details/home.html:210
+#, fuzzy
+#| msgid "مشاهده سبد خرید"
+msgid "مشاهده سریع "
+msgstr "Cart Detail"
+
+#: details/templates/details/home.html:214
+msgid "افزودن به سبد خرید "
+msgstr "Add to Cart"
+
+#: details/templates/details/home.html:223
+msgid "تومان "
+msgstr "dollar"
+
+#: details/templates/details/home.html:230
+msgid "دیدگاه "
+msgstr "Comment"
+
+#: details/templates/details/home.html:243
+msgid "مشاهده بیشتر "
+msgstr "More"

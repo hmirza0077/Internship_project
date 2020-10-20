@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: blog/templates/blog/aside.html:6 blog/templates/blog/aside.html:13
+msgid "جستجو"
+msgstr "جستجو"
+
+#: blog/templates/blog/aside.html:10
+msgid "جستجوی اخبار"
+msgstr "جستجوی اخبار"
+
+#: blog/templates/blog/aside.html:11
+msgid "جستجوی خبر مورد نظر"
+msgstr "جستجوی خبر مورد نظر"
+
+#: blog/templates/blog/aside.html:19
+msgid "دسته بندی ها"
+msgstr "دسته بندی ها"
+
+#: blog/templates/blog/aside.html:29
+msgid "پست های اخیر"
+msgstr "پست های اخیر"
+
+#: blog/templates/blog/aside.html:99
+msgid "برچسب ها"
+msgstr "برچسب ها"
+
+#: blog/templates/blog/detail.html:9 blog/templates/blog/detail.html:19
+msgid "پست تکی"
+msgstr "پست تکی"
+
+#: blog/templates/blog/detail.html:17 blog/templates/blog/list.html:17
+msgid "خانه"
+msgstr "خانه"
+
+#: blog/templates/blog/detail.html:18 blog/templates/blog/list.html:9
+msgid "وبلاگ"
+msgstr "وبلاگ"
+
+#: blog/templates/blog/detail.html:40
+msgid "نویسنده"
+msgstr "نویسنده"
+
+#: blog/templates/blog/detail.html:45 blog/templates/blog/detail.html:169
+#: blog/templates/blog/detail.html:195 blog/templates/blog/detail.html:270
+msgid "دیدگاه"
+msgstr "دیدگاه"
+
+#: blog/templates/blog/detail.html:67
+msgid "برچسب"
+msgstr "برچسب"
+
+#: blog/templates/blog/detail.html:99
+msgid "مدیر سایت"
+msgstr "مدیر سایت"
+
+#: blog/templates/blog/detail.html:103
+msgid "مشاهده همه پست های این نویسنده"
+msgstr "مشاهده همه پست های این نویسنده"
+
+#: blog/templates/blog/detail.html:111
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم "
+"متن ساختگی با تولید سادگی"
+msgstr "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم"
+
+#: blog/templates/blog/detail.html:125
+msgid "پست قبلی"
+msgstr "پست قبلی"
+
+#: blog/templates/blog/detail.html:129
+msgid "پست بعدی"
+msgstr "پست بعدی"
+
+#: blog/templates/blog/detail.html:136
+msgid "پست های مرتبط"
+msgstr "پست های مرتبط"
+
+#: blog/templates/blog/detail.html:208 blog/templates/blog/detail.html:235
+msgid "پاسخ"
+msgstr "پاسخ"
+
+#: blog/templates/blog/detail.html:254
+msgid "دیدگاه جدید ثبت شد"
+msgstr "دیدگاه جدید ثبت شد"
+
+#: blog/templates/blog/detail.html:261
+msgid "ارسال یک دیدگاه"
+msgstr "ارسال یک دیدگاه"
+
+#: blog/templates/blog/detail.html:263
+msgid "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
+msgstr "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
+
+#: blog/templates/blog/detail.html:275
+msgid "نام"
+msgstr "نام"
+
+#: blog/templates/blog/detail.html:281
+msgid "ایمیل"
+msgstr "ایمیل"
+
+#: blog/templates/blog/detail.html:289
+msgid "ارسال دیدگاه"
+msgstr "ارسال دیدگاه"
+
+#: blog/templates/blog/detail.html:294
+msgid "ابتدا باید"
+msgstr "ابتدا باید"
+
+#: blog/templates/blog/detail.html:294
+msgid "وارد"
+msgstr "وارد"
+
+#: blog/templates/blog/detail.html:294
+msgid "شوید"
+msgstr "شوید"
+
+#: blog/templates/blog/list.html:9 blog/templates/blog/list.html:18
+msgid "اخبار"
+msgstr "اخبار"
+
+#: blog/templates/blog/list.html:30
+msgid "فیلتر بر اساس"
+msgstr "فیلتر بر اساس"
+
+#: blog/templates/blog/list.html:64
+msgid "ادامه خواندن"
+msgstr "ادامه خواندن"
+
+#: blog/templates/blog/pagination.html:7
+msgid "قبلی"
+msgstr "قبلی"
+
+#: blog/templates/blog/pagination.html:41
+msgid "بعدی"
+msgstr "بعدی"

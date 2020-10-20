@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: orders/models.py:16
+msgid "first_name"
+msgstr "نام"
+
+#: orders/models.py:17
+msgid "last_name"
+msgstr "نام خانوادگی"
+
+#: orders/models.py:18
+msgid "e-mail"
+msgstr "ایمیل"
+
+#: orders/models.py:19
+msgid "address"
+msgstr "آدرس"
+
+#: orders/models.py:20
+msgid "postal_code"
+msgstr "کد پستی"
+
+#: orders/models.py:21
+msgid "city"
+msgstr "شهر"
+
+#: orders/templates/admin/orders/order/detail.html:6
+#: orders/templates/admin/orders/order/detail.html:12
+#: orders/templates/admin/orders/order/detail.html:17
+msgid "سفارش"
+msgstr "سفارش"
+
+#: orders/templates/admin/orders/order/detail.html:10
+#: orders/templates/orders/checkout.html:16
+msgid "خانه"
+msgstr "خانه"
+
+#: orders/templates/admin/orders/order/detail.html:11
+msgid "سفارشات"
+msgstr "سفارشات"
+
+#: orders/templates/admin/orders/order/detail.html:20
+msgid "پرینت"
+msgstr "پرینت"
+
+#: orders/templates/admin/orders/order/detail.html:25
+msgid "تاریخ ثبت سفارش"
+msgstr "تاریخ ثبت سفارش"
+
+#: orders/templates/admin/orders/order/detail.html:29
+msgid "مشتری"
+msgstr "مشتری"
+
+#: orders/templates/admin/orders/order/detail.html:33
+#: orders/templates/orders/checkout.html:102
+msgid "ایمیل"
+msgstr "ایمیل"
+
+#: orders/templates/admin/orders/order/detail.html:37
+#: orders/templates/orders/checkout.html:79
+msgid "آدرس"
+msgstr "آدرس"
+
+#: orders/templates/admin/orders/order/detail.html:41
+#: orders/templates/admin/orders/order/detail.html:72
+msgid "جمع خرید"
+msgstr "جمع خرید"
+
+#: orders/templates/admin/orders/order/detail.html:45
+msgid "وضعیت"
+msgstr "وضعیت"
+
+#: orders/templates/admin/orders/order/detail.html:46
+#: orders/templates/admin/orders/order/pdf.html:45
+msgid "پرداخت شده"
+msgstr "پرداخت شده"
+
+#: orders/templates/admin/orders/order/detail.html:46
+#: orders/templates/admin/orders/order/pdf.html:45
+msgid "پرداخت نشده"
+msgstr "پرداخت نشده"
+
+#: orders/templates/admin/orders/order/detail.html:53
+msgid "جنس خریداری شده"
+msgstr "جنس خریداری شده"
+
+#: orders/templates/admin/orders/order/detail.html:56
+#: orders/templates/admin/orders/order/pdf.html:22
+msgid "محصول"
+msgstr "محصول"
+
+#: orders/templates/admin/orders/order/detail.html:57
+#: orders/templates/admin/orders/order/pdf.html:23
+msgid "قیمت"
+msgstr "قیمت"
+
+#: orders/templates/admin/orders/order/detail.html:58
+#: orders/templates/admin/orders/order/pdf.html:24
+msgid "تعداد"
+msgstr "تعداد"
+
+#: orders/templates/admin/orders/order/detail.html:59
+#: orders/templates/admin/orders/order/pdf.html:38
+msgid "مجموع"
+msgstr "مجموع"
+
+#: orders/templates/admin/orders/order/detail.html:66
+#: orders/templates/admin/orders/order/detail.html:68
+#: orders/templates/admin/orders/order/detail.html:72
+#: orders/templates/admin/orders/order/pdf.html:39
+#: orders/templates/orders/checkout.html:138
+#: orders/templates/orders/checkout.html:146
+#: orders/templates/orders/checkout.html:154
+#: orders/templates/orders/checkout.html:171
+msgid "تومان"
+msgstr "تومان"
+
+#: orders/templates/admin/orders/order/pdf.html:5
+msgid "فروشگاه من"
+msgstr "فروشگاه من"
+
+#: orders/templates/admin/orders/order/pdf.html:7
+msgid "خرید شماره ی"
+msgstr "خرید شماره ی"
+
+#: orders/templates/admin/orders/order/pdf.html:13
+msgid "پرداخت کننده"
+msgstr "پرداخت کننده"
+
+#: orders/templates/admin/orders/order/pdf.html:18
+msgid "محصولات خریداری شده"
+msgstr "محصولات خریداری شده"
+
+#: orders/templates/admin/orders/order/pdf.html:25
+msgid "قیمت کل"
+msgstr "قیمت کل"
+
+#: orders/templates/orders/checkout.html:3
+msgid "سبد خرید"
+msgstr "سبد خرید"
+
+#: orders/templates/orders/checkout.html:8
+#: orders/templates/orders/checkout.html:18
+msgid "صفحه پرداخت"
+msgstr "صفحه پرداخت"
+
+#: orders/templates/orders/checkout.html:8
+#: orders/templates/orders/checkout.html:17
+msgid "فروشگاه"
+msgstr "فروشگاه"
+
+#: orders/templates/orders/checkout.html:39
+msgid "جزئیات صورت حساب"
+msgstr "جزئیات صورت حساب"
+
+#: orders/templates/orders/checkout.html:43
+msgid "نام"
+msgstr "نام"
+
+#: orders/templates/orders/checkout.html:49
+msgid "نام خانوادگی"
+msgstr "نام خانوادگی"
+
+#: orders/templates/orders/checkout.html:64
+msgid "شهر"
+msgstr "شهر"
+
+#: orders/templates/orders/checkout.html:90
+msgid "کد پستی"
+msgstr "کد پستی"
+
+#: orders/templates/orders/checkout.html:107
+msgid "ایجاد یک حساب کاربری؟"
+msgstr "ایجاد یک حساب کاربری؟"
+
+#: orders/templates/orders/checkout.html:113
+msgid "ارسال به یک آدرس متفاوت؟"
+msgstr "ارسال به یک آدرس متفاوت؟"
+
+#: orders/templates/orders/checkout.html:117
+msgid "توضیحات (اختیاری)"
+msgstr "توضیحات (اختیاری)"
+
+#: orders/templates/orders/checkout.html:123
+msgid "سفارش شما"
+msgstr "سفارش شما"
+
+#: orders/templates/orders/checkout.html:130
+msgid "جمع"
+msgstr "جمع"
+
+#: orders/templates/orders/checkout.html:144
+#: orders/templates/orders/checkout.html:170
+msgid "جمع سبد خرید"
+msgstr "جمع سبد خرید"
+
+#: orders/templates/orders/checkout.html:150
+msgid "کوپن"
+msgstr "کوپن"
+
+#: orders/templates/orders/checkout.html:150
+msgid "تخفیف"
+msgstr "تخفیف"
+
+#: orders/templates/orders/checkout.html:276
+msgid "ثبت"
+msgstr "ثبت"
+
+#: orders/templates/orders/checkout.html:277
+msgid "پرداخت"
+msgstr "پرداخت"
+
+#: orders/templates/orders/created.html:1
+msgid "تکمیل خرید"
+msgstr "تکمیل خرید"
+
+#: orders/templates/orders/created.html:10
+msgid "با تشکر از خرید شما"
+msgstr "با تشکر از خرید شما"
+
+#: orders/templates/orders/created.html:11
+msgid "شماره سفارش شما"
+msgstr "شماره سفارش شما"
+
+#: orders/templates/orders/created.html:12
+msgid "برای بازگشت به صفحه ی اصلی"
+msgstr "برای بازگشت به صفحه ی اصلی"
+
+#: orders/templates/orders/created.html:12
+msgid "کلیک"
+msgstr "کلیک"
+
+#: orders/templates/orders/created.html:12
+msgid "کنید"
+msgstr "کنید"

@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: shop/templates/shop/detail.html:3 shop/templates/shop/list.html:3
+msgid "فروشگاه لیست"
+msgstr "Shop List"
+
+#: shop/templates/shop/detail.html:11 shop/templates/shop/list.html:19
+msgid "خانه"
+msgstr "Home"
+
+#: shop/templates/shop/detail.html:12
+msgid "محصولات"
+msgstr "Products"
+
+#: shop/templates/shop/detail.html:13
+msgid "پیش فرض"
+msgstr "Default"
+
+#: shop/templates/shop/detail.html:20 shop/templates/shop/pagination.html:7
+msgid "قبلی"
+msgstr "Prev"
+
+#: shop/templates/shop/detail.html:24 shop/templates/shop/pagination.html:41
+msgid "بعدی"
+msgstr "Next"
+
+#: shop/templates/shop/detail.html:122 shop/templates/shop/list.html:252
+msgid "سایز"
+msgstr "Size"
+
+#: shop/templates/shop/detail.html:125
+msgid "سایز را انتخاب کنید"
+msgstr "Please choose your size"
+
+#: shop/templates/shop/detail.html:126
+msgid "کوچک"
+msgstr "Small"
+
+#: shop/templates/shop/detail.html:127
+msgid "متوسط"
+msgstr "Medium"
+
+#: shop/templates/shop/detail.html:128
+msgid "بزرگ"
+msgstr "Large"
+
+#: shop/templates/shop/detail.html:129
+msgid "خیلی بزرگ"
+msgstr "XLarge"
+
+#: shop/templates/shop/detail.html:134
+msgid "راهنمای اندازه"
+msgstr "Size Menue:"
+
+#: shop/templates/shop/detail.html:140
+msgid "تعداد"
+msgstr "Quantity"
+
+#: shop/templates/shop/detail.html:151 shop/templates/shop/detail.html:314
+msgid "افزودن به سبد خرید"
+msgstr "Add to Cart"
+
+#: shop/templates/shop/detail.html:158 shop/templates/shop/detail.html:308
+#: shop/templates/shop/list.html:149
+msgid "افزودن به لیست علاقه مندی"
+msgstr "Add to Favorites"
+
+#: shop/templates/shop/detail.html:159
+msgid "افزودن به لیست مقایسه"
+msgstr "Add to Compare list"
+
+#: shop/templates/shop/detail.html:167 shop/templates/shop/list.html:221
+msgid "دسته بندی"
+msgstr "Category"
+
+#: shop/templates/shop/detail.html:173
+msgid "اشتراک گذاری"
+msgstr "Share"
+
+#: shop/templates/shop/detail.html:197
+msgid "توضیحات"
+msgstr "Description"
+
+#: shop/templates/shop/detail.html:200
+msgid "اطلاعات بیشتر"
+msgstr "More Information"
+
+#: shop/templates/shop/detail.html:203
+msgid "نظرات "
+msgstr "Comments"
+
+#: shop/templates/shop/detail.html:209
+msgid "اطلاعات محصول"
+msgstr "Product Description"
+
+#: shop/templates/shop/detail.html:217
+msgid "اطلاعات"
+msgstr "Description"
+
+#: shop/templates/shop/detail.html:225
+msgid "دیدگاهی موجود نیست"
+msgstr "No Comments"
+
+#: shop/templates/shop/detail.html:251
+msgid "مثبت"
+msgstr "Like"
+
+#: shop/templates/shop/detail.html:252
+msgid "منفی"
+msgstr "Dislike"
+
+#: shop/templates/shop/detail.html:271
+msgid "محصولاتی که شاید بپسندید"
+msgstr "Products you may like"
+
+#: shop/templates/shop/detail.html:309 shop/templates/shop/list.html:136
+msgid "مشاهده سریع"
+msgstr "Show"
+
+#: shop/templates/shop/detail.html:310
+msgid "لیست مقایسه"
+msgstr "Compare List"
+
+#: shop/templates/shop/detail.html:328
+msgid "تومان"
+msgstr "$"
+
+#: shop/templates/shop/detail.html:337
+msgid "دیدگاه "
+msgstr "Comment "
+
+#: shop/templates/shop/list.html:11 shop/templates/shop/list.html:21
+msgid "لیست"
+msgstr "List"
+
+#: shop/templates/shop/list.html:11 shop/templates/shop/list.html:20
+msgid "فروشگاه"
+msgstr "Shop"
+
+#: shop/templates/shop/list.html:35
+msgid "نمایش"
+msgstr "Show"
+
+#: shop/templates/shop/list.html:35
+msgid "از"
+msgstr "from"
+
+#: shop/templates/shop/list.html:35
+msgid " محصول"
+msgstr "procuts"
+
+#: shop/templates/shop/list.html:43
+msgid "مرتب سازی براساس"
+msgstr "Sort by"
+
+#: shop/templates/shop/list.html:46
+msgid "بیشترین خرید"
+msgstr "Most buy"
+
+#: shop/templates/shop/list.html:47
+msgid "بیشترین امتیاز"
+msgstr "Most popular"
+
+#: shop/templates/shop/list.html:48
+msgid "تاریخ"
+msgstr "Date"
+
+#: shop/templates/shop/list.html:109
+msgid "جدید"
+msgstr "New"
+
+#: shop/templates/shop/list.html:126
+msgid "بازدید"
+msgstr "Visit"
+
+#: shop/templates/shop/list.html:137
+msgid "مقایسه"
+msgstr "Compare"
+
+#: shop/templates/shop/list.html:141
+msgid "جزئیات محصول"
+msgstr "Product Detail"
+
+#: shop/templates/shop/list.html:159
+msgid "بدون توضیحات"
+msgstr "No Description"
+
+#: shop/templates/shop/list.html:213
+msgid "فیلترها"
+msgstr "Filters"
+
+#: shop/templates/shop/list.html:214
+msgid "پاک کردن همه"
+msgstr "Clear all"
+
+#: shop/templates/shop/list.html:329
+msgid "رنگ"
+msgstr "Color"
+
+#: shop/templates/shop/list.html:450
+msgid "قیمت"
+msgstr "Price"
+
+#: shop/templates/shop/list.html:459
+msgid " : محدوده قیمت"
+msgstr " "

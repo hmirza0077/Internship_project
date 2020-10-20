@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/templates/blog/aside.html:6 blog/templates/blog/aside.html:13
+msgid "جستجو"
+msgstr "Search"
+
+#: blog/templates/blog/aside.html:10
+msgid "جستجوی اخبار"
+msgstr ""
+
+#: blog/templates/blog/aside.html:11
+msgid "جستجوی خبر مورد نظر"
+msgstr "Search..."
+
+#: blog/templates/blog/aside.html:19
+msgid "دسته بندی ها"
+msgstr "Categories"
+
+#: blog/templates/blog/aside.html:29
+msgid "پست های اخیر"
+msgstr "Latest Posts"
+
+#: blog/templates/blog/aside.html:99
+msgid "برچسب ها"
+msgstr "Tags"
+
+#: blog/templates/blog/detail.html:9 blog/templates/blog/detail.html:19
+msgid "پست تکی"
+msgstr "Single Post"
+
+#: blog/templates/blog/detail.html:17 blog/templates/blog/list.html:17
+msgid "خانه"
+msgstr "Home"
+
+#: blog/templates/blog/detail.html:18 blog/templates/blog/list.html:9
+msgid "وبلاگ"
+msgstr "Blog"
+
+#: blog/templates/blog/detail.html:40
+msgid "نویسنده"
+msgstr "Author"
+
+#: blog/templates/blog/detail.html:45 blog/templates/blog/detail.html:169
+#: blog/templates/blog/detail.html:195 blog/templates/blog/detail.html:270
+msgid "دیدگاه"
+msgstr "Comment"
+
+#: blog/templates/blog/detail.html:67
+msgid "برچسب"
+msgstr "Tag"
+
+#: blog/templates/blog/detail.html:99
+msgid "مدیر سایت"
+msgstr "Admin"
+
+#: blog/templates/blog/detail.html:103
+msgid "مشاهده همه پست های این نویسنده"
+msgstr "More from this author"
+
+#: blog/templates/blog/detail.html:111
+msgid ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
+"تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم "
+"متن ساختگی با تولید سادگی"
+msgstr "Lorem Ipsum with simple text and bla bla bla"
+
+#: blog/templates/blog/detail.html:125
+msgid "پست قبلی"
+msgstr "Previous Post"
+
+#: blog/templates/blog/detail.html:129
+msgid "پست بعدی"
+msgstr "Next Post"
+
+#: blog/templates/blog/detail.html:136
+msgid "پست های مرتبط"
+msgstr "Related Posts"
+
+#: blog/templates/blog/detail.html:208 blog/templates/blog/detail.html:235
+msgid "پاسخ"
+msgstr "Reply"
+
+#: blog/templates/blog/detail.html:254
+msgid "دیدگاه جدید ثبت شد"
+msgstr "New Comment Submitted"
+
+#: blog/templates/blog/detail.html:261
+msgid "ارسال یک دیدگاه"
+msgstr "Add a Commet"
+
+#: blog/templates/blog/detail.html:263
+msgid "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
+msgstr "Your email won't published. Fields with * sign are required."
+
+#: blog/templates/blog/detail.html:275
+msgid "نام"
+msgstr "First name"
+
+#: blog/templates/blog/detail.html:281
+msgid "ایمیل"
+msgstr "E-mai"
+
+#: blog/templates/blog/detail.html:289
+msgid "ارسال دیدگاه"
+msgstr "Add a Comment"
+
+#: blog/templates/blog/detail.html:294
+msgid "ابتدا باید"
+msgstr "First you shoul"
+
+#: blog/templates/blog/detail.html:294
+msgid "وارد"
+msgstr "login"
+
+#: blog/templates/blog/detail.html:294
+msgid "شوید"
+msgstr ""
+
+#: blog/templates/blog/list.html:9 blog/templates/blog/list.html:18
+msgid "اخبار"
+msgstr "News"
+
+#: blog/templates/blog/list.html:30
+msgid "فیلتر بر اساس"
+msgstr "Filter based on:"
+
+#: blog/templates/blog/list.html:64
+msgid "ادامه خواندن"
+msgstr "Read more..."
+
+#: blog/templates/blog/pagination.html:7
+msgid "قبلی"
+msgstr "Prev"
+
+#: blog/templates/blog/pagination.html:41
+msgid "بعدی"
+msgstr "Next"

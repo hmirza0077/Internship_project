@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# print('BASE_DIR: ', BASE_DIR)
+# print()
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # packages
+    'rosetta',
     'taggit',
     'crispy_forms',
     'ckeditor',
@@ -46,6 +50,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'social_django',
     'django.contrib.sites',
+    'multiselectfield',
+    'star_ratings',
+    'parler',
     # apps
     'orders',
     'accounts',
@@ -54,6 +61,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'blog',
+    'coupons',
 ]
 
 SITE_ID = 1
@@ -61,6 +69,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -125,6 +134,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'fa'
+LANGUAGES = (
+    ('fa', _('Persian')),
+    ('en', _('English')),
+)
+LOCALE_PATH = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -161,3 +177,26 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 CART_SESSION_ID = 'cart'
+# STAR_RATINGS_RERATE = False
+# STAR_RATINGS_ANONYMOUS = True
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'fa'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
+
+# PARLER_SHOW_EXCLUDED_LANGUAGE_TABS = True

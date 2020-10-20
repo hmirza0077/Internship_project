@@ -19603,5 +19603,37 @@ button:focus {
     margin-bottom: 16px;
 }
 
+.red {
+    background-color: #cc3333 !important;
+}
+
+.brown {
+    background-color: #b87145 !important;
+}
+
+.yellow {
+    background-color: #f0c04a !important;
+}
+
+.black {
+    background-color: #333333 !important;
+}
+
+.pink {
+    background-color: #f2719c !important;
+}
+
+.gray {
+    background-color: #ebebeb !important;
+}
+
+.green {
+    background-color: #669933 !important;
+}
+
+.blue {
+    background-color: #3399cc !important;
+}
+
 
 /*# sourceMappingURL=style.css.map */

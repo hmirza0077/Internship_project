@@ -1,9 +1,10 @@
+{% load i18n %}
 <nav aria-label="Page navigation">
     <ul class="pagination">
         {% if products.has_other_pages %} {% if products.has_previous %}
         <li class="page-item">
             <a class="page-link page-link-prev" href="?page={{ products.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>{% trans "قبلی" %}
             </a>
         </li>
         {% endif %} {% if products.number != 1 %}
@@ -37,7 +38,7 @@
         {% endif %} {% if products.has_next %}
         <li class="page-item">
             <a class="page-link page-link-next" href="?page={{ products.next_page_number }}" aria-label="Next">
-                        بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                        {% trans "بعدی" %}<span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
             </a>
         </li>
         {% endif %} {% endif %}

@@ -1,27 +1,30 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags ratings %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %}فروشگاه لیست{% endblock title %} {% block head %}
-<link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css"> {% endblock head %} {% block content %}
+<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "فروشگاه لیست" %}{% endblock title %} {% block head %}
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<link rel="stylesheet" href="{% static 'details/assets/css/plugins/owl-carousel/owl.carousel.css' %}">{% endblock head %} {% block content %}
 
 <main class="main">
     <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
         <div class="container d-flex align-items-center">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">محصولات</a></li>
-                <li class="breadcrumb-item active" aria-current="page">پیش فرض</li>
+                <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog:main' %}">{% trans "محصولات" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "پیش فرض" %}</li>
             </ol>
 
             <nav class="product-pager mr-auto" aria-label="Product">
-                <a class="product-pager-link product-pager-prev" href="{% url 'shop:product_list' %}" aria-label="Previous" tabindex="-1">
+                {% if previous_product %}
+                <a class="product-pager-link product-pager-prev" href="{{ previous_product.get_absolute_url }}" aria-label="Previous" tabindex="-1">
                     <i class="icon-angle-right"></i>
-                    <span>قبلی</span>
+                    <span>{% trans "قبلی" %}</span>
                 </a>
-                {% comment %} {% with next_product_id=product.id|add:1 %} {% with next_product=cart.item.product.objects.get(id=next_product_id) %}
-                <a class="product-pager-link product-pager-next" href="{% url 'shop:product_detail' next_product_id next_product.slug %}" aria-label="Next" tabindex="-1">
-                    <span>بعدی</span>
+                {% endif %} {% if next_product %}
+                <a class="product-pager-link product-pager-next" href="{{ next_product.get_absolute_url }}" aria-label="Next" tabindex="-1">
+                    <span>{% trans "بعدی" %}</span>
                     <i class="icon-angle-left"></i>
-                </a>{% endwith %} {% endwith %} {% endcomment %}
+                </a>
+                {% endif %}
             </nav>
             <!-- End .pager-nav -->
         </div>
@@ -76,13 +79,13 @@
                             <!-- End .product-title -->
 
                             <div class="ratings-container">
-                                <a class="ratings-text" href="#product-review-link" id="review-link">( 2 نظر
-                                            )</a>
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 80%;"></div>
-                                    <!-- End .ratings-val -->
+
+                                <!-- <a class="ratings-text" href="#product-review-link" id="review-link">( 2 نظر
+                                            )</a> -->
+                                <div class="text-right">
+                                    {% comment %} {% ratings product %} {% endcomment %} {% include "shop/star_rate.html" %}
+                                    <!-- <div class="ratings-val" style="width: 80%;"></div> -->
                                 </div>
-                                <!-- End .ratings -->
                             </div>
                             <!-- End .rating-container -->
 
@@ -90,61 +93,49 @@
                                 {{ product.price }}
                             </div>
                             <!-- End .product-price -->
-
+                            {% comment %}
                             <div class="product-content">
                                 <p>{{ product.short_description|safe }}</p>
                             </div>
                             <!-- End .product-content -->
+                            {% endcomment %}
 
                             <div class="details-filter-row details-row-size">
                                 <label>رنگ : </label>
 
                                 <div class="product-nav product-nav-thumbs">
-                                    <li class="wc-layerd-nav-term with-swatch-color">
-                                        <a rel="nofollow" href="#" class="layered-nav-link">
-                                            <span class="swatch-inner">
-                                                <span class="filter-swatch">
-                                                    <span style="background-color: rgb(232, 112, 53); --darkreader-inline-bgcolor:#a74413;" class="rounded">
-                                                        
-                                                    </span>
-                                            </span>
-                                            <span class="layer-term-name" style="margin: 0; padding: 0; border: 0; font: inherit; vertical-align: baseline; box-sizing: border-box;">{{product.color}}</span>
-                                            </span>
-                                        </a>
-                                        <!-- <span class="count">6</span> -->
-                                    </li>
-                                    <!-- <a href="#" class="active">{{ product.color }}</a> -->
-                                    <!-- <a href="#" class="active">
-                                        <img src="{% static 'assets/images/products/single/1-thumb.jpg' %}" alt="product desc">
-                                    </a>
-                                    <a href="#">
-                                        <img src="{% static 'assets/images/products/single/2-thumb.jpg' %}" alt="product desc">
-                                    </a> -->
+                                    <!--  -->
+                                    {% for color in product.color %}
+                                    <!-- <a href="#"><span style="background-color: #cc3333;" class="rounded-circle border-0"></span></a>  -->
+                                    <form id="post-form" action="{% url 'shop:product_detail_by_color' product.id product.slug color %}" method="POST">{% csrf_token %}<input type="submit" style="width: 4.4rem;height: 4.4rem;margin-left: .5rem;" class="rounded-circle border-0 {{ color }}" value=""><input type="hidden" value="{{ color }}"></form>
+                                    <!-- <form action="{% url 'shop:product_detail_by_color' product.id product.slug color %}" method="POST">{% csrf_token %}<input type="submit" style="width: 4.4rem;height: 4.4rem;margin-left: .5rem;" class="rounded-circle border-0 {{ color }}" value=""><input type="hidden" value="{{ color }}"></form> -->
+                                    <!-- <a href="#"><span style="background-color: {{ color }};" class="rounded-circle border-0"></span></a> -->
+                                    {% endfor %}
                                 </div>
                                 <!-- End .product-nav -->
                             </div>
                             <!-- End .details-filter-row -->
 
                             <div class="details-filter-row details-row-size">
-                                <label for="size">سایز : </label>
+                                <label for="size">{% trans "سایز" %} : </label>
                                 <div class="select-custom">
                                     <select name="size" id="size" class="form-control">
-                                                <option value="#" selected="selected">سایز را انتخاب کنید</option>
-                                                <option value="s">کوچک (Small)</option>
-                                                <option value="m">متوسط (Medium)</option>
-                                                <option value="l">بزرگ (Large)</option>
-                                                <option value="xl">خیلی بزرگ (XLarge)</option>
+                                                <option value="#" selected="selected">{% trans "سایز را انتخاب کنید" %}</option>
+                                                <option value="s">{% trans "کوچک" %}</option>
+                                                <option value="m">{% trans "متوسط" %}</option>
+                                                <option value="l">{% trans "بزرگ" %}</option>
+                                                <option value="xl">{% trans "خیلی بزرگ" %}</option>
                                         </select>
                                 </div>
                                 <!-- End .select-custom -->
 
-                                <a href="#" class="size-guide"><i class="icon-th-list"></i>راهنمای اندازه</a>
+                                <a href="#" class="size-guide"><i class="icon-th-list"></i>{% trans "راهنمای اندازه" %}</a>
                             </div>
                             <!-- End .details-filter-row -->
                             <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="details-filter-row details-row-size">
-                                    <label for="qty">تعداد : </label>
+                                    <label for="qty">{% trans "تعداد" %} : </label>
                                     <div class="product-details-quantity">
                                         <!-- <input type="number" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required> -->
                                         {{ cart_product_form.quantity }}
@@ -155,18 +146,15 @@
 
                                 <div class="product-details-action">
                                     <!-- <a href="{% url 'cart:cart_add' product.id %}" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a> -->
-                                    <input type="submit" value="افزودن به سبد خرید">
+                                    <input type="submit" value="{% trans 'افزودن به سبد خرید' %}">
                                     <!-- <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                                         {% csrf_token %} {{ cart_product_form.quantity }}
                                         <input type="submit" value="Add to cart"> -->
                             </form>
 
                             <div class="details-action-wrapper">
-                                <a href="#" class="btn-product btn-wishlist" title="لیست علاقه مندی"><span>افزودن
-                                                    به
-                                                    لیست علاقه مندی</span></a>
-                                <a href="#" class="btn-product btn-compare" title="مقایسه"><span>افزودن به
-                                                    لیست مقایسه</span></a>
+                                <a href="#" class="btn-product btn-wishlist" title="لیست علاقه مندی"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
+                                <a href="#" class="btn-product btn-compare" title="مقایسه"><span>{% trans "افزودن به لیست مقایسه" %}</span></a>
                             </div>
                             <!-- End .details-action-wrapper -->
                             </div>
@@ -174,15 +162,13 @@
 
                             <div class="product-details-footer">
                                 <div class="product-cat text-center">
-                                    <span>دسته بندی : </span>
-                                    <a href="#">زنانه</a>،
-                                    <a href="#">لباس</a>،
-                                    <a href="#">زرد</a>
+                                    <span>{% trans "دسته بندی" %} : </span>
+                                    <a href="{% url 'shop:product_list_by_category' product.category.slug %}">{{product.category}}</a>
                                 </div>
                                 <!-- End .product-cat -->
 
                                 <div class="social-icons social-icons-sm">
-                                    <span class="social-label">اشتراک گذاری : </span>
+                                    <span class="social-label">{% trans "اشتراک گذاری" %} : </span>
                                     <a href="#" class="social-icon" title="فیسبوک" target="_blank"><i
                                                     class="icon-facebook-f"></i></a>
                                     <a href="#" class="social-icon" title="توییتر" target="_blank"><i
@@ -206,66 +192,41 @@
             <div class="product-details-tab">
                 <ul class="nav nav-pills justify-content-center" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">توضیحات</a>
+                        <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">{% trans "توضیحات" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab" aria-controls="product-info-tab" aria-selected="false">اطلاعات بیشتر</a>
+                        <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab" aria-controls="product-info-tab" aria-selected="false">{% trans "اطلاعات بیشتر" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="product-shipping-link" data-toggle="tab" href="#product-shipping-tab" role="tab" aria-controls="product-shipping-tab" aria-selected="false">ارسال و بازگشت</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">نظرات (2)</a>
+                        <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">{% trans "نظرات " %} {{product.comments.count}}</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                         <div class="product-desc-content">
-                            <h3>اطلاعات محصول</h3>
-                            <p>{% if product.long_description %}{{ product.long_description|safe }}{% endif %}</p>
+                            <h3>{% trans "اطلاعات محصول" %}</h3>
+                            <p>{{ product.short_description|safe }}</p>
                         </div>
                         <!-- End .product-desc-content -->
                     </div>
                     <!-- .End .tab-pane -->
                     <div class="tab-pane fade" id="product-info-tab" role="tabpanel" aria-labelledby="product-info-link">
                         <div class="product-desc-content">
-                            <h3>اطلاعات</h3>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم
-                                ایپسوم متن ساختگی با تولید سادگی نامفهوم. </p>
-
-                            <h3>اطلاعات بیشتر</h3>
-                            <ul>
-                                <li>لورم ایپسوم متن ساختگی</li>
-                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                                <li>لورم ایپسوم</li>
-                                <li>لورم ایپسوم متن ساختگی </li>
-                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                                <li> ارتفاع: 31سانتی متر; عرض: 32سانتی متر; عمق: 12سانتی متر</li>
-                            </ul>
-
-                            <h3>سایز</h3>
-                            <p>تک سایز</p>
-                        </div>
-                        <!-- End .product-desc-content -->
-                    </div>
-                    <!-- .End .tab-pane -->
-                    <div class="tab-pane fade" id="product-shipping-tab" role="tabpanel" aria-labelledby="product-shipping-link">
-                        <div class="product-desc-content">
-                            <h3>ارسال و بازگشت</h3>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم<br> لورم ایپسوم متن ساختگی با تولید سادگی
-                                نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</a>
-                            </p>
+                            <h3>{% trans "اطلاعات" %}</h3>
+                            <p>{{product.long_description|safe}}</p>
                         </div>
                         <!-- End .product-desc-content -->
                     </div>
                     <!-- .End .tab-pane -->
                     <div class="tab-pane fade" id="product-review-tab" role="tabpanel" aria-labelledby="product-review-link">
+                        {% for comment in comments %} {% if not comment %}
+                        <h3>{% trans "دیدگاهی موجود نیست" %}</h3>{% endif %}
                         <div class="reviews">
-                            <h3>نظر (2)</h3>
+                            <h3>نظر ({{ comment.id }})</h3>
                             <div class="review">
                                 <div class="row no-gutters">
                                     <div class="col-auto">
-                                        <h4><a href="#">کاربر 1</a></h4>
+                                        <h4><a href="#">{{ user.username }}</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 80%;"></div>
@@ -274,55 +235,19 @@
                                             <!-- End .ratings -->
                                         </div>
                                         <!-- End .rating-container -->
-                                        <span class="review-date">4 روز پیش</span>
+                                        <span class="review-date">{{ comment.created }}</span>
                                     </div>
                                     <!-- End .col -->
                                     <div class="col-12">
-                                        <h4>عالی، سایز فوق العاده</h4>
 
                                         <div class="review-content">
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم،لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم!</p>
+                                            <p>{{ comment.body|linebreaks }}!</p>
                                         </div>
                                         <!-- End .review-content -->
 
                                         <div class="review-action">
-                                            <a href="#"><i class="icon-thumbs-up"></i>مثبت (2)</a>
-                                            <a href="#"><i class="icon-thumbs-down"></i>منفی (0)</a>
-                                        </div>
-                                        <!-- End .review-action -->
-                                    </div>
-                                    <!-- End .col-auto -->
-                                </div>
-                                <!-- End .row -->
-                            </div>
-                            <!-- End .review -->
-
-                            <div class="review">
-                                <div class="row no-gutters">
-                                    <div class="col-auto">
-                                        <h4><a href="#">کاربر 2</a></h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings">
-                                                <div class="ratings-val" style="width: 100%;"></div>
-                                                <!-- End .ratings-val -->
-                                            </div>
-                                            <!-- End .ratings -->
-                                        </div>
-                                        <!-- End .rating-container -->
-                                        <span class="review-date">2 روز پیش</span>
-                                    </div>
-                                    <!-- End .col -->
-                                    <div class="col-12">
-                                        <h4>خیلی عالی</h4>
-
-                                        <div class="review-content">
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
-                                        </div>
-                                        <!-- End .review-content -->
-
-                                        <div class="review-action">
-                                            <a href="#"><i class="icon-thumbs-up"></i>مثبت (0)</a>
-                                            <a href="#"><i class="icon-thumbs-down"></i>منفی (0)</a>
+                                            <a href="#"><i class="icon-thumbs-up"></i>{% trans "مثبت" %} (2)</a>
+                                            <a href="#"><i class="icon-thumbs-down"></i>{% trans "منفی" %} (0)</a>
                                         </div>
                                         <!-- End .review-action -->
                                     </div>
@@ -333,6 +258,7 @@
                             <!-- End .review -->
                         </div>
                         <!-- End .نظر -->
+                        {% endfor %}
                     </div>
                     <!-- .End .tab-pane -->
                 </div>
@@ -340,7 +266,7 @@
             </div>
             <!-- End .product-details-tab -->
 
-            <h2 class="title text-center mb-4">محصولاتی که شاید بپسندید</h2>
+            <h2 class="title text-center mb-4">{% trans "محصولاتی که شاید بپسندید" %}</h2>
             <!-- End .title text-center -->
 
             <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" data-owl-options='{
@@ -368,23 +294,22 @@
                                 }
                             }
                         }'>
+                {% for product in products %}
                 <div class="product product-7 text-center">
                     <figure class="product-media">
                         <!-- <span class="product-label label-new">جدید</span> -->
                         <a href="product.html">
-                            <img src="{% static 'details/assets/images/products/product-4.jpg' %}" alt="تصویر محصول" class="product-image">
+                            <img src="{{product.image.url}}" alt="تصویر محصول" class="product-image">
                         </a>
 
                         <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>افزودن به
-                                            لیست علاقه مندی</span></a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه"><span>لیست
-                                            مقایسه</span></a>
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="مشاهده سریع"><span>{% trans "مشاهده سریع" %}</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه"><span>{% trans "لیست مقایسه" %}</span></a>
                         </div>
                         <!-- End .product-action-vertical -->
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                            <a href="#" class="btn-product btn-cart"><span>{% trans "افزودن به سبد خرید" %}</span></a>
                         </div>
                         <!-- End .product-action -->
                     </figure>
@@ -392,13 +317,13 @@
 
                     <div class="product-body">
                         <div class="product-cat text-center">
-                            <a href="#">زنانه</a>
+                            <a href="{% url 'shop:product_list_by_gender' product.gender %}">{{product.gender}}</a>
                         </div>
                         <!-- End .product-cat -->
-                        <h3 class="product-title text-center"><a href="product.html">دامن چرم قهوه ای</a></h3>
+                        <h3 class="product-title text-center"><a href="{{product.get_absolute_url}}">{{product.title}}</a></h3>
                         <!-- End .product-title -->
                         <div class="product-price">
-                            60,000 تومان
+                            {{product.price}} {% trans "تومان" %}
                         </div>
                         <!-- End .product-price -->
                         <div class="ratings-container">
@@ -407,10 +332,10 @@
                                 <!-- End .ratings-val -->
                             </div>
                             <!-- End .ratings -->
-                            <span class="ratings-text">( 2 دیدگاه )</span>
+                            <span class="ratings-text">( {{product.comments.count}} {% trans "دیدگاه " %} )</span>
                         </div>
                         <!-- End .rating-container -->
-
+                        {% comment %}
                         <div class="product-nav product-nav-thumbs">
                             <a href="#" class="active">
                                 <img src="{% static 'details/assets/images/products/product-4-thumb.jpg' %}" alt="product desc">
@@ -424,10 +349,12 @@
                             </a>
                         </div>
                         <!-- End .product-nav -->
+                        {% endcomment %}
                     </div>
                     <!-- End .product-body -->
                 </div>
                 <!-- End .product -->
+                {% endfor %}
             </div>
             <!-- End .owl-carousel -->
         </div>
@@ -437,4 +364,24 @@
 </main>
 <!-- End .main -->
 
-{% endblock content %}
+{% endblock content %} {% block script %}
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+{% endblock script %}
+<!--  -->
+{% comment %} {% block script_code %}
+<script>
+    $(document).on('submit', '#post-form', function(e) {
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'shop:product_detail' %}",
+            data: {
+                color: $('.red').val(),
+            },
+            success: function(json) {},
+            error: function(xhr, errmsg, err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    });
+</script>
+{% endblock script_code %} {% endcomment %}

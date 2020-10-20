@@ -1,11 +1,11 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %}سبد خرید{% endblock title %} {% block content %}
+<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "سبد خرید" %}{% endblock title %} {% block content %}
 
 <main class="main">
     <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">صفحه پرداخت<span>فروشگاه</span></h1>
+            <h1 class="page-title">{% trans "صفحه پرداخت" %}<span>{% trans "فروشگاه" %}</span></h1>
         </div>
         <!-- End .container -->
     </div>
@@ -13,9 +13,9 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
-                <li class="breadcrumb-item active" aria-current="page">صفحه پرداخت</li>
+                <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'shop:product_list' %}">{% trans "فروشگاه" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "صفحه پرداخت" %}</li>
             </ol>
         </div>
         <!-- End .container -->
@@ -25,27 +25,28 @@
     <div class="page-content">
         <div class="checkout">
             <div class="container">
-                <div class="checkout-discount">
+                <!-- <div class="checkout-discount">
                     <form action="#">
                         <input type="text" class="form-control" required id="checkout-discount-input">
                         <label for="checkout-discount-input" class="text-truncate">کد تخفیف دارید؟ <span>برای وارد کردن کد تخفیف خود اینجا کلیک کنید</span></label>
                     </form>
-                </div>
+                </div> -->
                 <!-- End .checkout-discount -->
                 <form action="." method="POST">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-lg-9">
-                            <h2 class="checkout-title">جزئیات صورت حساب</h2>
+                            <h2 class="checkout-title">{% trans "جزئیات صورت حساب" %}</h2>
                             <!-- End .checkout-title -->
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <label>نام *</label> {{ form.first_name|as_crispy_field }}
+                                    <label>{% trans "نام" %} *</label> {{ form.first_name|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" required> -->
                                 </div>
                                 <!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
-                                    <label>نام خانوادگی *</label> {{ form.last_name|as-crispy_field }}
+                                    <label>{% trans "نام خانوادگی" %} *</label> {{ form.last_name|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" required> -->
                                 </div>
                                 <!-- End .col-sm-6 -->
@@ -60,7 +61,7 @@
 
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <label>شهر *</label> {{ form.city|as_crispy_field }}
+                                    <label>{% trans "شهر" %} *</label> {{ form.city|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" required> -->
 
                                 </div>
@@ -75,7 +76,7 @@
                             <!-- End .row -->
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <label>آدرس *</label> {{ form.address|as_crispy_field }}
+                                    <label>{% trans "آدرس" %} *</label> {{ form.address|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" placeholder="نام خیابان و پلاک" required> -->
 
                                 </div>
@@ -86,7 +87,7 @@
 
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <label>کد پستی *</label> {{ form.postal_code|as_crispy_field }}
+                                    <label>{% trans "کد پستی" %} *</label> {{ form.postal_code|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" required> -->
                                 </div>
                                 <!-- End .col-sm-6 -->
@@ -98,68 +99,83 @@
                             </div>
                             <!-- End .row -->
 
-                            <label>ایمیل *</label> {{ form.email|as_crispy_field }}
+                            <label>{% trans "ایمیل" %} *</label> {{ form.email|as_crispy_field }}
                             <!-- <input type="email" class="form-control" required> -->
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
-                                <label class="custom-control-label" for="checkout-create-acc">ایجاد یک حساب کاربری؟</label>
+                                <label class="custom-control-label" for="checkout-create-acc">{% trans "ایجاد یک حساب کاربری؟" %}</label>
                             </div>
                             <!-- End .custom-checkbox -->
 
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="checkout-diff-address">
-                                <label class="custom-control-label" for="checkout-diff-address">ارسال به یک آدرس متفاوت؟</label>
+                                <label class="custom-control-label" for="checkout-diff-address">{% trans "ارسال به یک آدرس متفاوت؟" %}</label>
                             </div>
                             <!-- End .custom-checkbox -->
 
-                            <label>توضیحات (اختیاری)</label>
+                            <label>{% trans "توضیحات (اختیاری)" %}</label>
                             <textarea class="form-control" cols="30" rows="4" placeholder="شما میتوانید توضیحات اضافی خود را اینجا بنویسید"></textarea>
                         </div>
                         <!-- End .col-lg-9 -->
                         <aside class="col-lg-3">
                             <div class="summary">
-                                <h3 class="summary-title">سفارش شما</h3>
+                                <h3 class="summary-title">{% trans "سفارش شما" %}</h3>
                                 <!-- End .summary-title -->
 
                                 <table class="table table-summary">
                                     <thead>
                                         <tr>
                                             <th>محصول</th>
-                                            <th class="text-left">جمع</th>
+                                            <th class="text-left">{% trans "جمع" %}</th>
                                         </tr>
                                     </thead>
-                                    {% for item in cart %} {% with product=item.product %}
+
                                     <tbody>
+                                        {% for item in cart %} {% with product=item.product %}
                                         <tr>
                                             <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
-                                            <td class="text-left">{{ item.price }}</td>
+                                            <td class="text-left">{{ item.total_price }} {% trans "تومان" %}</td>
                                         </tr>
-
-                                        <tr>
-                                            <td><a href="#">سارافون آبی بلند</a></td>
-                                            <td class="text-left">152,000 تومان</td>
-                                        </tr>
-                                        <tr class="summary-subtotal">
-                                            <td>جمع سبد خرید</td>
-                                            <td class="text-left">{{ item.total_price }}</td>
-                                        </tr>
+                                        {% endwith %} {% endfor %}
                                         <!-- End .summary-subtotal -->
+                                        {% if cart.coupon %}
+                                        <tr class="subtotal">
+                                            <td>{% trans "جمع سبد خرید" %}</td>
+                                            <td colspan="4"></td>
+                                            <td class="num">{{ cart.get_total_price }} {% trans "تومان" %}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                "{{ cart.coupon.code }}" {% trans "کوپن" %} ({{ cart.coupon.discount }}% {% trans "تخفیف" %})
+                                            </td>
+                                            <td colspan="4"></td>
+                                            <td class="num neg">
+                                                - {{ cart.get_discount }} {% trans "تومان" %}
+                                            </td>
+                                        </tr>
+                                        {% endif %} {% comment %}
                                         <tr>
                                             <td>شیوه ارسال : </td>
                                             <td class="text-left">ارسال رایگان</td>
                                         </tr>
                                         <tr class="summary-total">
                                             <td>مبلغ قابل پرداخت :</td>
-                                            <td class="text-left">236,000 تومان</td>
+                                            <td class="text-left">{{ cart.get_total_price }}</td>
                                         </tr>
                                         <!-- End .summary-total -->
+                                        {% endcomment %}
+                                        <tr class="summary-subtotal">
+                                            <td>{% trans "جمع سبد خرید" %}</td>
+                                            <td class="text-left">{{ cart.get_total_price_after_discount }} {% trans "تومان" %}</td>
+                                        </tr>
                                     </tbody>
-                                    {% endwith %} {% endfor %}
+
                                 </table>
                                 <!-- End .table table-summary -->
 
                                 <div class="accordion-summary" id="accordion-payment">
+                                    {% comment %}
                                     <div class="card">
                                         <div class="card-header" id="heading-1">
                                             <h2 class="card-title">
@@ -168,6 +184,7 @@
 										                </a>
                                             </h2>
                                         </div>
+
                                         <!-- End .card-header -->
                                         <div id="collapse-1" class="collapse show" aria-labelledby="heading-1" data-parent="#accordion-payment">
                                             <div class="card-body">
@@ -252,10 +269,10 @@
                                         <!-- End .card -->
                                     </div>
                                     <!-- End .accordion -->
-
+                                    {% endcomment %}
                                     <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
-		                					<span class="btn-text">ثبت</span>
-		                					<span class="btn-hover-text">پرداخت</span>
+		                					<span class="btn-text">{% trans "ثبت" %}</span>
+		                					<span class="btn-hover-text">{% trans "پرداخت" %}</span>
 		                				</button>
                                 </div>
                                 <!-- End .summary -->

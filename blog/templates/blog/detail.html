@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}پست{% endblock title %} {% block content %}{% block head %}
 <link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css">{% endblock head %}
@@ -6,7 +6,7 @@
 <main class="main">
     <div class="page-header text-center" style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">پیش فرض با سایدبار<span>پست تکی</span></h1>
+            <h1 class="page-title">{% trans "پست تکی" %}</h1>
         </div>
         <!-- End .container -->
     </div>
@@ -14,9 +14,10 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">اخبار</a></li>
-                <li class="breadcrumb-item active" aria-current="page">پست تکی پیش فرض با سایدبار</li>
+                <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog:main' %}">{% trans "وبلاگ" %}</a></li>
+                <li class="breadcrumb-item" aria-current="page">{% trans "پست تکی" %}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
             </ol>
         </div>
         <!-- End .container -->
@@ -36,12 +37,12 @@
                         <div class="entry-body">
                             <div class="entry-meta">
                                 <span class="entry-author">
-                                            نویسنده : <a href="#">{{ user.username }}</a>
+                                            {% trans "نویسنده" %}: <a href="#">{{ user.username }}</a>
                                         </span>
                                 <span class="meta-separator">|</span>
                                 <a href="#">{{ post.publish }}</a>
                                 <span class="meta-separator">|</span>
-                                <a href="#">2 دیدگاه</a>
+                                <a href="#">{{post.comments.count}} {% trans "دیدگاه" %}</a>
                             </div>
                             <!-- End .entry-meta -->
 
@@ -63,7 +64,7 @@
                             <div class="entry-footer row no-gutters flex-column flex-md-row">
                                 <div class="col-md">
                                     <div class="entry-tags">
-                                        <span>برچسب : </span>{% for tag in post.tags.all %} <a href="{% url 'blog:post_list_by_tag' tag.slug %}"> {{ tag.name }} </a> {% if not forloop.last %} {% endif %} {% endfor %}
+                                        <span>{% trans "برچسب" %} : </span>{% for tag in post.tags.all %} <a href="{% url 'blog:post_list_by_tag' tag.slug %}"> {{ tag.name }} </a> {% if not forloop.last %} {% endif %} {% endfor %}
                                     </div>
                                     <!-- End .entry-tags -->
                                 </div>
@@ -92,15 +93,14 @@
                                 </a>
                             </figure>
                             <!-- End .author-media -->
-
                             <div class="author-body">
                                 <div class="author-header row no-gutters flex-column flex-md-row">
                                     <div class="col-12">
-                                        <h4><a href="#">مدیر سایت</a></h4>
+                                        <h4><a href="#">{% trans "مدیر سایت" %}</a></h4>
                                     </div>
                                     <!-- End .col -->
                                     <div class="col-auto mt-1 mt-md-0">
-                                        <a href="#" class="author-link">مشاهده همه پست های این نویسنده <i
+                                        <a href="#" class="author-link">{% trans "مشاهده همه پست های این نویسنده" %} <i
                                                         class="icon-long-arrow-left"></i></a>
                                     </div>
                                     <!-- End .col -->
@@ -108,7 +108,7 @@
                                 <!-- End .row -->
 
                                 <div class="author-content">
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی
+                                    <p>{% trans "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی" %}
                                     </p>
                                 </div>
                                 <!-- End .author-content -->
@@ -120,20 +120,20 @@
                     <!-- End .entry -->
 
                     <nav class="pager-nav" aria-label="Page navigation">
-                        <a class="pager-link pager-link-prev" href="#" aria-label="Previous" tabindex="-1">
-                                    پست قبلی
-                                    <span class="pager-link-title">لورم ایپسوم متن ساختگی با تولید سادگی</span>
-                                </a>
-
-                        <a class="pager-link pager-link-next" href="#" aria-label="Next" tabindex="-1">
-                                    پست بعدی
-                                    <span class="pager-link-title">لورم ایپسوم متن ساختگی</span>
-                                </a>
+                        {% if previous_post %}
+                        <a class="pager-link pager-link-prev" href="{{ previous_post.get_absolute_url }}" aria-label="Previous" tabindex="-1">
+                                    {% trans "پست قبلی" %}
+                                    <span class="pager-link-title">{{previous_post.title}}</span>
+                                </a>{% endif %} {% if next_post %}
+                        <a class="pager-link pager-link-next" href="{{ next_post.get_absolute_url }}" aria-label="Next" tabindex="-1">
+                                    {% trans "پست بعدی" %}
+                                    <span class="pager-link-title">{{next_post.title}}</span>            
+                        </a>{% endif %}
                     </nav>
                     <!-- End .pager-nav -->
 
                     <div class="related-posts">
-                        <h3 class="title">پست های مرتبط</h3>
+                        <h3 class="title">{% trans "پست های مرتبط" %}</h3>
                         <!-- End .title -->
 
                         <div class="owl-carousel owl-simple" data-toggle="owl" data-owl-options='{
@@ -153,127 +153,38 @@
                                             }
                                         }
                                     }'>
+                            {% for post in posts %}
                             <article class="entry entry-grid">
                                 <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="{% static 'details/assets/images/blog/grid/3cols/post-1.jpg' %}" alt="توضیحات عکس">
+                                    <a href="{{post.get_absolute_url}}">
+                                        <img src="{{post.image.url}}" alt="توضیحات عکس">
                                     </a>
                                 </figure>
                                 <!-- End .entry-media -->
 
                                 <div class="entry-body">
                                     <div class="entry-meta justify-content-end">
-                                        <a href="#">22 فروردین 1399</a>
+                                        <a href="#">{{post.publish}}</a>
                                         <span class="meta-separator">|</span>
-                                        <a href="#">2 دیدگاه</a>
+                                        <a href="#">{{post.comments.count}} {% trans "دیدگاه" %}</a>
                                     </div>
                                     <!-- End .entry-meta -->
 
                                     <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                        <a href="{{post.get_absolute_url}}">{{post.title}}</a>
                                     </h2>
                                     <!-- End .entry-title -->
 
                                     <div class="entry-cats">
-                                        <a href="#">سبک زندگی</a>،
-                                        <a href="#">فروشگاه</a>
+                                        <a href="{% url 'blog:post_list_by_category' post.category.slug %}">{{post.category}}</a>
+                                        <!-- <a href="#">فروشگاه</a> -->
                                     </div>
                                     <!-- End .entry-cats -->
                                 </div>
                                 <!-- End .entry-body -->
                             </article>
                             <!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="{% static 'details/assets/images/blog/grid/3cols/post-2.jpg' %}" alt="توضیحات عکس">
-                                    </a>
-                                </figure>
-                                <!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-end">
-                                        <a href="#">21 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">0 دیدگاه</a>
-                                    </div>
-                                    <!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی</a>
-                                    </h2>
-                                    <!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">سبک زندگی</a>
-                                    </div>
-                                    <!-- End .entry-cats -->
-                                </div>
-                                <!-- End .entry-body -->
-                            </article>
-                            <!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="{% static 'details/assets/images/blog/grid/3cols/post-3.jpg' %}" alt="توضیحات عکس">
-                                    </a>
-                                </figure>
-                                <!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-end">
-                                        <a href="#">18 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">3 دیدگاه</a>
-                                    </div>
-                                    <!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی.</a>
-                                    </h2>
-                                    <!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">مد</a>،
-                                        <a href="#">سبک زندگی</a>
-                                    </div>
-                                    <!-- End .entry-cats -->
-                                </div>
-                                <!-- End .entry-body -->
-                            </article>
-                            <!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="{% static 'details/assets/images/blog/grid/3cols/post-4.jpg' %}" alt="توضیحات عکس">
-                                    </a>
-                                </figure>
-                                <!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-end">
-                                        <a href="#">15 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">4 دیدگاه</a>
-                                    </div>
-                                    <!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی</a>
-                                    </h2>
-                                    <!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">سفر</a>
-                                    </div>
-                                    <!-- End .entry-cats -->
-                                </div>
-                                <!-- End .entry-body -->
-                            </article>
-                            <!-- End .entry -->
+                            {% endfor %}
                         </div>
                         <!-- End .owl-carousel -->
                     </div>
@@ -281,7 +192,7 @@
 
                     <div class="comments">
                         {% with comments.count as total_comments %}
-                        <h3 class="h4 text-right">{{ total_comments }} دیدگاه</h3>
+                        <h3 class="h4 text-right">{{ total_comments }} {% trans "دیدگاه" %}</h3>
                         {% endwith %}
                         <ul>{% for comment in comments %}
                             <li>
@@ -294,7 +205,10 @@
                                     </figure>
 
                                     <div class="comment-body">
-                                        <a href="#" class="comment-reply">پاسخ</a>
+                                        <!-- <a href="#" class="comment-reply">{% trans "پاسخ" %}</a> -->
+                                        <!-- Reply Comment -->
+                                        <button class="btn btn-fill-out" data-toggle="collapse" href="#collapseOne">پاسخ</button>
+                                        <!-- End Reply Comment -->
                                         <div class="comment-user">
                                             <h4><a href="#">{{ user.username }}</a></h4>
                                             <span class="comment-date">{{ comment.created }}</span>
@@ -303,8 +217,25 @@
 
                                         <div class="comment-content">
                                             <p>{{ comment.body|linebreaks }}</p>
-                                        </div>
+                                        </div><br>
                                         <!-- End .comment-content -->
+
+                                        <!-- Reply Comment Form -->
+                                        <div id="collapseOne" class="collapse">
+                                            <form action="." method="POST" name="enq">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="form-group col-md-12">
+                                                        <label>پیام <span class="required">*</span></label>
+                                                        <textarea required="" type="" class="form-control ticket-textarea" name="body"></textarea>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-outline-primary-2 float-left" name="reply" value="Submit">ارسال</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- End Reply Comment Form -->
                                     </div>
                                     <!-- End .comment-body -->
                                 </div>
@@ -321,16 +252,15 @@
                                             </figure>
 
                                             <div class="comment-body">
-                                                <a href="#" class="comment-reply">پاسخ</a>
+                                                <a href="#" class="comment-reply">{% trans "پاسخ" %}</a>
                                                 <div class="comment-user">
-                                                    <h4><a href="#">کاربر 2</a></h4>
-                                                    <span class="comment-date">9 فروردین 1399 - 2:19
-                                                                بعدازظهر</span>
+                                                    <h4><a href="#">{{user.username}}</a></h4>
+                                                    <span class="comment-date">{{reply.created}}</span>
                                                 </div>
                                                 <!-- End .comment-user -->
 
                                                 <div class="comment-content">
-                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
+                                                    <p>{{reply.body}}</p>
                                                 </div>
                                                 <!-- End .comment-content -->
                                             </div>
@@ -341,47 +271,49 @@
                                 </ul>
                                 {% endfor %}
                             </li> {% endfor %} {% if new_comment %}
-                            <h2 class="h4 text-center text-success">دیدگاه جدید ثبت شد</h2> {% endif %}
+                            <h2 class="h4 text-center text-success">{% trans "دیدگاه جدید ثبت شد" %}</h2> {% endif %}
                         </ul>
                     </div>
                     <!-- End .comments -->
 
                     <div class="reply">
                         <div class="heading">
-                            <h3 class="title">ارسال یک دیدگاه</h3>
+                            <h3 class="title">{% trans "ارسال یک دیدگاه" %}</h3>
                             <!-- End .title -->
-                            <p class="title-desc">ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند.</p>
+                            <p class="title-desc">{% trans "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند." %}</p>
                         </div>
                         <!-- End .heading -->
 
                         {% if user.is_authenticated %}
                         <form action="." method="POST">
                             {% csrf_token %}
-                            <label for="reply-message" class="sr-only">دیدگاه</label> {{ comment_form.body|as_crispy_field }}
                             <!-- <textarea name="reply-message" id="reply-message" cols="30" rows="4" class="form-control" required placeholder="دیدگاه شما *"></textarea> -->
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="reply-name" class="sr-only">نام</label> {{ comment_form.first_name|as_crispy_field }}
+                                    <label for="reply-name" class="sr-only">{% trans "نام" %}</label> {{ comment_form.first_name|as_crispy_field }}
                                     <!-- <input type="text" class="form-control" id="reply-name" name="reply-name" required placeholder="نام شما *"> -->
                                 </div>
                                 <!-- End .col-md-6 -->
 
+                                {% comment %}
                                 <div class="col-md-6">
-                                    <label for="reply-email" class="sr-only">ایمیل</label> {{ comment_form.email|as_crispy_field }}
+                                    <label for="reply-email" class="sr-only">{% trans "ایمیل" %}</label> {{ comment_form.email|as_crispy_field }}
                                     <!-- <input type="email" class="form-control" id="reply-email" name="reply-email" required placeholder="ایمیل شما *"> -->
                                 </div>
                                 <!-- End .col-md-6 -->
+                                {% endcomment %}
                             </div>
                             <!-- End .row -->
+                            <label for="reply-message" class="sr-only">{% trans "دیدگاه" %}</label> {{ comment_form.body|as_crispy_field }}
 
                             <button type="submit" class="btn btn-outline-primary-2 float-right">
-                                        <span>ارسال دیدگاه</span>
+                                        <span>{% trans "ارسال دیدگاه" %}</span>
                                         <i class="icon-long-arrow-left"></i>
                                     </button>
                         </form>
                         {% else %}
-                        <p>ابتدا باید <a href="{% url 'register' %}">وارد </a>شوید</p>{% endif %}
+                        <p>{% trans "ابتدا باید" %} <a href="{% url 'register' %}">{% trans "وارد" %} </a>{% trans "شوید" %}</p>{% endif %}
 
                     </div>
                     <!-- End .reply -->

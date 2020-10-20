@@ -1,4 +1,17 @@
-{% extends "details/base.html" %} {% block title %} Thank You {% endblock title %} {% block content %}
-<h1>Thank You</h1>
-<p>Your Order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+{% load i18n %} {% extends "details/base.html" %} {% block title %} {% trans "تکمیل خرید" %} {% endblock title %} {% block content %}
+<!-- <div>
+    <h1>Thank You</h1>
+    <p>Your Order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+</div> -->
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/static/details/assets/images/backgrounds/login-bg.jpg')">
+    <div class="tab-content">
+        <div class="form-box">
+            <div class="form-group">
+                <h1 class="h4 text-right">{% trans "با تشکر از خرید شما" %}</h1><br>
+                <p> {% trans "شماره سفارش شما" %}: <strong>{{ order.id }}</strong></p>
+                <p>{% trans "برای بازگشت به صفحه ی اصلی" %} <a href="{% url 'details:home' %}">{% trans "کلیک" %}</a> {% trans "کنید" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

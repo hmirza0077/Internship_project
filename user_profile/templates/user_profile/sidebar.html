@@ -1,23 +1,23 @@
 <aside class="col-md-4 col-lg-3">
     <ul class="nav nav-dashboard flex-column mb-3 mb-md-0" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="tab-dashboard-link" href="{% url 'user_profile:profile_detail_view' %}">داشبورد</a>
+            <a class="nav-link active" id="tab-dashboard-link" href="{% url 'user_profile:profile_detail_view' %}">{% trans "داشبورد" %}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab-orders-link" href="#tab-orders">سفارشات</a>
+            <a class="nav-link" id="tab-orders-link" href="#tab-orders">{% trans "سفارشات" %}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab-downloads-link" href="#tab-downloads">دانلود ها</a>
+            <a class="nav-link" id="tab-downloads-link" href="#tab-downloads">{% trans "دانلود ها" %}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="tab-address-link" href="{% url 'password_change' %}">تغییر رمز عبور</a>
+            <a class="nav-link" id="tab-address-link" href="{% url 'password_change' %}">{% trans "تغییر رمز عبور" %}</a>
         </li>
         <!-- <li class="nav-item">
             <a class="nav-link" id="tab-account-link" href="">جزئیات حساب
                 کاربری</a>
         </li> -->
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">خروج از حساب کاربری</a>
+            <a class="nav-link" href="{% url 'logout' %}">{% trans "خروج از حساب کاربری" %}</a>
         </li>
     </ul>
 </aside>

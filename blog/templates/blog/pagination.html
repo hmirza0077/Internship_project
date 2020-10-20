@@ -1,9 +1,10 @@
+{% load i18n %}
 <nav aria-label="Page navigation">
     <ul class="pagination">
         {% if posts.has_other_pages %} {% if posts.has_previous %}
         <li class="page-item">
             <a class="page-link page-link-prev" href="?page={{ posts.previous_page_number }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>قبلی
+                <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>{% trans "قبلی" %}
             </a>
         </li>
         {% endif %} {% if posts.number != 1 %}
@@ -37,7 +38,7 @@
         {% endif %} {% if posts.has_next %}
         <li class="page-item">
             <a class="page-link page-link-next" href="?page={{ posts.next_page_number }}" aria-label="Next">
-                        بعدی <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
+                         {% trans "بعدی" %}<span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>
             </a>
         </li>
         {% endif %} {% endif %}

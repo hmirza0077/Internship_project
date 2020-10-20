@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load static %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}وبلاگ{% endblock title %} {% block head %}
 <link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css">{% endblock head %} {% block content %}
@@ -6,7 +6,7 @@
 <main class="main">
     <div class="page-header text-center" style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">کلاسیک<span>اخبار</span></h1>
+            <h1 class="page-title">{% trans "وبلاگ" %}<span>{% trans "اخبار" %}</span></h1>
         </div>
         <!-- End .container -->
     </div>
@@ -14,9 +14,8 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">اخبار</a></li>
-                <li class="breadcrumb-item active" aria-current="page">کلاسیک</li>
+                <li class="breadcrumb-item"><a href="index.html">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="#">{% trans "اخبار" %}</a></li>
             </ol>
         </div>
         <!-- End .container -->
@@ -28,11 +27,11 @@
             <div class="row">
                 <div class="col-lg-9">
                     {% if tag %}
-                    <h2 class="h4 text-right">فیلتر بر اساس: "{{ tag.name }}"</h2>
+                    <h2 class="h4 text-right">{% trans "فیلتر بر اساس" %}: "{{ tag.name }}"</h2>
                     {% endif %} {% for post in posts %}
                     <article class="entry">
                         <figure class="entry-media">
-                            <a href="{% url 'blog:single_post' %}">
+                            <a href="{{ post.get_absolute_url }}">
                                 <img src="{{ post.image.url }}" alt="توضیحات عکس">
                             </a>
                         </figure>
@@ -62,7 +61,7 @@
 
                             <div class="entry-content">
                                 <p>{{ post.body|truncatewords:30|linebreaks }}</p>
-                                <a href="{% url 'blog:single_post' %}" class="read-more">ادامه خواندن</a>
+                                <a href="{{ post.get_absolute_url }}" class="read-more">{% trans "ادامه خواندن" %}</a>
                             </div>
                             <!-- End .entry-content -->
                         </div>

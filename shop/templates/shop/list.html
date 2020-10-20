@@ -1,6 +1,6 @@
-{% extends 'details/base.html' %} {% load static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %}فروشگاه لیست{% endblock title %} {% block head %}
+<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "فروشگاه لیست" %}{% endblock title %} {% block head %}
 <link rel="stylesheet" href="{% static 'details/assets/css/plugins/owl-carousel/owl.carousel.css' %}">
 <link rel="stylesheet" href="{% static 'details/assets/css/plugins/magnific-popup/magnific-popup.css' %}">
 <link rel="stylesheet" href="{% static 'details/assets/css/plugins/nouislider/nouislider.css' %}"> {% endblock head %} {% block content %}
@@ -8,7 +8,7 @@
 <main class="main">
     <div class="page-header text-center" style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">لیست<span>فروشگاه</span></h1>
+            <h1 class="page-title">{% trans "لیست" %}<span>{% trans "فروشگاه" %}</span></h1>
         </div>
         <!-- End .container -->
     </div>
@@ -16,9 +16,9 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
-                <li class="breadcrumb-item active" aria-current="page">لیست</li>
+                <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog:main' %}">{% trans "فروشگاه" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "لیست" %}</li>
             </ol>
         </div>
         <!-- End .container -->
@@ -32,7 +32,7 @@
                     <div class="toolbox">
                         <div class="toolbox-left">
                             <div class="toolbox-info">
-                                نمایش <span>{{ products|length }} از {{ number_of_products }}</span> محصول
+                                {% trans "نمایش" %} <span>{{ products|length }} {% trans "از" %} {{ number_of_products }}</span>{% trans " محصول" %}
                             </div>
                             <!-- End .toolbox-info -->
                         </div>
@@ -40,12 +40,12 @@
 
                         <div class="toolbox-right">
                             <div class="toolbox-sort">
-                                <label for="sortby">مرتب سازی براساس : </label>
+                                <label for="sortby">{% trans "مرتب سازی براساس" %} : </label>
                                 <div class="select-custom">
                                     <select name="sortby" id="sortby" class="form-control">
-                                                <option value="popularity" selected="selected">بیشترین خرید</option>
-                                                <option value="rating">بیشترین امتیاز</option>
-                                                <option value="date">تاریخ</option>
+                                                <option value="popularity" selected="selected">{% trans "بیشترین خرید" %}</option>
+                                                <option value="rating">{% trans "بیشترین امتیاز" %}</option>
+                                                <option value="date">{% trans "تاریخ" %}</option>
                                             </select>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                 <div class="col-6 col-lg-3">
                                     <figure class="product-media">
 
-                                        {% if product.created|add:timedelta >= now %} <span class="product-label label-new">جدید</span> {% endif %}
+                                        {% if product.created|add:timedelta >= now %} <span class="product-label label-new">{% trans "جدید" %}</span> {% endif %}
 
                                         <a href="{{ product.get_absolute_url }}">
                                             <img src="{{ product.image.url }}" alt="تصویر محصول" class="product-image">
@@ -123,7 +123,7 @@
                                         </div>
                                         <!-- End .product-price -->
                                         <div class="ratings-container">
-                                            <span class="ratings-text">( {{ product.visit_num }} بازدید )</span>
+                                            <span class="ratings-text">( {{ product.visit_num }} {% trans "بازدید" %} )</span>
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 20%;"></div>
                                                 <!-- End .ratings-val -->
@@ -133,12 +133,12 @@
                                         <!-- End .rating-container -->
 
                                         <div class="product-action">
-                                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
-                                            <a href="#" class="btn-product btn-compare" title="مقایسه"><span>مقایسه</span></a>
+                                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="مشاهده سریع محصول"><span>{% trans "مشاهده سریع" %}</span></a>
+                                            <a href="#" class="btn-product btn-compare" title="مقایسه"><span>{% trans "مقایسه" %}</span></a>
                                         </div>
                                         <!-- End .product-action -->
 
-                                        <a href="{% url 'shop:product_detail' product.id product.slug %}" class="btn-product btn-cart"><span>جزئیات محصول</span></a>
+                                        <a href="{% url 'shop:product_detail' product.id product.slug %}" class="btn-product btn-cart"><span>{% trans "جزئیات محصول" %}</span></a>
                                     </div>
                                     <!-- End .product-list-action -->
                                 </div>
@@ -146,18 +146,17 @@
 
                                 <div class="col-lg-6">
                                     <div class="product-body product-action-inner">
-                                        <a href="#" class="btn-product btn-wishlist" title="افزودن به لیست علاقه مندی"><span>افزودن به لیست علاقه
-                                                        مندی</span></a>
+                                        <a href="#" class="btn-product btn-wishlist" title="افزودن به لیست علاقه مندی"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
                                         <div class="product-cat">
                                             <a href="#">{{ product.gender }}</a>
                                         </div>
                                         <!-- End .product-cat -->
-                                        <h3 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.name }} {{ product.material }} {{ product.color }}</a>
+                                        <h3 class="product-title"><a href="{{ product.get_absolute_url }}">{{ product.name }} {{ product.material }}</a>
                                         </h3>
                                         <!-- End .product-title -->
 
                                         <div class="product-content">
-                                            <p>{% if product.short_description %} {{ product.short_description|safe }} {% else %} بدون توضیحات {% endif %}</p>
+                                            <p>{% if product.short_description %} {{ product.short_description|safe }} {% else %} {% trans "بدون توضیحات" %} {% endif %}</p>
                                         </div>
                                         <!-- End .product-content -->
 
@@ -211,15 +210,15 @@
                 <aside class="col-lg-3 order-lg-first">
                     <div class="sidebar sidebar-shop">
                         <div class="widget widget-clean">
-                            <label>فیلترها : </label>
-                            <a href="{% url 'shop:product_list' %}">پاک کردن همه</a>
+                            <label>{% trans "فیلترها" %} : </label>
+                            <a href="{% url 'shop:product_list' %}">{% trans "پاک کردن همه" %}</a>
                         </div>
                         <!-- End .widget widget-clean -->
 
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">
                                 <a data-toggle="collapse" href="#widget-1" role="button" aria-expanded="true" aria-controls="widget-1">
-                                            دسته بندی
+                                            {% trans "دسته بندی" %}
                                         </a>
                             </h3>
                             <!-- End .widget-title -->
@@ -250,7 +249,7 @@
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">
                                 <a data-toggle="collapse" href="#widget-2" role="button" aria-expanded="true" aria-controls="widget-2">
-                                            سایز
+                                            {% trans "سایز" %}
                                         </a>
                             </h3>
                             <!-- End .widget-title -->
@@ -262,7 +261,7 @@
                                         <div class="filter-item">
                                             <div class="custom-control custom-checkbox">
                                                 <!-- <input type="checkbox" class="custom-control-input" id="size-1" value="XS"> -->
-                                                <a href="{% url 'shop:product_list_by_size' product.size %}"><label class="custom-control-label" for="size-1">{{ product.size }}</label></a>
+                                                <a href="#"><label class="custom-control-label" for="size-1">{{ product.size }}</label></a>
                                                 <!-- <label class="custom-control-label" for="size-1">XS</label> -->
 
                                             </div>
@@ -327,7 +326,7 @@
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">
                                 <a data-toggle="collapse" href="#widget-3" role="button" aria-expanded="true" aria-controls="widget-3">
-                                            رنگ
+                                            {% trans "رنگ" %}
                                         </a>
                             </h3>
                             <!-- End .widget-title -->
@@ -448,7 +447,7 @@
                         <div class="widget widget-collapsible">
                             <h3 class="widget-title">
                                 <a data-toggle="collapse" href="#widget-5" role="button" aria-expanded="true" aria-controls="widget-5">
-                                            قیمت
+                                            {% trans "قیمت" %}
                                         </a>
                             </h3>
                             <!-- End .widget-title -->
@@ -457,7 +456,7 @@
                                 <div class="widget-body">
                                     <div class="filter-price">
                                         <div class="filter-price-text">
-                                            محدوده قیمت :
+                                            {% trans " : محدوده قیمت" %}
                                             <span id="filter-price-range"></span>
                                         </div>
                                         <!-- End .filter-price-text -->

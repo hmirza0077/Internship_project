@@ -68,9 +68,24 @@ def post_list(request, tag_slug=None, category_slug=None):
     return render(request, 'blog/list.html', context=context)
 
 def post_detail(request, year, month, day, post):
+    posts = Post.published.all()[:10]   # Related posts in detail page
     post = get_object_or_404(Post, slug=post, status='منتشر شده',
                                publish__year=year, publish__month=month,
                                publish__day=day)
+
+    # The code below is for getting next and previous object
+    # and if object does not exists, we set it to None.
+    try:
+        next_post_id = post.id + 1
+        next_post = get_object_or_404(Post ,id=next_post_id)
+    except:
+        next_post = None
+    try:
+        previouse_post_id = post.id - 1
+        previous_post = get_object_or_404(Post ,id=previouse_post_id)
+    except:
+        previous_post = None
+
     # List of active comments for this post
     comments = post.comments.filter(active=True)
     
@@ -91,9 +106,10 @@ def post_detail(request, year, month, day, post):
 
     context = {'post': post, 'comments': comments, 'new_comment': new_comment,
                 'comment_form': comment_form, 'three_latest_posts': get_three_latest_posts(),
-                'tags': get_all_tags(), 'categories': get_all_categories()}
+                'tags': get_all_tags(), 'categories': get_all_categories(),
+                'next_post': next_post, 'previous_post': previous_post, 'posts': posts}
 
-    return render(request, 'blog/detail.html')
+    return render(request, 'blog/detail.html', context=context)
 
     
 

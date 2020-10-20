@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: orders/models.py:16
+msgid "first_name"
+msgstr "first_name"
+
+#: orders/models.py:17
+msgid "last_name"
+msgstr "last_name"
+
+#: orders/models.py:18
+msgid "e-mail"
+msgstr "e-mail"
+
+#: orders/models.py:19
+msgid "address"
+msgstr "address"
+
+#: orders/models.py:20
+msgid "postal_code"
+msgstr "postal_code"
+
+#: orders/models.py:21
+msgid "city"
+msgstr "city"
+
+#: orders/templates/admin/orders/order/detail.html:6
+#: orders/templates/admin/orders/order/detail.html:12
+#: orders/templates/admin/orders/order/detail.html:17
+msgid "سفارش"
+msgstr "Order"
+
+#: orders/templates/admin/orders/order/detail.html:10
+#: orders/templates/orders/checkout.html:16
+msgid "خانه"
+msgstr "Home"
+
+#: orders/templates/admin/orders/order/detail.html:11
+msgid "سفارشات"
+msgstr "Orders"
+
+#: orders/templates/admin/orders/order/detail.html:20
+msgid "پرینت"
+msgstr "Print"
+
+#: orders/templates/admin/orders/order/detail.html:25
+msgid "تاریخ ثبت سفارش"
+msgstr "Bought Date"
+
+#: orders/templates/admin/orders/order/detail.html:29
+msgid "مشتری"
+msgstr "Customer"
+
+#: orders/templates/admin/orders/order/detail.html:33
+#: orders/templates/orders/checkout.html:102
+msgid "ایمیل"
+msgstr "E-mail"
+
+#: orders/templates/admin/orders/order/detail.html:37
+#: orders/templates/orders/checkout.html:79
+msgid "آدرس"
+msgstr "Address"
+
+#: orders/templates/admin/orders/order/detail.html:41
+#: orders/templates/admin/orders/order/detail.html:72
+msgid "جمع خرید"
+msgstr "Total"
+
+#: orders/templates/admin/orders/order/detail.html:45
+msgid "وضعیت"
+msgstr "Status"
+
+#: orders/templates/admin/orders/order/detail.html:46
+#: orders/templates/admin/orders/order/pdf.html:45
+msgid "پرداخت شده"
+msgstr "Paid"
+
+#: orders/templates/admin/orders/order/detail.html:46
+#: orders/templates/admin/orders/order/pdf.html:45
+msgid "پرداخت نشده"
+msgstr "Pending Paid"
+
+#: orders/templates/admin/orders/order/detail.html:53
+msgid "جنس خریداری شده"
+msgstr "Item bought"
+
+#: orders/templates/admin/orders/order/detail.html:56
+#: orders/templates/admin/orders/order/pdf.html:22
+msgid "محصول"
+msgstr "Product"
+
+#: orders/templates/admin/orders/order/detail.html:57
+#: orders/templates/admin/orders/order/pdf.html:23
+msgid "قیمت"
+msgstr "Price"
+
+#: orders/templates/admin/orders/order/detail.html:58
+#: orders/templates/admin/orders/order/pdf.html:24
+msgid "تعداد"
+msgstr "Quantity"
+
+#: orders/templates/admin/orders/order/detail.html:59
+#: orders/templates/admin/orders/order/pdf.html:38
+msgid "مجموع"
+msgstr "Total"
+
+#: orders/templates/admin/orders/order/detail.html:66
+#: orders/templates/admin/orders/order/detail.html:68
+#: orders/templates/admin/orders/order/detail.html:72
+#: orders/templates/admin/orders/order/pdf.html:39
+#: orders/templates/orders/checkout.html:138
+#: orders/templates/orders/checkout.html:146
+#: orders/templates/orders/checkout.html:154
+#: orders/templates/orders/checkout.html:171
+msgid "تومان"
+msgstr "$"
+
+#: orders/templates/admin/orders/order/pdf.html:5
+msgid "فروشگاه من"
+msgstr "My Shop"
+
+#: orders/templates/admin/orders/order/pdf.html:7
+msgid "خرید شماره ی"
+msgstr "Order no."
+
+#: orders/templates/admin/orders/order/pdf.html:13
+msgid "پرداخت کننده"
+msgstr "Bill to"
+
+#: orders/templates/admin/orders/order/pdf.html:18
+msgid "محصولات خریداری شده"
+msgstr "Items bought"
+
+#: orders/templates/admin/orders/order/pdf.html:25
+msgid "قیمت کل"
+msgstr "Total"
+
+#: orders/templates/orders/checkout.html:3
+msgid "سبد خرید"
+msgstr "Cart"
+
+#: orders/templates/orders/checkout.html:8
+#: orders/templates/orders/checkout.html:18
+msgid "صفحه پرداخت"
+msgstr "Pay"
+
+#: orders/templates/orders/checkout.html:8
+#: orders/templates/orders/checkout.html:17
+msgid "فروشگاه"
+msgstr "Shop"
+
+#: orders/templates/orders/checkout.html:39
+msgid "جزئیات صورت حساب"
+msgstr "Details"
+
+#: orders/templates/orders/checkout.html:43
+msgid "نام"
+msgstr "First Name"
+
+#: orders/templates/orders/checkout.html:49
+msgid "نام خانوادگی"
+msgstr " Last Name"
+
+#: orders/templates/orders/checkout.html:64
+msgid "شهر"
+msgstr "City"
+
+#: orders/templates/orders/checkout.html:90
+msgid "کد پستی"
+msgstr "Postal Code"
+
+#: orders/templates/orders/checkout.html:107
+msgid "ایجاد یک حساب کاربری؟"
+msgstr "Make an account?"
+
+#: orders/templates/orders/checkout.html:113
+msgid "ارسال به یک آدرس متفاوت؟"
+msgstr "Send to a different address?"
+
+#: orders/templates/orders/checkout.html:117
+msgid "توضیحات (اختیاری)"
+msgstr "Description (optional)"
+
+#: orders/templates/orders/checkout.html:123
+msgid "سفارش شما"
+msgstr "Your Order"
+
+#: orders/templates/orders/checkout.html:130
+msgid "جمع"
+msgstr "Total"
+
+#: orders/templates/orders/checkout.html:144
+#: orders/templates/orders/checkout.html:170
+msgid "جمع سبد خرید"
+msgstr "Total Price"
+
+#: orders/templates/orders/checkout.html:150
+msgid "کوپن"
+msgstr "Coupon"
+
+#: orders/templates/orders/checkout.html:150
+msgid "تخفیف"
+msgstr "off"
+
+#: orders/templates/orders/checkout.html:276
+msgid "ثبت"
+msgstr "Submit"
+
+#: orders/templates/orders/checkout.html:277
+msgid "پرداخت"
+msgstr "Pay"
+
+#: orders/templates/orders/created.html:1
+msgid "تکمیل خرید"
+msgstr "Submit"
+
+#: orders/templates/orders/created.html:10
+msgid "با تشکر از خرید شما"
+msgstr "Thank you for your purchase"
+
+#: orders/templates/orders/created.html:11
+msgid "شماره سفارش شما"
+msgstr "Your order number"
+
+#: orders/templates/orders/created.html:12
+msgid "برای بازگشت به صفحه ی اصلی"
+msgstr "To return to home"
+
+#: orders/templates/orders/created.html:12
+msgid "کلیک"
+msgstr "click"
+
+#: orders/templates/orders/created.html:12
+msgid "کنید"
+msgstr "here"

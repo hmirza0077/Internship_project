@@ -1,13 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from . import forms
+from shop.models import Product
+from django.contrib.auth.models import User
 
 
 def home(request):
-    return render(request, 'details/home.html')
+    latest_products = Product.objects.all()[:10]
+    context = {'products': latest_products}
+    return render(request, 'details/home.html', context=context)
 
 def about_us(request):
-    return render(request, 'details/about.html')
+    user = User.objects.all()
+    context = {'user': user}
+    return render(request, 'details/about.html', context=context)
 
 def feedback(request):
     if request.method == 'POST':

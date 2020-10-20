@@ -1,10 +1,10 @@
 {% extends "details/base.html" %} {% load static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %} ویرایش پروفایل{% endblock title %} {% block content %}
+<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "ویرایش پروفایل" %}{% endblock title %} {% block content %}
 <main class="main">
     <div class="page-header text-center" style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
         <div class="container">
-            <h1 class="page-title">داشبورد<span>فروشگاه</span></h1>
+            <h1 class="page-title">{% trans "داشبورد" %}<span>{% trans "فروشگاه" %}</span></h1>
         </div>
         <!-- End .container -->
     </div>
@@ -12,9 +12,9 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
-                <li class="breadcrumb-item active" aria-current="page">داشبورد</li>
+                <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'details:product_list' %}">{% trans "فروشگاه" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "داشبورد" %}</li>
             </ol>
         </div>
         <!-- End .container -->
@@ -29,7 +29,7 @@
 
                     <div class="col-md-8 col-lg-9">
                         <div class="form-tab text-right">
-                            <h1 class="h4">{{ user.username }} خوش آمدید</h1>
+                            <h1 class="h4">{{ user.username }} {% trans "خوش آمدید" %}</h1>
                         </div>
                         <div class="tab-content">
 
@@ -48,12 +48,12 @@
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <label>نام</label> {{ user_form.first_name|as_crispy_field }}
+                                            <label>{% trans "نام" %}</label> {{ user_form.first_name|as_crispy_field }}
                                         </div>
                                         <!-- End .col-sm-6 -->
 
                                         <div class="col-sm-6">
-                                            <label>نام خانوادگی</label> {{ user_form.last_name|as_crispy_field }}
+                                            <label>{% trans "نام خانوادگی" %}</label> {{ user_form.last_name|as_crispy_field }}
                                         </div>
                                         <!-- End .col-sm-6 -->
                                     </div>
@@ -64,22 +64,22 @@
                                     <small class="form-text">این نام در قسمت بازدیدها، نظرات و حساب کاربری شما
                                         نمایش داده می شود.</small> -->
 
-                                    <label>ایمیل</label> {{ user_form.email|as_crispy_field }}
+                                    <label>{% trans "ایمیل" %}</label> {{ user_form.email|as_crispy_field }}
 
-                                    <label>شماره تلفن همراه</label> {{ user_profile.phone_number|as_crispy_field }}
+                                    <label>{% trans "شماره تلفن همراه" %}</label> {{ user_profile.phone_number|as_crispy_field }}
 
-                                    <label>شماره تلفن ثابت</label> {{ user_profile.home_telephone|as_crispy_field }}
+                                    <label>{% trans "شماره تلفن ثابت" %}</label> {{ user_profile.home_telephone|as_crispy_field }}
 
-                                    <label>شهر محل سکونت</label> {{ user_profile.city|as_crispy_field }}
+                                    <label>{% trans "شهر محل سکونت" %}</label> {{ user_profile.city|as_crispy_field }}
 
-                                    <label>کد پستی</label> {{ user_profile.postal_code|as_crispy_field }}
+                                    <label>{% trans "کد پستی" %}</label> {{ user_profile.postal_code|as_crispy_field }}
 
-                                    <label>جنسیت</label> {{ user_profile.gender|as_crispy_field }}
+                                    <label>{% trans "جنسیت" %}</label> {{ user_profile.gender|as_crispy_field }}
 
-                                    <label>آدرس</label> {{ user_profile.address|as_crispy_field }}
+                                    <label>{% trans "آدرس" %}</label> {{ user_profile.address|as_crispy_field }}
 
                                     <button type="submit" class="btn btn-outline-primary-2 float-right">
-                                        <span>ذخیره تغییرات</span>
+                                        <span>{% trans "ذخیره تغییرات" %}</span>
                                         <i class="icon-long-arrow-left"></i>
                                     </button>
                                 </form>
