@@ -4,11 +4,12 @@ from cart.forms import CartAddProductForm
 from django.db.models import F
 from django.utils.timezone import now, timedelta
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .recommender import Recommender
 
 def product_list(request, category_slug=None, gender=None):
 
-    # products = Product.available.all()
-    products = Product.objects.all()
+    language = request.LANGUAGE_CODE
+    products = Product.objects.filter(is_available=True)
     number_of_products = len(products)
 
     gender = None
@@ -18,7 +19,9 @@ def product_list(request, category_slug=None, gender=None):
     category = None
     categories = Category.objects.all()
     if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
+        category = get_object_or_404(Category, 
+                                    translations__slug=category_slug,
+                                    tranlations__language_code=language)
         products = products.filter(category=category)
 
     page = request.GET.get('page', 1)
@@ -30,13 +33,18 @@ def product_list(request, category_slug=None, gender=None):
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
 
-    context = {'category': category, 'categories': categories, 'products': products, 'now': now(), 'timedelta': timedelta(days=1), 'number_of_products': number_of_products}
+    context = {'category': category, 'categories': categories, 'products': products, 'now': now(),
+                'timedelta': timedelta(days=1), 'number_of_products': number_of_products, 'template_name': 'shop/star_rate.html',}
     return render(request, 'shop/list.html', context=context)
 
 def product_detail(request, id, slug, color=None):
 
-    products = Product.objects.all() # Related products in detail page
-    product = get_object_or_404(Product, id=id, slug=slug, is_available=True)
+    language = request.LANGUAGE_CODE
+    products = Product.objects.filter(is_available=True) # Related products in detail page
+    product = get_object_or_404(Product, id=id,
+                                translations__language_code=language, 
+                                translations__slug=slug,
+                                is_available=True)
 
     # The code below get next and previous object
     # and if the object does not exist, set it to None.
@@ -55,6 +63,12 @@ def product_detail(request, id, slug, color=None):
     product.visit_num = F('visit_num') + 1
     product.save()
     cart_product_form = CartAddProductForm()
-    context = {'product': product, 'cart_product_form': cart_product_form, 'now': now(), 
-                'timedelta': timedelta(days=1), 'products': products, 'next_product': next_product, 'previous_product': previous_product}
+
+    # Recommendation System with Redis
+    r = Recommender()
+    recommended_products = r.suggest_products_for([product], 6)
+
+    context = {'product': product, 'cart_product_form': cart_product_form, 'now': now(), 'template_name': 'shop/star_rate.html', 
+                'timedelta': timedelta(days=1), 'products': products, 'next_product': next_product,
+                'previous_product': previous_product, 'recommended_products': recommended_products}
     return render(request, 'shop/detail.html', context=context)

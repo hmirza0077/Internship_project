@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -8,10 +9,10 @@ class ActiveCouponManager(models.Manager):
 
 class Coupon(models.Model):
     #user = models.ManyToManyField("User", verbose_name=_(""))
-    code = models.CharField(max_length=50, unique=True)
-    valid_from = models.DateTimeField()
-    valid_to = models.DateTimeField()
-    discount = models.IntegerField(
+    code = models.CharField(_('کد'), max_length=50, unique=True)
+    valid_from = models.DateTimeField(_('اعتبار از'))
+    valid_to = models.DateTimeField(_('اعتبار تا'))
+    discount = models.IntegerField(_('تخفیف'),
         validators=[MinValueValidator(0), MaxValueValidator(100)]
     )
     active = models.BooleanField()
@@ -21,8 +22,8 @@ class Coupon(models.Model):
 
     class Meta:
         ordering = ('-valid_from',)
-        verbose_name = "کوپن"
-        verbose_name_plural = "کوپن ها"
+        verbose_name = _("کوپن")
+        verbose_name_plural = _("کوپن ها")
 
     def __str__(self):
         return self.code

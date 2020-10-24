@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from . import forms
 from django.core.mail import send_mail
-from .models import CustomTag
+from .models import Tags
 from django.contrib.auth.models import User
 from user_profile.models import UserProfile
 
@@ -24,16 +24,17 @@ def get_all_categories():
     return Category.objects.all()
 
 def get_three_latest_posts():
-    return Post.published.filter()[0:3]
+    return Post.objects.filter(status='published')[0:3]
 
 def get_all_tags():
-    return Post.tags.all()
+    return Tags.objects.all()
 
 def single_post(request):
     return render(request, 'blog/detail.html')
 
 def post_list(request, tag_slug=None, category_slug=None):
-    object_list = Post.published.all()
+    language = request.LANGUAGE_CODE
+    object_list = Post.objects.all()
     latest_posts = object_list[:3]
 
     # username = None
@@ -43,12 +44,12 @@ def post_list(request, tag_slug=None, category_slug=None):
 
     category = None
     if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
+        category = get_object_or_404(Category, translations__slug=category_slug, translations__language_code=language)
         object_list = object_list.filter(category__in=[category])
 
     tag = None
     if tag_slug:
-        tag = get_object_or_404(CustomTag, slug=tag_slug)
+        tag = get_object_or_404(Tags, translations__slug=tag_slug, translations__language_code=language)
         object_list = object_list.filter(tags__in=[tag])
 
     page = request.GET.get('page', 1)
@@ -68,10 +69,11 @@ def post_list(request, tag_slug=None, category_slug=None):
     return render(request, 'blog/list.html', context=context)
 
 def post_detail(request, year, month, day, post):
-    posts = Post.published.all()[:10]   # Related posts in detail page
-    post = get_object_or_404(Post, slug=post, status='منتشر شده',
+    language = request.LANGUAGE_CODE
+    posts = Post.objects.filter(status='published')[:10]   # Related posts in detail page
+    post = get_object_or_404(Post, translations__slug=post, status='published',
                                publish__year=year, publish__month=month,
-                               publish__day=day)
+                               publish__day=day, translations__language_code=language)
 
     # The code below is for getting next and previous object
     # and if object does not exists, we set it to None.

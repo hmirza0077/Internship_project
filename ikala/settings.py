@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # packages
     'rosetta',
-    'taggit',
     'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
@@ -189,12 +188,12 @@ REDIS_PORT = 6379
 REDIS_DB = 1
 
 PARLER_LANGUAGES = {
-    None: (
+    1: (
         {'code': 'en'},
         {'code': 'fa'},
     ),
     'default': {
-        'fallback': 'en',
+        'fallback': 'fa',
         'hide_untranslated': False,
     }
 }

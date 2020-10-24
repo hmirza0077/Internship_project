@@ -54,7 +54,7 @@
                                         </div>
                                         <!-- End .product -->
                                     </td>
-                                    <td class="price-col">{{ item.price }} {% trans "تومان" %}</td>
+                                    <td class="price-col">{{ item.price }} {% trans "ت" %}</td>
                                     <td class="quantity-col">
                                         <div class="cart-product-quantity">
                                             <form action="{% url 'cart:cart_add' product.id %}" method="POST">
@@ -65,7 +65,7 @@
                                         </div>
                                         <!-- End .cart-product-quantity -->
                                     </td>
-                                    <td class="total-col">{{ item.total_price }} {% trans "تومان" %}</td>
+                                    <td class="total-col">{{ item.total_price }} {% trans "ت" %}</td>
                                     <td><a href="{% url 'cart:cart_remove' product.id %}" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a></td>
                                     <!-- <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td> -->
                                 </tr>
@@ -107,7 +107,7 @@
                                     {% csrf_token %}
                                     <div class="input-group">
                                         <!-- <input type="text" class="form-control" required placeholder="کد تخفیف"> -->
-                                        {{ coupon_apply_form.code|as_crispy_field }}
+                                        {{ coupon_apply_form.code }}
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-primary-2" type="submit"><i
                                                             class="icon-long-arrow-left mr-0"></i></button>
@@ -134,13 +134,13 @@
                                     {% if not cart.coupon %}
                                     <tr class="summary-subtotal">
                                         <td>{% trans "جمع کل سبد خرید" %} : </td>
-                                        <td class="text-left">{{ cart.get_total_price }} {% trans "تومان" %}</td>
+                                        <td class="text-left">{{ cart.get_total_price }} {% trans "ت" %}</td>
                                     </tr>
                                     {% else %}
                                     <tr class="subtotal">
                                         <td>{% trans "جمع سبد خرید" %}</td>
                                         <td colspan="4"></td>
-                                        <td class="num">{{ cart.get_total_price }} {% trans "تومان" %}</td>
+                                        <td class="num">{{ cart.get_total_price }} {% trans "ت" %}</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -148,15 +148,15 @@
                                         </td>
                                         <td colspan="4"></td>
                                         <td class="num neg">
-                                            - {{ cart.get_discount }} {% trans "تومان" %}
+                                            - {{ cart.get_discount }} {% trans "ت" %}
                                         </td>
                                     </tr>
                                     {% endif %}
                                     <tr class="total">
-                                        <td>{% trans "جمع نهایی سبد خرید" %}جمع نهایی سبد خرید</td>
+                                        <td>{% trans "جمع نهایی سبد خرید" %}</td>
                                         <td colspan="4"></td>
                                         <td class="num">
-                                            {{ cart.get_total_price_after_discount }} {% trans "تومان" %}
+                                            {{ cart.get_total_price_after_discount }} {% trans "ت" %}
                                         </td>
                                     </tr>
                                     {% comment %}
@@ -175,7 +175,7 @@
                                             </div>
                                             <!-- End .custom-control -->
                                         </td>
-                                        <td class="text-left">{% trans "0,000 تومان" %}</td>
+                                        <td class="text-left">{% trans "0,000 ت" %}</td>
                                     </tr>
                                     <!-- End .summary-shipping-row -->
 
@@ -187,7 +187,7 @@
                                             </div>
                                             <!-- End .custom-control -->
                                         </td>
-                                        <td class="text-left">{% trans "10,000 تومان" %}</td>
+                                        <td class="text-left">{% trans "10,000 ت" %}</td>
                                     </tr>
                                     <!-- End .summary-shipping-row -->
 
@@ -199,7 +199,7 @@
                                             </div>
                                             <!-- End .custom-control -->
                                         </td>
-                                        <td class="text-left">{% trans "20,000 تومان" %}</td>
+                                        <td class="text-left">{% trans "20,000 ت" %}</td>
                                     </tr>
                                     <!-- End .summary-shipping-row -->
 
@@ -211,7 +211,7 @@
                                     {% endcomment %}
                                     <tr class="summary-total">
                                         <td>{% trans "مبلغ قابل پرداخت" %} :</td>
-                                        <td class="text-left">{{ cart.get_total_price_after_discount }} {% trans "تومان" %}</td>
+                                        <td class="text-left">{{ cart.get_total_price_after_discount }} {% trans "ت" %}</td>
                                     </tr>
                                     <!-- End .summary-total -->
                                 </tbody>

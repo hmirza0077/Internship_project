@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"POT-Creation-Date: 2020-10-21 20:28+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/forms.py:9
+#, fuzzy
+#| msgid "لطفا ایمیل خود را در کادر زیر وارد کنید"
+msgid "نام کاربری یا ایمیل خود را وارد کنید..."
+msgstr "Please enter you E-mail address"
+
+#: accounts/forms.py:10 accounts/forms.py:35
+#: accounts/templates/registration/login.html:27
+#: accounts/templates/registration/login.html:94
+msgid "رمز عبور"
+msgstr "Password"
+
+#: accounts/forms.py:15 accounts/forms.py:34
+msgid "ایمیل"
+msgstr ""
+
+#: accounts/forms.py:20
+#, fuzzy
+#| msgid "رمز عبور"
+msgid "رمز عبور قدیمی"
+msgstr "Password"
+
+#: accounts/forms.py:21 accounts/forms.py:27
+#, fuzzy
+#| msgid "رمز عبور"
+msgid "رمز عبور جدید"
+msgstr "Password"
+
+#: accounts/forms.py:22 accounts/forms.py:28
+#, fuzzy
+#| msgid "تغییر رمز عبور"
+msgid "تایید رمز عبور جدید"
+msgstr "Change Password"
+
+#: accounts/forms.py:33
+#, fuzzy
+#| msgid "نام کاربری شما"
+msgid "نام کاربری"
+msgstr "Your Username"
+
+#: accounts/forms.py:36 accounts/templates/registration/login.html:98
+msgid "تکرار رمز عبور"
+msgstr "Repeat password"
+
+#: accounts/forms.py:46
+msgid "قبلا با ایمیل ثبت نام انجام شده است"
+msgstr ""
 
 #: accounts/templates/registration/login.html:3
 msgid "ورود یا ثبت نام"
@@ -35,11 +83,6 @@ msgstr "Register"
 #: accounts/templates/registration/login.html:22
 msgid "نام کاربری یا آدرس ایمیل"
 msgstr "Username or Email"
-
-#: accounts/templates/registration/login.html:27
-#: accounts/templates/registration/login.html:94
-msgid "رمز عبور"
-msgstr "Password"
 
 #: accounts/templates/registration/login.html:50
 msgid "مرا به خاطر بسپار"
@@ -70,10 +113,6 @@ msgstr "Your E-mail address"
 #: accounts/templates/registration/login.html:90
 msgid "نام کاربری شما"
 msgstr "Your Username"
-
-#: accounts/templates/registration/login.html:98
-msgid "تکرار رمز عبور"
-msgstr "Repeat password"
 
 #: accounts/templates/registration/login.html:111
 msgid "من با"

@@ -8,54 +8,92 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:59+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"PO-Revision-Date: 2020-10-21 20:30+0326\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: orders/models.py:16
-msgid "first_name"
+#: orders/forms.py:6 orders/templates/orders/checkout.html:43
+msgid "نام"
 msgstr "نام"
 
-#: orders/models.py:17
-msgid "last_name"
+#: orders/forms.py:7 orders/models.py:17
+#: orders/templates/orders/checkout.html:49
+msgid "نام خانوادگی"
 msgstr "نام خانوادگی"
 
-#: orders/models.py:18
-msgid "e-mail"
+#: orders/forms.py:8 orders/models.py:18
+#: orders/templates/admin/orders/order/detail.html:33
+#: orders/templates/orders/checkout.html:102
+msgid "ایمیل"
 msgstr "ایمیل"
 
-#: orders/models.py:19
-msgid "address"
+#: orders/forms.py:9 orders/models.py:19
+#: orders/templates/admin/orders/order/detail.html:37
+#: orders/templates/orders/checkout.html:79
+msgid "آدرس"
 msgstr "آدرس"
 
-#: orders/models.py:20
-msgid "postal_code"
+#: orders/forms.py:10 orders/models.py:20
+#: orders/templates/orders/checkout.html:90
+msgid "کد پستی"
 msgstr "کد پستی"
 
-#: orders/models.py:21
-msgid "city"
+#: orders/forms.py:11 orders/models.py:21
+#: orders/templates/orders/checkout.html:64
+msgid "شهر"
 msgstr "شهر"
 
-#: orders/templates/admin/orders/order/detail.html:6
+#: orders/models.py:16
+msgid "نام کوچک"
+msgstr "نام کوچک"
+
+#: orders/models.py:22
+msgid "تاریخ ایجاد"
+msgstr "تاریخ ایجاد"
+
+#: orders/models.py:23
+msgid "تاریخ بروزرسانی"
+msgstr "تاریخ بروزرسانی"
+
+#: orders/models.py:24
+msgid "وضعیت پرداخت"
+msgstr "وضعیت پرداخت"
+
+#: orders/models.py:27 orders/templates/orders/checkout.html:150
+msgid "تخفیف"
+msgstr "تخفیف"
+
+#: orders/models.py:31 orders/templates/admin/orders/order/detail.html:6
 #: orders/templates/admin/orders/order/detail.html:12
 #: orders/templates/admin/orders/order/detail.html:17
 msgid "سفارش"
 msgstr "سفارش"
 
+#: orders/models.py:32 orders/templates/admin/orders/order/detail.html:11
+msgid "سفارشات"
+msgstr "سفارشات"
+
+#: orders/models.py:44 orders/templates/admin/orders/order/detail.html:57
+#: orders/templates/admin/orders/order/pdf.html:24
+msgid "قیمت"
+msgstr "قیمت"
+
+#: orders/models.py:45 orders/templates/admin/orders/order/detail.html:58
+#: orders/templates/admin/orders/order/pdf.html:25
+msgid "تعداد"
+msgstr "تعداد"
+
 #: orders/templates/admin/orders/order/detail.html:10
 #: orders/templates/orders/checkout.html:16
 msgid "خانه"
 msgstr "خانه"
-
-#: orders/templates/admin/orders/order/detail.html:11
-msgid "سفارشات"
-msgstr "سفارشات"
 
 #: orders/templates/admin/orders/order/detail.html:20
 msgid "پرینت"
@@ -69,16 +107,6 @@ msgstr "تاریخ ثبت سفارش"
 msgid "مشتری"
 msgstr "مشتری"
 
-#: orders/templates/admin/orders/order/detail.html:33
-#: orders/templates/orders/checkout.html:102
-msgid "ایمیل"
-msgstr "ایمیل"
-
-#: orders/templates/admin/orders/order/detail.html:37
-#: orders/templates/orders/checkout.html:79
-msgid "آدرس"
-msgstr "آدرس"
-
 #: orders/templates/admin/orders/order/detail.html:41
 #: orders/templates/admin/orders/order/detail.html:72
 msgid "جمع خرید"
@@ -89,12 +117,12 @@ msgid "وضعیت"
 msgstr "وضعیت"
 
 #: orders/templates/admin/orders/order/detail.html:46
-#: orders/templates/admin/orders/order/pdf.html:45
+#: orders/templates/admin/orders/order/pdf.html:46
 msgid "پرداخت شده"
 msgstr "پرداخت شده"
 
 #: orders/templates/admin/orders/order/detail.html:46
-#: orders/templates/admin/orders/order/pdf.html:45
+#: orders/templates/admin/orders/order/pdf.html:46
 msgid "پرداخت نشده"
 msgstr "پرداخت نشده"
 
@@ -103,53 +131,43 @@ msgid "جنس خریداری شده"
 msgstr "جنس خریداری شده"
 
 #: orders/templates/admin/orders/order/detail.html:56
-#: orders/templates/admin/orders/order/pdf.html:22
+#: orders/templates/admin/orders/order/pdf.html:23
 msgid "محصول"
 msgstr "محصول"
 
-#: orders/templates/admin/orders/order/detail.html:57
-#: orders/templates/admin/orders/order/pdf.html:23
-msgid "قیمت"
-msgstr "قیمت"
-
-#: orders/templates/admin/orders/order/detail.html:58
-#: orders/templates/admin/orders/order/pdf.html:24
-msgid "تعداد"
-msgstr "تعداد"
-
 #: orders/templates/admin/orders/order/detail.html:59
-#: orders/templates/admin/orders/order/pdf.html:38
+#: orders/templates/admin/orders/order/pdf.html:39
 msgid "مجموع"
 msgstr "مجموع"
 
 #: orders/templates/admin/orders/order/detail.html:66
 #: orders/templates/admin/orders/order/detail.html:68
 #: orders/templates/admin/orders/order/detail.html:72
-#: orders/templates/admin/orders/order/pdf.html:39
+#: orders/templates/admin/orders/order/pdf.html:40
 #: orders/templates/orders/checkout.html:138
 #: orders/templates/orders/checkout.html:146
 #: orders/templates/orders/checkout.html:154
 #: orders/templates/orders/checkout.html:171
-msgid "تومان"
-msgstr "تومان"
+msgid "ت"
+msgstr "ت"
 
-#: orders/templates/admin/orders/order/pdf.html:5
+#: orders/templates/admin/orders/order/pdf.html:6
 msgid "فروشگاه من"
 msgstr "فروشگاه من"
 
-#: orders/templates/admin/orders/order/pdf.html:7
+#: orders/templates/admin/orders/order/pdf.html:8
 msgid "خرید شماره ی"
 msgstr "خرید شماره ی"
 
-#: orders/templates/admin/orders/order/pdf.html:13
+#: orders/templates/admin/orders/order/pdf.html:14
 msgid "پرداخت کننده"
 msgstr "پرداخت کننده"
 
-#: orders/templates/admin/orders/order/pdf.html:18
+#: orders/templates/admin/orders/order/pdf.html:19
 msgid "محصولات خریداری شده"
 msgstr "محصولات خریداری شده"
 
-#: orders/templates/admin/orders/order/pdf.html:25
+#: orders/templates/admin/orders/order/pdf.html:26
 msgid "قیمت کل"
 msgstr "قیمت کل"
 
@@ -170,22 +188,6 @@ msgstr "فروشگاه"
 #: orders/templates/orders/checkout.html:39
 msgid "جزئیات صورت حساب"
 msgstr "جزئیات صورت حساب"
-
-#: orders/templates/orders/checkout.html:43
-msgid "نام"
-msgstr "نام"
-
-#: orders/templates/orders/checkout.html:49
-msgid "نام خانوادگی"
-msgstr "نام خانوادگی"
-
-#: orders/templates/orders/checkout.html:64
-msgid "شهر"
-msgstr "شهر"
-
-#: orders/templates/orders/checkout.html:90
-msgid "کد پستی"
-msgstr "کد پستی"
 
 #: orders/templates/orders/checkout.html:107
 msgid "ایجاد یک حساب کاربری؟"
@@ -215,10 +217,6 @@ msgstr "جمع سبد خرید"
 #: orders/templates/orders/checkout.html:150
 msgid "کوپن"
 msgstr "کوپن"
-
-#: orders/templates/orders/checkout.html:150
-msgid "تخفیف"
-msgstr "تخفیف"
 
 #: orders/templates/orders/checkout.html:276
 msgid "ثبت"
@@ -251,3 +249,24 @@ msgstr "کلیک"
 #: orders/templates/orders/created.html:12
 msgid "کنید"
 msgstr "کنید"
+
+#~ msgid "تومان"
+#~ msgstr "تومان"
+
+#~ msgid "first_name"
+#~ msgstr "نام"
+
+#~ msgid "last_name"
+#~ msgstr "نام خانوادگی"
+
+#~ msgid "e-mail"
+#~ msgstr "ایمیل"
+
+#~ msgid "address"
+#~ msgstr "آدرس"
+
+#~ msgid "postal_code"
+#~ msgstr "کد پستی"
+
+#~ msgid "city"
+#~ msgstr "شهر"

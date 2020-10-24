@@ -4,18 +4,22 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from multiselectfield import MultiSelectField
 from django.conf import settings
 from parler.models import TranslatableModel, TranslatedFields
-from parler.managers import TranslatableQuerySet
+# from parler.managers import TranslatableQuerySet, TranslatableManager
+from django.utils.translation import gettext_lazy as _
+# from mptt.managers import TreeManager
+# from mptt.querysets import TreeQuerySet
+# from mptt.models import MPTTModel
 
 class Category(TranslatableModel):
     translations = TranslatedFields(
-        name = models.CharField(max_length=200, db_index=True),
+        name = models.CharField(_('عنوان'), max_length=200, db_index=True),
         slug = models.SlugField(max_length=200, unique=True, db_index=True),
     )
 
     class Meta:
         # ordering = ('name',)
-        verbose_name = 'دسته بندی محصولات'
-        verbose_name_plural = 'دسته بندی محصولات'
+        verbose_name = _('دسته بندی محصولات')
+        verbose_name_plural = _('دسته بندی محصولات')
 
     def __str__(self):
         return self.name
@@ -23,67 +27,73 @@ class Category(TranslatableModel):
     def get_absolute_url(self):
         return reverse("shop:product_list_by_category", args=[self.slug])
 
+# class ProductQuerySet(TranslatableQuerySet, TreeQuerySet):
+#     def as_manager(cls):
+#         manager = AvailableProductManager.from_queryset(cls)()
+#         manager._built_with_as_manager = True
+#         return manager
+#     as_manager.queryset_only = True
+#     as_manager = classmethod(as_manager)
 
-class AvailableProductManager(models.Manager):
-    def get_querySet(self):
-        return super(AvailableProductManager, self).get_queryset().filter(available=True)
+# class AvailableProductManager(TreeManager, TranslatableManager):
+#     _queryset_class = ProductQuerySet
+#     def get_querySet(self):
+#         return super(AvailableProductManager, self).get_queryset().filter(available=True)
      
 
 class Product(TranslatableModel):
 
     GENDER_CHOICES = (
-        ('مردانه', 'مردانه'),
-        ('زنانه', 'زنانه')
+        ('men', _('مردانه')),
+        ('women', _('زنانه'))
     )
 
     SEASON_CHOICES = (
-        ('بهار', 'بهار'),
-        ('تابستان', 'تابستان'),
-        ('پاییز', 'پاییز'),
-        ('زمستان', 'زمستان')
+        ('spring', _('بهار')),
+        ('summer', _('تابستان')),
+        ('autumn', _('پاییز')),
+        ('winter', _('زمستان')),
     )
 
     COLOR_CHOICES = (
-        ('red', 'قرمز'),
-        ('brown', 'قهوه ای'),
-        ('yellow', 'زرد'),
-        ('black', 'مشکی'),
-        ('blue', 'آبی'),
-        ('green', 'سبز'),
-        ('pink', 'صورتی'),
-        ('gray', 'خاکستری'),
+        ('red', _('قرمز')),
+        ('brown', _('قهوه ای')),
+        ('yellow', _('زرد')),
+        ('black', _('مشکی')),
+        ('blue', _('آبی')),
+        ('green', _('سبز')),
+        ('pink', _('صورتی')),
+        ('gray', _('خاکستری')),
     )
 
-    # SIZE_CHOICES = (
-    #     ('XS', 'XS'),
-    #     ('S', 'S'),
-    #     ('M', 'M'),
-    #     ('L', 'L'),
-    #     ('XL', 'XL'),
-    #     ('XXL', 'XXL'),
-    # )
+    SIZE_CHOICES = (
+        ('XS', 'XS'),
+        ('S', 'S'),
+        ('M', 'M'),
+        ('L', 'L'),
+        ('XL', 'XL'),
+        ('XXL', 'XXL'),
+    )
 
     translations = TranslatedFields(
-        name = models.CharField(max_length=200, db_index=True),
+        name = models.CharField(_('عنوان'), max_length=200, db_index=True),
         slug = models.SlugField(max_length=200, db_index=True),
-        short_description = RichTextUploadingField('توضیحات مختصر', blank=True, null=True),
-        long_description = RichTextUploadingField('توضیحات جامع', blank=True, null=True),
-        material = models.CharField(max_length=50),
+        short_description = RichTextUploadingField(_('توضیحات مختصر'), blank=True, null=True),
+        long_description = RichTextUploadingField(_('توضیحات جامع'), blank=True, null=True),
+        material = models.CharField(_('نوع جنس'), max_length=50),
     )
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-    # description = models.TextField(blank=True)
-    visit_num = models.PositiveIntegerField(default=0)
-    price = models.PositiveIntegerField(default=0)
-    is_available = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    image = models.ImageField(_('تصویر محصول'), upload_to='products/%Y/%m/%d', blank=True, null=True)
+    visit_num = models.PositiveIntegerField(_('تعداد بازدید'), default=0)
+    price = models.PositiveIntegerField(_('قیمت'), default=0)
+    is_available = models.BooleanField(_('در دسترس'), default=True)
+    created = models.DateTimeField(_('تاریخ ایجاد'), auto_now_add=True)
+    updated = models.DateTimeField(_('تاریخ بروزرسانی'), auto_now=True)
 
-    size = models.IntegerField()
-    gender = models.CharField(max_length=50, choices=GENDER_CHOICES)
-    color = MultiSelectField(choices=COLOR_CHOICES)
-    #color = models.CharField(max_length=50)
-    season = models.CharField(max_length=50, choices=SEASON_CHOICES)
+    size = MultiSelectField(_('سایز'), choices=SIZE_CHOICES)
+    gender = models.CharField(_('جنسیت'), max_length=50, choices=GENDER_CHOICES)
+    color = MultiSelectField(_('رنگ'), choices=COLOR_CHOICES)
+    season = models.CharField(_('فصل'), max_length=50, choices=SEASON_CHOICES)
     #supplier = models.ForeignKet(Supplier, related_name='suppliers', on_delete=models.CASCADE)
 
     # objects = models.Manager()  # The default manager
@@ -94,8 +104,8 @@ class Product(TranslatableModel):
     class Meta:
         # ordering = ('name',)
         # index_together = (('id', 'slug'),)
-        verbose_name = 'محصول'
-        verbose_name_plural = 'محصولات'
+        verbose_name = _('محصول')
+        verbose_name_plural = _('محصولات')
 
     # @property
     # def calculate_qty(self):
@@ -116,17 +126,17 @@ class CommentManager(models.Manager):
 class ProductComments(models.Model):
     product = models.ForeignKey(Product, related_name='comments', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    body = models.TextField(max_length=1500)
+    body = models.TextField(_('متن پیام'), max_length=1500)
     parent = models.ForeignKey('ProductComments', null=True, blank=True, on_delete=models.CASCADE)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(_('تاریخ ایجاد'), auto_now_add=True)
     active = models.BooleanField(default=True)
 
     objects = CommentManager()
 
     class Meta:
         ordering = ['-created']
-        verbose_name = "کامنت"
-        verbose_name_plural = "کامنت ها"
+        verbose_name = _("کامنت")
+        verbose_name_plural = _("کامنت ها")
 
     def __str__(self):
         return str(self.user.username)

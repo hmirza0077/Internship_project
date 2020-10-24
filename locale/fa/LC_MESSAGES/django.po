@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:59+0330\n"
+"POT-Creation-Date: 2020-10-21 20:28+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: coupons/forms.py:6
-msgid "کوپن"
-msgstr "کوپن"
-
 #: ikala/settings.py:137
 msgid "Persian"
 msgstr "فارسی"
@@ -29,6 +25,14 @@ msgstr "فارسی"
 #: ikala/settings.py:138
 msgid "English"
 msgstr "انگلیسی"
+
+#~ msgid "کوپن"
+#~ msgstr "کوپن"
+
+#, fuzzy
+#~| msgid "کوپن"
+#~ msgid "کوپن ها"
+#~ msgstr "کوپن"
 
 #~ msgid "افزودن به سبد خرید"
 #~ msgstr "افزودن به سبد خرید"

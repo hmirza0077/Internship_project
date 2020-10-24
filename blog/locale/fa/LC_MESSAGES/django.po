@@ -8,15 +8,100 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:59+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"PO-Revision-Date: 2020-10-21 17:45+0326\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
+
+#: blog/forms.py:7
+msgid "نام شما"
+msgstr "نام شما"
+
+#: blog/forms.py:9 blog/templates/blog/detail.html:235
+msgid "دیدگاه شما"
+msgstr "دیدگاه شما"
+
+#: blog/models.py:30 blog/models.py:44 blog/models.py:62
+msgid "عنوان"
+msgstr "عنوان"
+
+#: blog/models.py:35 blog/templates/blog/detail.html:67
+msgid "برچسب"
+msgstr "برچسب"
+
+#: blog/models.py:36 blog/templates/blog/aside.html:99
+msgid "برچسب ها"
+msgstr "برچسب ها"
+
+#: blog/models.py:52
+msgid "دسته بندی"
+msgstr "دسته بندی"
+
+#: blog/models.py:53 blog/templates/blog/aside.html:19
+msgid "دسته بندی ها"
+msgstr "دسته بندی ها"
+
+#: blog/models.py:65
+msgid "توضیحات مختصر"
+msgstr "توضیحات مختصر"
+
+#: blog/models.py:66
+msgid "توضیحات جامع"
+msgstr "توضیحات جامع"
+
+#: blog/models.py:70
+msgid "در انتظار"
+msgstr "در انتظار"
+
+#: blog/models.py:71
+msgid "منتشر شده"
+msgstr "منتشر شده"
+
+#: blog/models.py:76
+msgid "تاریخ انتشار"
+msgstr "تاریخ انتشار"
+
+#: blog/models.py:77 blog/models.py:108
+msgid "تاریخ ساخت"
+msgstr "تاریخ ساخت"
+
+#: blog/models.py:78
+msgid "تاریخ بروزرسانی"
+msgstr "تاریخ بروزرسانی"
+
+#: blog/models.py:79
+msgid "وضعیت"
+msgstr "وضعیت"
+
+#: blog/models.py:83
+msgid "تصویر"
+msgstr "تصویر"
+
+#: blog/models.py:87
+msgid "پست"
+msgstr "پست"
+
+#: blog/models.py:88
+msgid "پست ها"
+msgstr "پست ها"
+
+#: blog/models.py:106
+msgid "متن پیام"
+msgstr "متن پیام"
+
+#: blog/models.py:115
+msgid "کامنت"
+msgstr "کامنت"
+
+#: blog/models.py:116
+msgid "کامنت ها"
+msgstr "کامنت ها"
 
 #: blog/templates/blog/aside.html:6 blog/templates/blog/aside.html:13
 msgid "جستجو"
@@ -30,17 +115,9 @@ msgstr "جستجوی اخبار"
 msgid "جستجوی خبر مورد نظر"
 msgstr "جستجوی خبر مورد نظر"
 
-#: blog/templates/blog/aside.html:19
-msgid "دسته بندی ها"
-msgstr "دسته بندی ها"
-
 #: blog/templates/blog/aside.html:29
 msgid "پست های اخیر"
 msgstr "پست های اخیر"
-
-#: blog/templates/blog/aside.html:99
-msgid "برچسب ها"
-msgstr "برچسب ها"
 
 #: blog/templates/blog/detail.html:9 blog/templates/blog/detail.html:19
 msgid "پست تکی"
@@ -59,13 +136,9 @@ msgid "نویسنده"
 msgstr "نویسنده"
 
 #: blog/templates/blog/detail.html:45 blog/templates/blog/detail.html:169
-#: blog/templates/blog/detail.html:195 blog/templates/blog/detail.html:270
+#: blog/templates/blog/detail.html:195 blog/templates/blog/detail.html:317
 msgid "دیدگاه"
 msgstr "دیدگاه"
-
-#: blog/templates/blog/detail.html:67
-msgid "برچسب"
-msgstr "برچسب"
 
 #: blog/templates/blog/detail.html:99
 msgid "مدیر سایت"
@@ -94,43 +167,39 @@ msgstr "پست بعدی"
 msgid "پست های مرتبط"
 msgstr "پست های مرتبط"
 
-#: blog/templates/blog/detail.html:208 blog/templates/blog/detail.html:235
+#: blog/templates/blog/detail.html:208 blog/templates/blog/detail.html:263
 msgid "پاسخ"
 msgstr "پاسخ"
 
-#: blog/templates/blog/detail.html:254
-msgid "دیدگاه جدید ثبت شد"
-msgstr "دیدگاه جدید ثبت شد"
-
-#: blog/templates/blog/detail.html:261
-msgid "ارسال یک دیدگاه"
-msgstr "ارسال یک دیدگاه"
-
-#: blog/templates/blog/detail.html:263
-msgid "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
-msgstr "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
-
-#: blog/templates/blog/detail.html:275
+#: blog/templates/blog/detail.html:229 blog/templates/blog/detail.html:302
 msgid "نام"
 msgstr "نام"
 
-#: blog/templates/blog/detail.html:281
-msgid "ایمیل"
-msgstr "ایمیل"
+#: blog/templates/blog/detail.html:282
+msgid "دیدگاه جدید ثبت شد"
+msgstr "دیدگاه جدید ثبت شد"
 
 #: blog/templates/blog/detail.html:289
+msgid "ارسال یک دیدگاه"
+msgstr "ارسال یک دیدگاه"
+
+#: blog/templates/blog/detail.html:291
+msgid "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
+msgstr "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
+
+#: blog/templates/blog/detail.html:320
 msgid "ارسال دیدگاه"
 msgstr "ارسال دیدگاه"
 
-#: blog/templates/blog/detail.html:294
+#: blog/templates/blog/detail.html:325
 msgid "ابتدا باید"
 msgstr "ابتدا باید"
 
-#: blog/templates/blog/detail.html:294
+#: blog/templates/blog/detail.html:325
 msgid "وارد"
 msgstr "وارد"
 
-#: blog/templates/blog/detail.html:294
+#: blog/templates/blog/detail.html:325
 msgid "شوید"
 msgstr "شوید"
 
@@ -153,3 +222,6 @@ msgstr "قبلی"
 #: blog/templates/blog/pagination.html:41
 msgid "بعدی"
 msgstr "بعدی"
+
+#~ msgid "ایمیل"
+#~ msgstr "ایمیل"

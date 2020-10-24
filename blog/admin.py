@@ -1,13 +1,12 @@
 from django.contrib import admin
-from .models import Post, Comments, Category, CustomTag
+from .models import Post, Comments, Category, Tags
 from taggit.models import Tag
+from  parler.admin import TranslatableAdmin
 
-admin.site.unregister(Tag)
-
-@admin.register(CustomTag)
-class TagAdmin(admin.ModelAdmin):
+@admin.register(Tags)
+class TagAdmin(TranslatableAdmin):
     list_display = ["name", "slug"]
-    ordering = ["name", "slug"]
+    #ordering = ["name", "slug"]
     search_fields = ["name"]
     #prepopulated_fields = {"slug": ["name"]}
 
@@ -17,11 +16,11 @@ class CommentsAdmin(admin.ModelAdmin):
     exclude = ('parent', )
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(TranslatableAdmin):
     list_display = ('title', 'slug',)
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(TranslatableAdmin):
     list_display = ('name', 'slug',)
     
 

@@ -8,15 +8,153 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-14 23:59+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"PO-Revision-Date: 2020-10-21 20:29+0326\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
+
+#: shop/models.py:15 shop/models.py:79
+msgid "عنوان"
+msgstr "عنوان"
+
+#: shop/models.py:21 shop/models.py:22
+msgid "دسته بندی محصولات"
+msgstr "دسته بندی محصولات"
+
+#: shop/models.py:47
+msgid "مردانه"
+msgstr "مردانه"
+
+#: shop/models.py:48
+msgid "زنانه"
+msgstr "زنانه"
+
+#: shop/models.py:52
+msgid "بهار"
+msgstr "بهار"
+
+#: shop/models.py:53
+msgid "تابستان"
+msgstr "تابستان"
+
+#: shop/models.py:54
+msgid "پاییز"
+msgstr "پاییز"
+
+#: shop/models.py:55
+msgid "زمستان"
+msgstr "زمستان"
+
+#: shop/models.py:59
+msgid "قرمز"
+msgstr "قرمز"
+
+#: shop/models.py:60
+msgid "قهوه ای"
+msgstr "قهوه ای"
+
+#: shop/models.py:61
+msgid "زرد"
+msgstr "زرد"
+
+#: shop/models.py:62
+msgid "مشکی"
+msgstr "مشکی"
+
+#: shop/models.py:63
+msgid "آبی"
+msgstr "آبی"
+
+#: shop/models.py:64
+msgid "سبز"
+msgstr "سبز"
+
+#: shop/models.py:65
+msgid "صورتی"
+msgstr "صورتی"
+
+#: shop/models.py:66
+msgid "خاکستری"
+msgstr "خاکستری"
+
+#: shop/models.py:81
+msgid "توضیحات مختصر"
+msgstr "توضیحات مختصر"
+
+#: shop/models.py:82
+msgid "توضیحات جامع"
+msgstr "توضیحات جامع"
+
+#: shop/models.py:83
+msgid "نوع جنس"
+msgstr "نوع جنس"
+
+#: shop/models.py:86
+msgid "تصویر محصول"
+msgstr "تصویر محصول"
+
+#: shop/models.py:87
+msgid "تعداد بازدید"
+msgstr "تعداد بازدید"
+
+#: shop/models.py:88 shop/templates/shop/list.html:450
+msgid "قیمت"
+msgstr "قیمت"
+
+#: shop/models.py:89
+msgid "در دسترس"
+msgstr "در دسترس"
+
+#: shop/models.py:90 shop/models.py:131
+msgid "تاریخ ایجاد"
+msgstr "تاریخ ایجاد"
+
+#: shop/models.py:91
+msgid "تاریخ بروزرسانی"
+msgstr "تاریخ بروزرسانی"
+
+#: shop/models.py:93 shop/templates/shop/detail.html:121
+#: shop/templates/shop/list.html:252
+msgid "سایز"
+msgstr "سایز"
+
+#: shop/models.py:94
+msgid "جنسیت"
+msgstr "جنسیت"
+
+#: shop/models.py:95 shop/templates/shop/list.html:329
+msgid "رنگ"
+msgstr "رنگ"
+
+#: shop/models.py:96
+msgid "فصل"
+msgstr "فصل"
+
+#: shop/models.py:107
+msgid "محصول"
+msgstr "محصول"
+
+#: shop/models.py:108 shop/templates/shop/detail.html:12
+msgid "محصولات"
+msgstr "محصولات"
+
+#: shop/models.py:129
+msgid "متن پیام"
+msgstr "متن پیام"
+
+#: shop/models.py:138
+msgid "کامنت"
+msgstr "کامنت"
+
+#: shop/models.py:139
+msgid "کامنت ها"
+msgstr "کامنت ها"
 
 #: shop/templates/shop/detail.html:3 shop/templates/shop/list.html:3
 msgid "فروشگاه لیست"
@@ -25,10 +163,6 @@ msgstr "فروشگاه لیست"
 #: shop/templates/shop/detail.html:11 shop/templates/shop/list.html:19
 msgid "خانه"
 msgstr "خانه"
-
-#: shop/templates/shop/detail.html:12
-msgid "محصولات"
-msgstr "محصولات"
 
 #: shop/templates/shop/detail.html:13
 msgid "پیش فرض"
@@ -42,108 +176,88 @@ msgstr "قبلی"
 msgid "بعدی"
 msgstr "بعدی"
 
-#: shop/templates/shop/detail.html:122 shop/templates/shop/list.html:252
-msgid "سایز"
-msgstr "سایز"
-
-#: shop/templates/shop/detail.html:125
+#: shop/templates/shop/detail.html:124
 msgid "سایز را انتخاب کنید"
 msgstr "سایز را انتخاب کنید"
 
-#: shop/templates/shop/detail.html:126
-msgid "کوچک"
-msgstr "کوچک"
-
-#: shop/templates/shop/detail.html:127
-msgid "متوسط"
-msgstr "متوسط"
-
-#: shop/templates/shop/detail.html:128
-msgid "بزرگ"
-msgstr "بزرگ"
-
-#: shop/templates/shop/detail.html:129
-msgid "خیلی بزرگ"
-msgstr "خیلی بزرگ"
-
-#: shop/templates/shop/detail.html:134
+#: shop/templates/shop/detail.html:139
 msgid "راهنمای اندازه"
 msgstr "راهنمای اندازه"
 
-#: shop/templates/shop/detail.html:140
+#: shop/templates/shop/detail.html:145
 msgid "تعداد"
 msgstr "تعداد"
 
-#: shop/templates/shop/detail.html:151 shop/templates/shop/detail.html:314
+#: shop/templates/shop/detail.html:156 shop/templates/shop/detail.html:320
 msgid "افزودن به سبد خرید"
 msgstr "افزودن به سبد خرید"
 
-#: shop/templates/shop/detail.html:158 shop/templates/shop/detail.html:308
+#: shop/templates/shop/detail.html:163 shop/templates/shop/detail.html:314
 #: shop/templates/shop/list.html:149
 msgid "افزودن به لیست علاقه مندی"
 msgstr "افزودن به لیست علاقه مندی"
 
-#: shop/templates/shop/detail.html:159
+#: shop/templates/shop/detail.html:164
 msgid "افزودن به لیست مقایسه"
 msgstr "افزودن به لیست مقایسه"
 
-#: shop/templates/shop/detail.html:167 shop/templates/shop/list.html:221
+#: shop/templates/shop/detail.html:172 shop/templates/shop/list.html:221
 msgid "دسته بندی"
 msgstr "دسته بندی"
 
-#: shop/templates/shop/detail.html:173
+#: shop/templates/shop/detail.html:178
 msgid "اشتراک گذاری"
 msgstr "اشتراک گذاری"
 
-#: shop/templates/shop/detail.html:197
+#: shop/templates/shop/detail.html:202
 msgid "توضیحات"
 msgstr "توضیحات"
 
-#: shop/templates/shop/detail.html:200
+#: shop/templates/shop/detail.html:205
 msgid "اطلاعات بیشتر"
 msgstr "اطلاعات بیشتر"
 
-#: shop/templates/shop/detail.html:203
+#: shop/templates/shop/detail.html:208
 msgid "نظرات "
 msgstr "نظرات"
 
-#: shop/templates/shop/detail.html:209
+#: shop/templates/shop/detail.html:214
 msgid "اطلاعات محصول"
 msgstr "اطلاعات محصول"
 
-#: shop/templates/shop/detail.html:217
+#: shop/templates/shop/detail.html:222
 msgid "اطلاعات"
 msgstr "اطلاعات"
 
-#: shop/templates/shop/detail.html:225
+#: shop/templates/shop/detail.html:230
 msgid "دیدگاهی موجود نیست"
 msgstr "دیدگاهی موجود نیست"
 
-#: shop/templates/shop/detail.html:251
+#: shop/templates/shop/detail.html:256
 msgid "مثبت"
 msgstr "مثبت"
 
-#: shop/templates/shop/detail.html:252
+#: shop/templates/shop/detail.html:257
 msgid "منفی"
 msgstr "منفی"
 
-#: shop/templates/shop/detail.html:271
+#: shop/templates/shop/detail.html:277
 msgid "محصولاتی که شاید بپسندید"
 msgstr "محصولاتی که شاید بپسندید"
 
-#: shop/templates/shop/detail.html:309 shop/templates/shop/list.html:136
+#: shop/templates/shop/detail.html:315 shop/templates/shop/list.html:136
 msgid "مشاهده سریع"
 msgstr "مشاهده سریع"
 
-#: shop/templates/shop/detail.html:310
+#: shop/templates/shop/detail.html:316
 msgid "لیست مقایسه"
 msgstr "لیست مقایسه"
 
-#: shop/templates/shop/detail.html:328
-msgid "تومان"
-msgstr "تومان"
+#: shop/templates/shop/detail.html:334
+msgid "ت"
+msgstr "ت"
 
-#: shop/templates/shop/detail.html:337
+#: shop/templates/shop/detail.html:340
 msgid "دیدگاه "
 msgstr "دیدگاه "
 
@@ -211,23 +325,28 @@ msgstr "فیلترها"
 msgid "پاک کردن همه"
 msgstr "پاک کردن همه"
 
-#: shop/templates/shop/list.html:329
-msgid "رنگ"
-msgstr "رنگ"
-
-#: shop/templates/shop/list.html:450
-msgid "قیمت"
-msgstr "قیمت"
-
 #: shop/templates/shop/list.html:459
 msgid " : محدوده قیمت"
 msgstr " : محدوده قیمت"
 
-#~ msgid "زنانه"
-#~ msgstr "زنانه"
+#: shop/templates/shop/star_rate.html:6
+msgid "Please log in to rate."
+msgstr "لطفا جهت امتیازدهی ابتدا وارد شوید."
+
+#~ msgid "تومان"
+#~ msgstr "ت"
+
+#~ msgid "کوچک"
+#~ msgstr "کوچک"
+
+#~ msgid "متوسط"
+#~ msgstr "متوسط"
+
+#~ msgid "بزرگ"
+#~ msgstr "بزرگ"
+
+#~ msgid "خیلی بزرگ"
+#~ msgstr "خیلی بزرگ"
 
 #~ msgid "لباس"
 #~ msgstr "لباس"
-
-#~ msgid "زرد"
-#~ msgstr "زرد"

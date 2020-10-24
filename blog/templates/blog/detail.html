@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags l10n %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}پست{% endblock title %} {% block content %}{% block head %}
 <link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css">{% endblock head %}
@@ -40,7 +40,7 @@
                                             {% trans "نویسنده" %}: <a href="#">{{ user.username }}</a>
                                         </span>
                                 <span class="meta-separator">|</span>
-                                <a href="#">{{ post.publish }}</a>
+                                <a href="#">{{ post.publish|localize }}</a>
                                 <span class="meta-separator">|</span>
                                 <a href="#">{{post.comments.count}} {% trans "دیدگاه" %}</a>
                             </div>
@@ -57,7 +57,7 @@
                             <!-- End .entry-cats -->
 
                             <div class="entry-content editor-content">
-                                <p>{{ post.body|linebreaks }}</p>
+                                <p>{{ post.long_description|safe|truncatewords:30|linebreaks }}</p>
                             </div>
                             <!-- End .entry-content -->
 
@@ -164,7 +164,7 @@
 
                                 <div class="entry-body">
                                     <div class="entry-meta justify-content-end">
-                                        <a href="#">{{post.publish}}</a>
+                                        <a href="#">{{post.publish|localize}}</a>
                                         <span class="meta-separator">|</span>
                                         <a href="#">{{post.comments.count}} {% trans "دیدگاه" %}</a>
                                     </div>
@@ -211,7 +211,7 @@
                                         <!-- End Reply Comment -->
                                         <div class="comment-user">
                                             <h4><a href="#">{{ user.username }}</a></h4>
-                                            <span class="comment-date">{{ comment.created }}</span>
+                                            <span class="comment-date">{{ comment.created|localize }}</span>
                                         </div>
                                         <!-- End .comment-user -->
 
@@ -225,9 +225,16 @@
                                             <form action="." method="POST" name="enq">
                                                 {% csrf_token %}
                                                 <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label for="reply-name" class="sr-only">{% trans "نام" %}</label> {{ comment_form.first_name|as_crispy_field }}
+                                                        <!-- <input type="text" class="form-control" id="reply-name" name="reply-name" required placeholder="نام شما *"> -->
+                                                    </div>
+                                                </div>
+                                                <div class="row">
                                                     <div class="form-group col-md-12">
-                                                        <label>پیام <span class="required">*</span></label>
-                                                        <textarea required="" type="" class="form-control ticket-textarea" name="body"></textarea>
+                                                        <label for="reply-name" class="sr-only">{% trans "دیدگاه شما" %}</label>
+                                                        <!-- <textarea required="" type="" class="form-control ticket-textarea" name="body"></textarea> -->
+                                                        {{ comment_form.body|as_crispy_field }}
                                                     </div>
                                                     <div class="col-md-12">
                                                         <button type="submit" class="btn btn-outline-primary-2 float-left" name="reply" value="Submit">ارسال</button>
@@ -236,6 +243,7 @@
                                             </form>
                                         </div>
                                         <!-- End Reply Comment Form -->
+
                                     </div>
                                     <!-- End .comment-body -->
                                 </div>

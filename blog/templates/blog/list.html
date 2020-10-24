@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load i18n static %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static l10n %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}وبلاگ{% endblock title %} {% block head %}
 <link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css">{% endblock head %} {% block content %}
@@ -43,7 +43,7 @@
                                             <a href="#">{{ user.username }}</a>
                                 </span>
                                 <span class="meta-separator">|</span>
-                                <a href="#">{{ post.publish }}</a>
+                                <a href="#">{{ post.publish|localize }}</a>
                                 <!-- <span class="meta-separator">|</span>
                                 <a href="#">2 دیدگاه</a> -->
                             </div>
@@ -60,7 +60,7 @@
                             <!-- End .entry-cats -->
 
                             <div class="entry-content">
-                                <p>{{ post.body|truncatewords:30|linebreaks }}</p>
+                                <p>{{ post.short_description|safe|truncatewords:30|linebreaks }}</p>
                                 <a href="{{ post.get_absolute_url }}" class="read-more">{% trans "ادامه خواندن" %}</a>
                             </div>
                             <!-- End .entry-content -->

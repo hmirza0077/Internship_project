@@ -9,7 +9,7 @@
         <div class="container d-flex align-items-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
-                <li class="breadcrumb-item"><a href="{% url 'blog:main' %}">{% trans "محصولات" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'shop:product_list' %}">{% trans "محصولات" %}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{% trans "پیش فرض" %}</li>
             </ol>
 
@@ -83,7 +83,7 @@
                                 <!-- <a class="ratings-text" href="#product-review-link" id="review-link">( 2 نظر
                                             )</a> -->
                                 <div class="text-right">
-                                    {% comment %} {% ratings product %} {% endcomment %} {% include "shop/star_rate.html" %}
+                                    {% ratings product 20 20 False template_name %}
                                     <!-- <div class="ratings-val" style="width: 80%;"></div> -->
                                 </div>
                             </div>
@@ -120,16 +120,21 @@
                                 <label for="size">{% trans "سایز" %} : </label>
                                 <div class="select-custom">
                                     <select name="size" id="size" class="form-control">
-                                                <option value="#" selected="selected">{% trans "سایز را انتخاب کنید" %}</option>
-                                                <option value="s">{% trans "کوچک" %}</option>
-                                                <option value="m">{% trans "متوسط" %}</option>
-                                                <option value="l">{% trans "بزرگ" %}</option>
-                                                <option value="xl">{% trans "خیلی بزرگ" %}</option>
+                                        <option value="#" selected="selected">{% trans "سایز را انتخاب کنید" %}</option>
+                                        {% for si in product.size %}
+                                        <option value="{{si}}">{{si}}</option>
+                                        {% comment %}
+                                        <option value="s">{% trans "کوچک" %}</option>
+                                        <option value="m">{% trans "متوسط" %}</option>
+                                        <option value="l">{% trans "بزرگ" %}</option>
+                                        <option value="xl">{% trans "خیلی بزرگ" %}</option>
+                                        {% endcomment %}
+                                        {% endfor %}
                                         </select>
                                 </div>
                                 <!-- End .select-custom -->
 
-                                <a href="#" class="size-guide"><i class="icon-th-list"></i>{% trans "راهنمای اندازه" %}</a>
+                                <!-- <a href="#" class="size-guide"><i class="icon-th-list"></i>{% trans "راهنمای اندازه" %}</a> -->
                             </div>
                             <!-- End .details-filter-row -->
                             <form action="{% url 'cart:cart_add' product.id %}" method="POST">
@@ -266,6 +271,7 @@
             </div>
             <!-- End .product-details-tab -->
 
+            {% if recommended_products %}                  
             <h2 class="title text-center mb-4">{% trans "محصولاتی که شاید بپسندید" %}</h2>
             <!-- End .title text-center -->
 
@@ -294,7 +300,7 @@
                                 }
                             }
                         }'>
-                {% for product in products %}
+                {% for product in recommended_products %}
                 <div class="product product-7 text-center">
                     <figure class="product-media">
                         <!-- <span class="product-label label-new">جدید</span> -->
@@ -323,14 +329,11 @@
                         <h3 class="product-title text-center"><a href="{{product.get_absolute_url}}">{{product.title}}</a></h3>
                         <!-- End .product-title -->
                         <div class="product-price">
-                            {{product.price}} {% trans "تومان" %}
+                            {{product.price}} {% trans "ت" %}
                         </div>
                         <!-- End .product-price -->
                         <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 20%;"></div>
-                                <!-- End .ratings-val -->
-                            </div>
+                            {% ratings product 15 15 True template_name %}
                             <!-- End .ratings -->
                             <span class="ratings-text">( {{product.comments.count}} {% trans "دیدگاه " %} )</span>
                         </div>
@@ -357,6 +360,8 @@
                 {% endfor %}
             </div>
             <!-- End .owl-carousel -->
+            {% endif %}
+
         </div>
         <!-- End .container -->
     </div>

@@ -135,7 +135,7 @@
                                         {% for item in cart %} {% with product=item.product %}
                                         <tr>
                                             <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
-                                            <td class="text-left">{{ item.total_price }} {% trans "تومان" %}</td>
+                                            <td class="text-left">{{ item.total_price }} {% trans "ت" %}</td>
                                         </tr>
                                         {% endwith %} {% endfor %}
                                         <!-- End .summary-subtotal -->
@@ -143,7 +143,7 @@
                                         <tr class="subtotal">
                                             <td>{% trans "جمع سبد خرید" %}</td>
                                             <td colspan="4"></td>
-                                            <td class="num">{{ cart.get_total_price }} {% trans "تومان" %}</td>
+                                            <td class="num">{{ cart.get_total_price }} {% trans "ت" %}</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -151,7 +151,7 @@
                                             </td>
                                             <td colspan="4"></td>
                                             <td class="num neg">
-                                                - {{ cart.get_discount }} {% trans "تومان" %}
+                                                - {{ cart.get_discount }} {% trans "ت" %}
                                             </td>
                                         </tr>
                                         {% endif %} {% comment %}
@@ -167,7 +167,7 @@
                                         {% endcomment %}
                                         <tr class="summary-subtotal">
                                             <td>{% trans "جمع سبد خرید" %}</td>
-                                            <td class="text-left">{{ cart.get_total_price_after_discount }} {% trans "تومان" %}</td>
+                                            <td class="text-left">{{ cart.get_total_price_after_discount }} {% trans "ت" %}</td>
                                         </tr>
                                     </tbody>
 
