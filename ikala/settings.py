@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # packages
+    'django_social_share',
+    'django_filters',
     'rosetta',
     'crispy_forms',
     'ckeditor',
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'star_ratings',
     'parler',
     # apps
+    'payment',
     'orders',
     'accounts',
     'details',
@@ -132,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = 'fa-ir'
 LANGUAGES = (
     ('fa', _('Persian')),
     ('en', _('English')),

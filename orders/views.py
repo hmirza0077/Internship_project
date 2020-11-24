@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .tasks import order_created
 from .models import OrderItem, Order
 from .forms import OrderForm
@@ -34,7 +34,9 @@ def order_create(request):
             cart.clear()
             # launch asynchronous task in celery: Send email
             #order_created.delay(order.id)
-            return render(request, 'orders/created.html', {'order': order})
+            # return render(request, 'orders/created.html', {'order': order})
+            request.session["order_id"] = order.id
+            return redirect('payment:request')
     
     form = OrderForm()
     context = {'cart': cart, 'form': form}

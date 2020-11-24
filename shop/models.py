@@ -1,14 +1,22 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 from multiselectfield import MultiSelectField
 from django.conf import settings
 from parler.models import TranslatableModel, TranslatedFields
-# from parler.managers import TranslatableQuerySet, TranslatableManager
 from django.utils.translation import gettext_lazy as _
-# from mptt.managers import TreeManager
-# from mptt.querysets import TreeQuerySet
-# from mptt.models import MPTTModel
+
+class BookmarkProduct(models.Model):
+    user = models.ForeignKey(User, related_name="user", on_delete=models.DO_NOTHING)
+    product = models.ForeignKey('Product', related_name="products", on_delete=models.DO_NOTHING)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "bookmark_product"
+        # ordering = ('-created',)
+        verbose_name = _('لیست علاقه مندی ها')
+        verbose_name_plural = _('لیست علاقه مندی ها')
 
 class Category(TranslatableModel):
     translations = TranslatedFields(

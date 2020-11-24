@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags l10n %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags l10n social_share %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}پست{% endblock title %} {% block content %}{% block head %}
 <link rel="stylesheet" href="/static/details/assets/css/plugins/owl-carousel/owl.carousel.css">{% endblock head %}
@@ -70,16 +70,22 @@
                                 </div>
                                 <!-- End .col -->
 
-                                <!-- <div class="col-md-auto mt-2 mt-md-0">
+                                <div class="col-md-auto mt-2 mt-md-0">
                                     <div class="social-icons social-icons-color">
                                         <span class="social-label">اشتراک گذاری این پست : </span>
-                                        <a href="#" class="social-icon social-facebook" title="فیسبوک"><i class="icon-facebook-f"></i></a>
+                                        <!-- Share via Telegram -->
+                                        {% post_to_telegram share_telegram.text share_telegram.url share_telegram.link_text|safe %}
+                                        <!-- Share via Whatsapp -->
+                                        {% post_to_whatsapp share_whatsapp.url share_whatsapp.text|safe %}
+                                        <!-- Share via Linkedin -->
+                                        {% comment %}{% post_to_linkedin share_linkedin.url %}{% endcomment %}
+                                        <!-- <a href="#" class="social-icon social-facebook" title="فیسبوک"><i class="icon-facebook-f"></i></a>
                                         <a href="#" class="social-icon social-twitter" title="توییتر"><i class="icon-twitter"></i></a>
                                         <a href="#" class="social-icon social-pinterest" title="پینترست"><i class="icon-pinterest"></i></a>
                                         <a href="#" class="social-icon social-linkedin" title="لینکدین"><i class="icon-linkedin"></i></a>
-                                        <a href="#" class="social-icon social-google" title="جیمیل"><i class="icon-google"></i></a>
+                                        <a href="#" class="social-icon social-google" title="جیمیل"><i class="icon-google"></i></a> -->
                                     </div>
-                                </div> -->
+                                </div>
                                 <!-- End .col-auto -->
                             </div>
                             <!-- End .entry-footer row no-gutters -->
@@ -124,11 +130,12 @@
                         <a class="pager-link pager-link-prev" href="{{ previous_post.get_absolute_url }}" aria-label="Previous" tabindex="-1">
                                     {% trans "پست قبلی" %}
                                     <span class="pager-link-title">{{previous_post.title}}</span>
-                                </a>{% endif %} {% if next_post %}
+                                </a>{% endif %} 
+                        {% if next_post %}
                         <a class="pager-link pager-link-next" href="{{ next_post.get_absolute_url }}" aria-label="Next" tabindex="-1">
                                     {% trans "پست بعدی" %}
                                     <span class="pager-link-title">{{next_post.title}}</span>            
-                        </a>{% endif %}
+                                </a>{% endif %}
                     </nav>
                     <!-- End .pager-nav -->
 
@@ -207,7 +214,7 @@
                                     <div class="comment-body">
                                         <!-- <a href="#" class="comment-reply">{% trans "پاسخ" %}</a> -->
                                         <!-- Reply Comment -->
-                                        <button class="btn btn-fill-out" data-toggle="collapse" href="#collapseOne">پاسخ</button>
+                                        <button class="btn btn-fill-out" data-toggle="collapse" href="#collapse{{forloop.counter}}">پاسخ</button>
                                         <!-- End Reply Comment -->
                                         <div class="comment-user">
                                             <h4><a href="#">{{ user.username }}</a></h4>
@@ -221,7 +228,7 @@
                                         <!-- End .comment-content -->
 
                                         <!-- Reply Comment Form -->
-                                        <div id="collapseOne" class="collapse">
+                                        <div id="collapse{{forloop.counter}}" class="collapse">
                                             <form action="." method="POST" name="enq">
                                                 {% csrf_token %}
                                                 <div class="row">

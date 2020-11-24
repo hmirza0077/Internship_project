@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"POT-Creation-Date: 2020-11-07 15:11+0330\n"
 "PO-Revision-Date: 2020-10-21 17:55+0326\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,10 +60,10 @@ msgid "تاریخ ایجاد"
 msgstr "Created"
 
 #: details/models.py:15 details/models.py:16
-#: details/templates/details/base.html:76
-#: details/templates/details/base.html:455
-#: details/templates/details/base.html:624
-#: details/templates/details/base.html:714
+#: details/templates/details/base.html:77
+#: details/templates/details/base.html:457
+#: details/templates/details/base.html:626
+#: details/templates/details/base.html:716
 #: details/templates/details/contact.html:3
 #: details/templates/details/contact.html:10
 #: details/templates/details/contact.html:18
@@ -71,8 +71,8 @@ msgid "تماس با ما"
 msgstr "Contact Us"
 
 #: details/templates/details/about.html:9
-#: details/templates/details/base.html:105
-#: details/templates/details/base.html:705
+#: details/templates/details/base.html:107
+#: details/templates/details/base.html:707
 #: details/templates/details/contact.html:8
 msgid "خانه"
 msgstr "Home"
@@ -84,10 +84,10 @@ msgstr "Pages"
 
 #: details/templates/details/about.html:11
 #: details/templates/details/about.html:19
-#: details/templates/details/base.html:75
-#: details/templates/details/base.html:408
-#: details/templates/details/base.html:620
-#: details/templates/details/base.html:711
+#: details/templates/details/base.html:76
+#: details/templates/details/base.html:410
+#: details/templates/details/base.html:622
+#: details/templates/details/base.html:713
 msgid "درباره ما"
 msgstr "About Us"
 
@@ -157,202 +157,156 @@ msgstr "Customers Opinio"
 msgid "مشتری"
 msgstr "Customer"
 
-#: details/templates/details/base.html:45
+#: details/templates/details/base.html:46
 msgid "انتخاب زبان"
 msgstr "Choose Language"
 
-#: details/templates/details/base.html:70
+#: details/templates/details/base.html:71
 msgid "لینک ها"
 msgstr "Links"
 
-#: details/templates/details/base.html:72
+#: details/templates/details/base.html:73
 msgid "تلفن تماس"
 msgstr "Contact Us"
 
-#: details/templates/details/base.html:73
+#: details/templates/details/base.html:74
 msgid "لیست علاقه مندی"
 msgstr "Favorites"
 
-#: details/templates/details/base.html:77
-#: details/templates/details/base.html:656
-#: details/templates/details/base.html:789
+#: details/templates/details/base.html:78
+#: details/templates/details/base.html:658
 msgid "ورود"
 msgstr "Login"
 
-#: details/templates/details/base.html:94
-msgid "فهرست"
-msgstr "Content"
-
-#: details/templates/details/base.html:322
-#: details/templates/details/base.html:708
-msgid "فروشگاه"
-msgstr "Shop"
-
-#: details/templates/details/base.html:458
-#: details/templates/details/base.html:717
-msgid "وبلاگ"
-msgstr "Weblog"
-
-#: details/templates/details/base.html:461
-#: details/templates/details/base.html:721
-msgid "کاربری"
-msgstr "User"
-
-#: details/templates/details/base.html:464
-#: details/templates/details/base.html:724
+#: details/templates/details/base.html:79
+#: details/templates/details/base.html:466
+#: details/templates/details/base.html:726
 msgid "داشبورد"
 msgstr "Dashboard"
 
-#: details/templates/details/base.html:470
-#: details/templates/details/base.html:730
+#: details/templates/details/base.html:96
+msgid "فهرست"
+msgstr "Content"
+
+#: details/templates/details/base.html:324
+#: details/templates/details/base.html:710
+msgid "فروشگاه"
+msgstr "Shop"
+
+#: details/templates/details/base.html:460
+#: details/templates/details/base.html:719
+msgid "وبلاگ"
+msgstr "Weblog"
+
+#: details/templates/details/base.html:463
+#: details/templates/details/base.html:723
+msgid "کاربری"
+msgstr "User"
+
+#: details/templates/details/base.html:472
+#: details/templates/details/base.html:732
 msgid "ورود و ثبت نام"
 msgstr "Login or Register"
 
-#: details/templates/details/base.html:489
-#: details/templates/details/base.html:697
+#: details/templates/details/base.html:491
+#: details/templates/details/base.html:699
 msgid "جستجو"
 msgstr "Search"
 
-#: details/templates/details/base.html:490
-#: details/templates/details/base.html:698
+#: details/templates/details/base.html:492
+#: details/templates/details/base.html:700
 msgid "جستجو در ..."
 msgstr "Search in..."
 
-#: details/templates/details/base.html:516
+#: details/templates/details/base.html:518
 msgid "پاک کردن همه"
 msgstr "Clear All"
 
-#: details/templates/details/base.html:517
+#: details/templates/details/base.html:519
 msgid "مقایسه"
 msgstr "Compare"
 
-#: details/templates/details/base.html:559
+#: details/templates/details/base.html:561
 msgid "مجموع"
 msgstr "Summation"
 
-#: details/templates/details/base.html:568
+#: details/templates/details/base.html:570
 msgid "مشاهده سبد خرید"
 msgstr "Cart Detail"
 
-#: details/templates/details/base.html:569
+#: details/templates/details/base.html:571
 msgid "پرداخت"
 msgstr "Pay"
 
-#: details/templates/details/base.html:594
+#: details/templates/details/base.html:596
 msgid ""
 "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
 "تولید سادگی نامفهوم"
 msgstr "Lorem Ipsum with this simple that we bla bla bla"
 
-#: details/templates/details/base.html:616
+#: details/templates/details/base.html:618
 msgid "لینک های مفید"
 msgstr "Useful Links"
 
-#: details/templates/details/base.html:621
+#: details/templates/details/base.html:623
 msgid "خدمات"
 msgstr "Products"
 
-#: details/templates/details/base.html:622
+#: details/templates/details/base.html:624
 msgid "نحوه خرید"
 msgstr "How to shop?"
 
-#: details/templates/details/base.html:623
+#: details/templates/details/base.html:625
 msgid "سوالات متداول"
 msgstr "FQ"
 
-#: details/templates/details/base.html:634
+#: details/templates/details/base.html:636
 msgid "خدمات مشتری"
 msgstr "Customer"
 
-#: details/templates/details/base.html:638
+#: details/templates/details/base.html:640
 msgid "شیوه پرداخت"
 msgstr "How to Pay"
 
-#: details/templates/details/base.html:639
+#: details/templates/details/base.html:641
 msgid "گارانتی بازگشت وجه"
 msgstr "Gaurantee"
 
-#: details/templates/details/base.html:640
+#: details/templates/details/base.html:642
 msgid "شیوه ارسال محصولات"
 msgstr "How to ship"
 
-#: details/templates/details/base.html:641
-#: details/templates/details/base.html:845
+#: details/templates/details/base.html:643
 msgid "قوانین و مقررات"
 msgstr "Terms and Conditions"
 
-#: details/templates/details/base.html:642
+#: details/templates/details/base.html:644
 msgid "خط مشی"
 msgstr "ٌWhat we do"
 
-#: details/templates/details/base.html:652
+#: details/templates/details/base.html:654
 msgid "حساب کاربری"
 msgstr "User Profile"
 
-#: details/templates/details/base.html:657
+#: details/templates/details/base.html:659
 msgid "سبد خرید"
 msgstr "Cart"
 
-#: details/templates/details/base.html:658
+#: details/templates/details/base.html:660
 msgid "لیست علاقه مندی ها"
 msgstr "Favorites"
 
-#: details/templates/details/base.html:659
+#: details/templates/details/base.html:661
 msgid "پیگیری سفارشات"
 msgstr "Orders"
 
-#: details/templates/details/base.html:660
+#: details/templates/details/base.html:662
 msgid "راهنما"
 msgstr "Guidence"
 
-#: details/templates/details/base.html:676
+#: details/templates/details/base.html:678
 msgid "تمامی حقوق محفوظ است"
 msgstr "All the content are protected"
-
-#: details/templates/details/base.html:776
-msgid "نام کاربری یا آدرس ایمیل"
-msgstr "Username or Email Adress"
-
-#: details/templates/details/base.html:782
-#: details/templates/details/base.html:831
-msgid "رمز عبور"
-msgstr "Password"
-
-#: details/templates/details/base.html:795
-msgid "مرا به خاطر بسپار"
-msgstr "Remember Me"
-
-#: details/templates/details/base.html:798
-msgid "فراموشی رمز عبور؟"
-msgstr "Forgot Password?"
-
-#: details/templates/details/base.html:803
-msgid "یا ورود با"
-msgstr "Login with"
-
-#: details/templates/details/base.html:825
-msgid "آدرس ایمیل شما"
-msgstr "Email Adress"
-
-#: details/templates/details/base.html:838
-msgid "ثبت نام"
-msgstr "Register"
-
-#: details/templates/details/base.html:845
-msgid "موافقم"
-msgstr "Agree"
-
-#: details/templates/details/base.html:852
-msgid "یا عضویت با"
-msgstr "or Register with"
-
-#: details/templates/details/base.html:856
-msgid " حساب گوگل"
-msgstr "Google Account"
-
-#: details/templates/details/base.html:862
-msgid "حساب فیسبوک"
-msgstr "Facebook Account"
 
 #: details/templates/details/contact.html:18
 msgid "ارتباط خود را با ما حفظ کنید"
@@ -579,3 +533,36 @@ msgstr "Comment"
 #: details/templates/details/home.html:243
 msgid "مشاهده بیشتر "
 msgstr "More"
+
+#~ msgid "نام کاربری یا آدرس ایمیل"
+#~ msgstr "Username or Email Adress"
+
+#~ msgid "رمز عبور"
+#~ msgstr "Password"
+
+#~ msgid "مرا به خاطر بسپار"
+#~ msgstr "Remember Me"
+
+#~ msgid "فراموشی رمز عبور؟"
+#~ msgstr "Forgot Password?"
+
+#~ msgid "یا ورود با"
+#~ msgstr "Login with"
+
+#~ msgid "آدرس ایمیل شما"
+#~ msgstr "Email Adress"
+
+#~ msgid "ثبت نام"
+#~ msgstr "Register"
+
+#~ msgid "موافقم"
+#~ msgstr "Agree"
+
+#~ msgid "یا عضویت با"
+#~ msgstr "or Register with"
+
+#~ msgid " حساب گوگل"
+#~ msgstr "Google Account"
+
+#~ msgid "حساب فیسبوک"
+#~ msgstr "Facebook Account"

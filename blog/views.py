@@ -53,7 +53,7 @@ def post_list(request, tag_slug=None, category_slug=None):
         object_list = object_list.filter(tags__in=[tag])
 
     page = request.GET.get('page', 1)
-    paginator = Paginator(object_list, 3) # 3 posts in each page
+    paginator = Paginator(object_list, 4) # 4 posts in each page
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
@@ -109,7 +109,11 @@ def post_detail(request, year, month, day, post):
     context = {'post': post, 'comments': comments, 'new_comment': new_comment,
                 'comment_form': comment_form, 'three_latest_posts': get_three_latest_posts(),
                 'tags': get_all_tags(), 'categories': get_all_categories(),
-                'next_post': next_post, 'previous_post': previous_post, 'posts': posts}
+                'next_post': next_post, 'previous_post': previous_post, 'posts': posts,
+                'share_telegram': {'url': post.get_absolute_url, 'text': post.title, 'link_text': "<i title='Telegram' class='fa fa-telegram mr-3' style='font-size:24px;color:#2196F3;'></i>" },
+                'share_whatsapp': {'url': post.get_absolute_url, 'text': "<i title='Whatsapp' class='fab fa fa-whatsapp mr-3' style='font-size:24px;color:#1bd741;'></i>" },
+                'share_linkedin': {'url': post.get_absolute_url},
+                }
 
     return render(request, 'blog/detail.html', context=context)
 

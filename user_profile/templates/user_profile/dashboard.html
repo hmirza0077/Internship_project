@@ -1,6 +1,7 @@
-{% extends "details/base.html" %} {% load crispy_forms_tags %} {% block meta %}
+{% extends "details/base.html" %} {% load i18n static crispy_forms_tags %} {% block meta %}
 <meta name="keywords" content="">
-<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "داشبورد" %}{% endblock title %} {% block content %}
+<meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "داشبورد" %}{% endblock title %}
+{% block content %}
 <main class="main">
     <div class="page-header " style="background-image: url('/static/details/assets/images/page-header-bg.jpg')">
         <div class="container text-center">
@@ -13,7 +14,7 @@
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'details:home' %}">{% trans "خانه" %}</a></li>
-                <li class="breadcrumb-item"><a href="{% url 'details:product_list' %}">{% trans "فروشگاه" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'shop:product_list' %}">{% trans "فروشگاه" %}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{% trans "داشبورد" %}</li>
             </ol>
         </div>
@@ -54,52 +55,52 @@
 
                                     <div class="content-section col-md-12 col-sm-12">
                                         <div class="media">
-                                            <img src="{{ user.userprofile.photo.url }}" class="account-img rounded-circle">
+                                            <img src="{% if user.userprofile.image %} {{ user.userprofile.image.url }} {% else %} {% static 'img/no_image.png' %} {% endif %}" class="account-img rounded-circle">
                                         </div>
                                     </div>
 
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "نام کاربری" %} : </strong></label> {{ user.username|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "نام کاربری" %} : </strong></label> {{ user.username|default:_("وارد نشده است") }}
                                         <!-- <input type="text" class="form-control" required> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "نام و نام خانوادگی" %} :‌ </strong></label> {{ user.get_full_name|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "نام و نام خانوادگی" %} :‌ </strong></label> {{ user.get_full_name|default:_("وارد نشده است") }}
                                         <!-- <input type="text" class="form-control" required> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "ایمیل" %} : </strong></label> {{ user.email|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "ایمیل" %} : </strong></label> {{ user.email|default:_("وارد نشده است") }}
                                         <!-- <input type="email" class="form-control" required> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "شماره تلفن همراه" %} : </strong></label> {{ user.userprofile.phone_number|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "شماره تلفن همراه" %} : </strong></label> {{ user.userprofile.phone_number|default:_("وارد نشده است") }}
                                         <!-- <input type="phone_number" class="form-control"> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "شماره تلفن ثابت" %} : </strong></label> {{ user.userprofile.home_telephone|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "شماره تلفن ثابت" %} : </strong></label> {{ user.userprofile.home_telephone|default:_("وارد نشده است") }}
                                         <!-- <input type="phone" class="form-control"> -->
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "کد پستی" %} : </strong></label> {{ user.userprofile.postal_code|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "کد پستی" %} : </strong></label> {{ user.userprofile.postal_code|default:_("وارد نشده است") }}
                                         <!-- <input type="city" class="form-control mb-2"> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "جنسیت" %} : </strong></label> {{ user.userprofile.gender|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "جنسیت" %} : </strong></label> {{ user.userprofile.gender|default:_("وارد نشده است")  }}
                                         <!-- <input type="city" class="form-control mb-2"> -->
                                     </div>
 
                                     <div class="form-group col-md-6 col-sm-12">
-                                        <label><strong>{% trans "شهر محل سکونت" %} : </strong></label> {{ user.userprofile.city|default:"{% trans 'وارد نشده است' %}" }}
+                                        <label><strong>{% trans "شهر محل سکونت" %} : </strong></label> {{ user.userprofile.city|default:_("وارد نشده است") }}
                                         <!-- <input type="city" class="form-control mb-2"> -->
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-12 text-right">
-                                        <label class="ml-4"><strong>{% trans "آدرس" %} : </strong>{{ user.userprofile.address|default:"{% trans 'وارد نشده است' %}" }}</label>
+                                        <label class="ml-4"><strong>{% trans "آدرس" %} : </strong> {{ user.userprofile.address|default:_("وارد نشده است") }}</label>
 
                                         <!-- <input type="city" class="form-control mb-2"> -->
                                     </div>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-21 20:28+0330\n"
-"PO-Revision-Date: 2020-10-21 18:15+0326\n"
+"POT-Creation-Date: 2020-11-07 15:11+0330\n"
+"PO-Revision-Date: 2020-10-27 10:31+0326\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,25 +20,25 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
 #: user_profile/forms.py:8 user_profile/models.py:17
-#: user_profile/templates/user_profile/dashboard.html:78
+#: user_profile/templates/user_profile/dashboard.html:79
 #: user_profile/templates/user_profile/edit_profile.html:69
 msgid "شماره تلفن همراه"
 msgstr "شماره تلفن همراه"
 
 #: user_profile/forms.py:9 user_profile/models.py:18
-#: user_profile/templates/user_profile/dashboard.html:87
+#: user_profile/templates/user_profile/dashboard.html:88
 #: user_profile/templates/user_profile/edit_profile.html:75
 msgid "کد پستی"
 msgstr "کد پستی"
 
 #: user_profile/forms.py:10 user_profile/models.py:19
-#: user_profile/templates/user_profile/dashboard.html:102
+#: user_profile/templates/user_profile/dashboard.html:103
 #: user_profile/templates/user_profile/edit_profile.html:79
 msgid "آدرس"
 msgstr "آدرس"
 
 #: user_profile/forms.py:11 user_profile/models.py:20
-#: user_profile/templates/user_profile/dashboard.html:83
+#: user_profile/templates/user_profile/dashboard.html:84
 #: user_profile/templates/user_profile/edit_profile.html:71
 msgid "شماره تلفن ثابت"
 msgstr "شماره تلفن ثابت"
@@ -48,7 +48,7 @@ msgid "شهر"
 msgstr "شهر"
 
 #: user_profile/forms.py:13 user_profile/models.py:21
-#: user_profile/templates/user_profile/dashboard.html:92
+#: user_profile/templates/user_profile/dashboard.html:93
 #: user_profile/templates/user_profile/edit_profile.html:77
 msgid "جنسیت"
 msgstr "جنسیت"
@@ -68,7 +68,7 @@ msgid "نام خانوادگی"
 msgstr "نام خانوادگی"
 
 #: user_profile/forms.py:22
-#: user_profile/templates/user_profile/dashboard.html:73
+#: user_profile/templates/user_profile/dashboard.html:74
 #: user_profile/templates/user_profile/edit_profile.html:67
 msgid "ایمیل"
 msgstr "ایمیل"
@@ -90,40 +90,52 @@ msgid "پروفایل ها"
 msgstr "پروفایل ها"
 
 #: user_profile/templates/user_profile/dashboard.html:3
-#: user_profile/templates/user_profile/dashboard.html:7
-#: user_profile/templates/user_profile/dashboard.html:17
+#: user_profile/templates/user_profile/dashboard.html:8
+#: user_profile/templates/user_profile/dashboard.html:18
 #: user_profile/templates/user_profile/edit_profile.html:7
 #: user_profile/templates/user_profile/edit_profile.html:17
-#: user_profile/templates/user_profile/sidebar.html:4
+#: user_profile/templates/user_profile/sidebar.html:5
 msgid "داشبورد"
 msgstr "داشبورد"
 
-#: user_profile/templates/user_profile/dashboard.html:7
-#: user_profile/templates/user_profile/dashboard.html:16
+#: user_profile/templates/user_profile/dashboard.html:8
+#: user_profile/templates/user_profile/dashboard.html:17
 #: user_profile/templates/user_profile/edit_profile.html:7
 #: user_profile/templates/user_profile/edit_profile.html:16
 msgid "فروشگاه"
 msgstr "فروشگاه"
 
-#: user_profile/templates/user_profile/dashboard.html:15
+#: user_profile/templates/user_profile/dashboard.html:16
 #: user_profile/templates/user_profile/edit_profile.html:15
 msgid "خانه"
 msgstr "خانه"
 
-#: user_profile/templates/user_profile/dashboard.html:63
+#: user_profile/templates/user_profile/dashboard.html:64
 msgid "نام کاربری"
 msgstr "نام کاربری"
 
-#: user_profile/templates/user_profile/dashboard.html:68
+#: user_profile/templates/user_profile/dashboard.html:64
+#: user_profile/templates/user_profile/dashboard.html:69
+#: user_profile/templates/user_profile/dashboard.html:74
+#: user_profile/templates/user_profile/dashboard.html:79
+#: user_profile/templates/user_profile/dashboard.html:84
+#: user_profile/templates/user_profile/dashboard.html:88
+#: user_profile/templates/user_profile/dashboard.html:93
+#: user_profile/templates/user_profile/dashboard.html:98
+#: user_profile/templates/user_profile/dashboard.html:103
+msgid "وارد نشده است"
+msgstr "وارد نشده است"
+
+#: user_profile/templates/user_profile/dashboard.html:69
 msgid "نام و نام خانوادگی"
 msgstr "نام و نام خانوادگی"
 
-#: user_profile/templates/user_profile/dashboard.html:97
+#: user_profile/templates/user_profile/dashboard.html:98
 #: user_profile/templates/user_profile/edit_profile.html:73
 msgid "شهر محل سکونت"
 msgstr "شهر محل سکونت"
 
-#: user_profile/templates/user_profile/dashboard.html:111
+#: user_profile/templates/user_profile/dashboard.html:112
 msgid "ویرایش"
 msgstr "ویرایش"
 
@@ -139,18 +151,20 @@ msgstr "خوش آمدید"
 msgid "ذخیره تغییرات"
 msgstr "ذخیره تغییرات"
 
-#: user_profile/templates/user_profile/sidebar.html:7
-msgid "سفارشات"
-msgstr "سفارشات"
+#: user_profile/templates/user_profile/sidebar.html:14
+msgid "لیست علاقه مندی ها"
+msgstr ""
 
-#: user_profile/templates/user_profile/sidebar.html:10
-msgid "دانلود ها"
-msgstr "دانلود ها"
-
-#: user_profile/templates/user_profile/sidebar.html:13
+#: user_profile/templates/user_profile/sidebar.html:17
 msgid "تغییر رمز عبور"
 msgstr "تغییر رمز عبور"
 
-#: user_profile/templates/user_profile/sidebar.html:20
+#: user_profile/templates/user_profile/sidebar.html:24
 msgid "خروج از حساب کاربری"
 msgstr "خروج از حساب کاربری"
+
+#~ msgid "سفارشات"
+#~ msgstr "سفارشات"
+
+#~ msgid "دانلود ها"
+#~ msgstr "دانلود ها"

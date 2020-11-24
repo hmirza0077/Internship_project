@@ -1,6 +1,7 @@
 from celery import task
 from django.core.mail import send_mail
 from .models import Order
+from blog.models import Post
 
 @task
 def order_created(order_id):
@@ -14,3 +15,9 @@ def order_created(order_id):
                 Your order id is {order.id}."
     mail_sent = send_mail(subject, message, 'admin@ikala.com', [order.email])
     return mail_sent
+
+
+from celery.task.schedules import crontab
+from celery.decorators import periodic_task
+
+# @periodic_task(run_every=(crontab(hour=Post.objects.all.values('publish')[0].get('publish').hour,)))

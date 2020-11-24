@@ -1,4 +1,4 @@
-{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags ratings %} {% block meta %}
+{% extends 'details/base.html' %} {% load i18n static crispy_forms_tags ratings social_share %} {% block meta %}
 <meta name="keywords" content="">
 <meta name="description" content=""> {% endblock meta %} {% block title %}{% trans "فروشگاه لیست" %}{% endblock title %} {% block head %}
 <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
@@ -40,7 +40,7 @@
                         <div class="product-gallery product-gallery-vertical">
                             <div class="row">
                                 <figure class="product-main-image">
-                                    <img id="product-zoom" src="{{ product.image.url }}" data-zoom-image="#" alt="تصویر محصول">
+                                    <img id="product-zoom" src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/no_image.png' %} {% endif %}" data-zoom-image="#" alt="تصویر محصول">
 
                                     <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                         <i class="icon-arrows"></i>
@@ -90,7 +90,7 @@
                             <!-- End .rating-container -->
 
                             <div class="product-price">
-                                {{ product.price }}
+                                {{ product.price }} {% trans "تومان" %}
                             </div>
                             <!-- End .product-price -->
                             {% comment %}
@@ -101,7 +101,7 @@
                             {% endcomment %}
 
                             <div class="details-filter-row details-row-size">
-                                <label>رنگ : </label>
+                                <label>{% trans "رنگ" %} : </label>
 
                                 <div class="product-nav product-nav-thumbs">
                                     <!--  -->
@@ -151,14 +151,15 @@
 
                                 <div class="product-details-action">
                                     <!-- <a href="{% url 'cart:cart_add' product.id %}" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a> -->
-                                    <input type="submit" value="{% trans 'افزودن به سبد خرید' %}">
+                                    <input type="submit" value="{% trans 'افزودن به سبد خرید' %}" class="btn btn-outline-primary-2">
                                     <!-- <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                                         {% csrf_token %} {{ cart_product_form.quantity }}
                                         <input type="submit" value="Add to cart"> -->
+                                
                             </form>
 
                             <div class="details-action-wrapper">
-                                <a href="#" class="btn-product btn-wishlist" title="لیست علاقه مندی"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
+                                <a href="{% url 'shop:add_to_wishlist' product.id %}" class="btn-product btn-wishlist" title="لیست علاقه مندی"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
                                 <a href="#" class="btn-product btn-compare" title="مقایسه"><span>{% trans "افزودن به لیست مقایسه" %}</span></a>
                             </div>
                             <!-- End .details-action-wrapper -->
@@ -174,14 +175,16 @@
 
                                 <div class="social-icons social-icons-sm">
                                     <span class="social-label">{% trans "اشتراک گذاری" %} : </span>
-                                    <a href="#" class="social-icon" title="فیسبوک" target="_blank"><i
-                                                    class="icon-facebook-f"></i></a>
-                                    <a href="#" class="social-icon" title="توییتر" target="_blank"><i
-                                                    class="icon-twitter"></i></a>
-                                    <a href="#" class="social-icon" title="اینستاگرام" target="_blank"><i
-                                                    class="icon-instagram"></i></a>
-                                    <a href="#" class="social-icon" title="پینترست" target="_blank"><i
-                                                    class="icon-pinterest"></i></a>
+                                    <!-- Share via Telegram -->
+                                    {% post_to_telegram share_telegram.text share_telegram.url share_telegram.link_text|safe %}
+                                    <!-- Share via Whatsapp -->
+                                    {% post_to_whatsapp share_whatsapp.url share_whatsapp.text|safe %}
+                                    <!-- Share via Linkedin -->
+                                    {% comment %}{% post_to_linkedin share_linkedin.url %}{% endcomment %}
+                                    <!-- <a href="#" class="social-icon" title="فیسبوک" target="_blank"><i class="icon-facebook-f"></i></a> -->
+                                    <!-- <a href="#" class="social-icon" title="توییتر" target="_blank"><i class="icon-twitter"></i></a> -->
+                                    <!-- <a href="#" class="social-icon" title="اینستاگرام" target="_blank"><i class="icon-instagram"></i></a> -->
+                                    <!-- <a href="#" class="social-icon" title="پینترست" target="_blank"><i class="icon-pinterest"></i></a> -->
                                 </div>
                             </div>
                             <!-- End .product-details-footer -->
@@ -304,12 +307,12 @@
                 <div class="product product-7 text-center">
                     <figure class="product-media">
                         <!-- <span class="product-label label-new">جدید</span> -->
-                        <a href="product.html">
+                        <a href="{{product.get_absolute_url}}">
                             <img src="{{product.image.url}}" alt="تصویر محصول" class="product-image">
                         </a>
 
                         <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
+                            <a href="{% url 'shop:add_to_wishlist' product.id %}" class="btn-product-icon btn-wishlist btn-expandable"><span>{% trans "افزودن به لیست علاقه مندی" %}</span></a>
                             <a href="popup/quickView.html" class="btn-product-icon btn-quickview" title="مشاهده سریع"><span>{% trans "مشاهده سریع" %}</span></a>
                             <a href="#" class="btn-product-icon btn-compare" title="مقایسه"><span>{% trans "لیست مقایسه" %}</span></a>
                         </div>

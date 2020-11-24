@@ -6,7 +6,6 @@ from django.contrib import messages
 from django.shortcuts import redirect
 
 
-
 @login_required
 def profile_detail_view(request):
     return render(request, 'user_profile/dashboard.html')

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"POT-Creation-Date: 2020-11-07 15:11+0330\n"
 "PO-Revision-Date: 2020-10-21 17:51+0326\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "نام شما"
 msgstr "Your Name"
 
-#: blog/forms.py:9 blog/templates/blog/detail.html:235
+#: blog/forms.py:9 blog/templates/blog/detail.html:243
 msgid "دیدگاه شما"
 msgstr "Comment"
 
@@ -135,71 +135,71 @@ msgstr "Blog"
 msgid "نویسنده"
 msgstr "Author"
 
-#: blog/templates/blog/detail.html:45 blog/templates/blog/detail.html:169
-#: blog/templates/blog/detail.html:195 blog/templates/blog/detail.html:317
+#: blog/templates/blog/detail.html:45 blog/templates/blog/detail.html:177
+#: blog/templates/blog/detail.html:203 blog/templates/blog/detail.html:325
 msgid "دیدگاه"
 msgstr "Comment"
 
-#: blog/templates/blog/detail.html:99
+#: blog/templates/blog/detail.html:106
 msgid "مدیر سایت"
 msgstr "Admin"
 
-#: blog/templates/blog/detail.html:103
+#: blog/templates/blog/detail.html:110
 msgid "مشاهده همه پست های این نویسنده"
 msgstr "More from this author"
 
-#: blog/templates/blog/detail.html:111
+#: blog/templates/blog/detail.html:118
 msgid ""
 "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با "
 "تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم "
 "متن ساختگی با تولید سادگی"
 msgstr "Lorem Ipsum with simple text and bla bla bla"
 
-#: blog/templates/blog/detail.html:125
+#: blog/templates/blog/detail.html:132
 msgid "پست قبلی"
 msgstr "Previous Post"
 
-#: blog/templates/blog/detail.html:129
+#: blog/templates/blog/detail.html:137
 msgid "پست بعدی"
 msgstr "Next Post"
 
-#: blog/templates/blog/detail.html:136
+#: blog/templates/blog/detail.html:144
 msgid "پست های مرتبط"
 msgstr "Related Posts"
 
-#: blog/templates/blog/detail.html:208 blog/templates/blog/detail.html:263
+#: blog/templates/blog/detail.html:216 blog/templates/blog/detail.html:271
 msgid "پاسخ"
 msgstr "Reply"
 
-#: blog/templates/blog/detail.html:229 blog/templates/blog/detail.html:302
+#: blog/templates/blog/detail.html:237 blog/templates/blog/detail.html:310
 msgid "نام"
 msgstr "First name"
 
-#: blog/templates/blog/detail.html:282
+#: blog/templates/blog/detail.html:290
 msgid "دیدگاه جدید ثبت شد"
 msgstr "New Comment Submitted"
 
-#: blog/templates/blog/detail.html:289
+#: blog/templates/blog/detail.html:297
 msgid "ارسال یک دیدگاه"
 msgstr "Add a Commet"
 
-#: blog/templates/blog/detail.html:291
+#: blog/templates/blog/detail.html:299
 msgid "ایمیل شما منتشر نخواهد شد، فیلد های اجباری با علامت * مشخص شده اند."
 msgstr "Your email won't published. Fields with * sign are required."
 
-#: blog/templates/blog/detail.html:320
+#: blog/templates/blog/detail.html:328
 msgid "ارسال دیدگاه"
 msgstr "Add a Comment"
 
-#: blog/templates/blog/detail.html:325
+#: blog/templates/blog/detail.html:333
 msgid "ابتدا باید"
 msgstr "First you shoul"
 
-#: blog/templates/blog/detail.html:325
+#: blog/templates/blog/detail.html:333
 msgid "وارد"
 msgstr "login"
 
-#: blog/templates/blog/detail.html:325
+#: blog/templates/blog/detail.html:333
 msgid "شوید"
 msgstr ""
 

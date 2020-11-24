@@ -23,6 +23,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls), # admin site
     path('accounts/', include('accounts.urls')),
     path('user_profile/', include('user_profile.urls')),
+    path('payment/', include('payment.urls')),
     path('rosetta/', include('rosetta.urls')),
     path('coupons/', include('coupons.urls')),
     path('blog/', include('blog.urls')),

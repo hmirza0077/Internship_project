@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Category, Product, BookmarkProduct
 from  parler.admin import TranslatableAdmin
+
+
+@admin.register(BookmarkProduct)
+class BookmarkProductAdmin(admin.ModelAdmin):
+
+    list_display = ['user', 'product']
 
 @admin.register(Category)
 class CategoryAdmin(TranslatableAdmin):

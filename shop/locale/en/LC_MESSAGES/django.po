@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: shop/templates/shop/wishlist.html:15
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-21 20:28+0330\n"
+"POT-Creation-Date: 2020-11-07 15:11+0330\n"
 "PO-Revision-Date: 2020-10-21 20:29+0326\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,140 +20,148 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: shop/models.py:15 shop/models.py:79
+#: shop/models.py:18 shop/models.py:19 shop/templates/shop/wishlist.html:3
+#, fuzzy
+#| msgid "افزودن به لیست علاقه مندی"
+msgid "لیست علاقه مندی ها"
+msgstr "Add to Favorites"
+
+#: shop/models.py:23 shop/models.py:87
 msgid "عنوان"
 msgstr "Title"
 
-#: shop/models.py:21 shop/models.py:22
+#: shop/models.py:29 shop/models.py:30
 msgid "دسته بندی محصولات"
 msgstr "Category"
 
-#: shop/models.py:47
+#: shop/models.py:55
 msgid "مردانه"
 msgstr "Men"
 
-#: shop/models.py:48
+#: shop/models.py:56
 msgid "زنانه"
 msgstr "Women"
 
-#: shop/models.py:52
+#: shop/models.py:60
 msgid "بهار"
 msgstr "Spring"
 
-#: shop/models.py:53
+#: shop/models.py:61
 msgid "تابستان"
 msgstr "Summer"
 
-#: shop/models.py:54
+#: shop/models.py:62
 msgid "پاییز"
 msgstr "Autumn"
 
-#: shop/models.py:55
+#: shop/models.py:63
 msgid "زمستان"
 msgstr "Winter"
 
-#: shop/models.py:59
+#: shop/models.py:67
 msgid "قرمز"
 msgstr "Red"
 
-#: shop/models.py:60
+#: shop/models.py:68
 msgid "قهوه ای"
 msgstr "Brown"
 
-#: shop/models.py:61
+#: shop/models.py:69
 msgid "زرد"
 msgstr "Yellow"
 
-#: shop/models.py:62
+#: shop/models.py:70
 msgid "مشکی"
 msgstr "Black"
 
-#: shop/models.py:63
+#: shop/models.py:71
 msgid "آبی"
 msgstr "Blue"
 
-#: shop/models.py:64
+#: shop/models.py:72
 msgid "سبز"
 msgstr "Green"
 
-#: shop/models.py:65
+#: shop/models.py:73
 msgid "صورتی"
 msgstr "Pink"
 
-#: shop/models.py:66
+#: shop/models.py:74
 msgid "خاکستری"
 msgstr "Grey"
 
-#: shop/models.py:81
+#: shop/models.py:89
 msgid "توضیحات مختصر"
 msgstr "Short Description"
 
-#: shop/models.py:82
+#: shop/models.py:90
 msgid "توضیحات جامع"
 msgstr "Long Description"
 
-#: shop/models.py:83
+#: shop/models.py:91
 msgid "نوع جنس"
 msgstr "Material"
 
-#: shop/models.py:86
+#: shop/models.py:94
 msgid "تصویر محصول"
 msgstr "Image"
 
-#: shop/models.py:87
+#: shop/models.py:95
 msgid "تعداد بازدید"
 msgstr "Visit"
 
-#: shop/models.py:88 shop/templates/shop/list.html:450
+#: shop/models.py:96 shop/templates/shop/list.html:450
+#: shop/templates/shop/wishlist.html:30
 msgid "قیمت"
 msgstr "Price"
 
-#: shop/models.py:89
+#: shop/models.py:97
 msgid "در دسترس"
 msgstr "Is Available"
 
-#: shop/models.py:90 shop/models.py:131
+#: shop/models.py:98 shop/models.py:139
 msgid "تاریخ ایجاد"
 msgstr "Created"
 
-#: shop/models.py:91
+#: shop/models.py:99
 msgid "تاریخ بروزرسانی"
 msgstr "Updated"
 
-#: shop/models.py:93 shop/templates/shop/detail.html:121
+#: shop/models.py:101 shop/templates/shop/detail.html:121
 #: shop/templates/shop/list.html:252
 msgid "سایز"
 msgstr "Size"
 
-#: shop/models.py:94
+#: shop/models.py:102
 msgid "جنسیت"
 msgstr "Gender"
 
-#: shop/models.py:95 shop/templates/shop/list.html:329
+#: shop/models.py:103 shop/templates/shop/detail.html:105
+#: shop/templates/shop/list.html:329
 msgid "رنگ"
 msgstr "Color"
 
-#: shop/models.py:96
+#: shop/models.py:104
 msgid "فصل"
 msgstr "Season"
 
-#: shop/models.py:107
+#: shop/models.py:115 shop/templates/shop/wishlist.html:29
 msgid "محصول"
 msgstr "Product"
 
-#: shop/models.py:108 shop/templates/shop/detail.html:12
+#: shop/models.py:116 shop/templates/shop/detail.html:12
 msgid "محصولات"
 msgstr "Products"
 
-#: shop/models.py:129
+#: shop/models.py:137
 msgid "متن پیام"
 msgstr "Body"
 
-#: shop/models.py:138
+#: shop/models.py:146
 msgid "کامنت"
 msgstr "Comment"
 
-#: shop/models.py:139
+#: shop/models.py:147
 msgid "کامنت ها"
 msgstr "Comments"
 
@@ -176,6 +185,10 @@ msgstr "Prev"
 msgid "بعدی"
 msgstr "Next"
 
+#: shop/templates/shop/detail.html:93
+msgid "تومان"
+msgstr "$"
+
 #: shop/templates/shop/detail.html:124
 msgid "سایز را انتخاب کنید"
 msgstr "Please choose your size"
@@ -188,76 +201,77 @@ msgstr "Size Menu:"
 msgid "تعداد"
 msgstr "Quantity"
 
-#: shop/templates/shop/detail.html:156 shop/templates/shop/detail.html:320
+#: shop/templates/shop/detail.html:156 shop/templates/shop/detail.html:324
+#: shop/templates/shop/wishlist.html:62
 msgid "افزودن به سبد خرید"
 msgstr "Add to Cart"
 
-#: shop/templates/shop/detail.html:163 shop/templates/shop/detail.html:314
+#: shop/templates/shop/detail.html:164 shop/templates/shop/detail.html:318
 #: shop/templates/shop/list.html:149
 msgid "افزودن به لیست علاقه مندی"
 msgstr "Add to Favorites"
 
-#: shop/templates/shop/detail.html:164
+#: shop/templates/shop/detail.html:165
 msgid "افزودن به لیست مقایسه"
 msgstr "Add to Compare list"
 
-#: shop/templates/shop/detail.html:172 shop/templates/shop/list.html:221
+#: shop/templates/shop/detail.html:173 shop/templates/shop/list.html:221
 msgid "دسته بندی"
 msgstr "Category"
 
-#: shop/templates/shop/detail.html:178
+#: shop/templates/shop/detail.html:179
 msgid "اشتراک گذاری"
 msgstr "Share"
 
-#: shop/templates/shop/detail.html:202
+#: shop/templates/shop/detail.html:206
 msgid "توضیحات"
 msgstr "Description"
 
-#: shop/templates/shop/detail.html:205
+#: shop/templates/shop/detail.html:209
 msgid "اطلاعات بیشتر"
 msgstr "More Information"
 
-#: shop/templates/shop/detail.html:208
+#: shop/templates/shop/detail.html:212
 msgid "نظرات "
 msgstr "Comments"
 
-#: shop/templates/shop/detail.html:214
+#: shop/templates/shop/detail.html:218
 msgid "اطلاعات محصول"
 msgstr "Product Description"
 
-#: shop/templates/shop/detail.html:222
+#: shop/templates/shop/detail.html:226
 msgid "اطلاعات"
 msgstr "Description"
 
-#: shop/templates/shop/detail.html:230
+#: shop/templates/shop/detail.html:234
 msgid "دیدگاهی موجود نیست"
 msgstr "No Comments"
 
-#: shop/templates/shop/detail.html:256
+#: shop/templates/shop/detail.html:260
 msgid "مثبت"
 msgstr "Like"
 
-#: shop/templates/shop/detail.html:257
+#: shop/templates/shop/detail.html:261
 msgid "منفی"
 msgstr "Dislike"
 
-#: shop/templates/shop/detail.html:277
+#: shop/templates/shop/detail.html:281
 msgid "محصولاتی که شاید بپسندید"
 msgstr "Products you may like"
 
-#: shop/templates/shop/detail.html:315 shop/templates/shop/list.html:136
+#: shop/templates/shop/detail.html:319 shop/templates/shop/list.html:136
 msgid "مشاهده سریع"
 msgstr "Show"
 
-#: shop/templates/shop/detail.html:316
+#: shop/templates/shop/detail.html:320
 msgid "لیست مقایسه"
 msgstr "Compare List"
 
-#: shop/templates/shop/detail.html:334
+#: shop/templates/shop/detail.html:338
 msgid "ت"
 msgstr "$"
 
-#: shop/templates/shop/detail.html:340
+#: shop/templates/shop/detail.html:344
 msgid "دیدگاه "
 msgstr "Comment "
 
@@ -266,6 +280,7 @@ msgid "لیست"
 msgstr "List"
 
 #: shop/templates/shop/list.html:11 shop/templates/shop/list.html:20
+#: shop/templates/shop/wishlist.html:7 shop/templates/shop/wishlist.html:16
 msgid "فروشگاه"
 msgstr "Shop"
 
@@ -333,8 +348,25 @@ msgstr " "
 msgid "Please log in to rate."
 msgstr "Please log in to rate."
 
-#~ msgid "تومان"
-#~ msgstr "$"
+#: shop/templates/shop/wishlist.html:7 shop/templates/shop/wishlist.html:17
+#, fuzzy
+#| msgid "افزودن به لیست علاقه مندی"
+msgid "لیست علاقه مندی"
+msgstr "Add to Favorites"
+
+#: shop/templates/shop/wishlist.html:31
+#, fuzzy
+#| msgid "جزئیات محصول"
+msgid "وضعیت محصول"
+msgstr "Product Detail"
+
+#: shop/templates/shop/wishlist.html:57
+msgid "موجود"
+msgstr "Available"
+
+#: shop/templates/shop/wishlist.html:76 shop/templates/shop/wishlist.html:78
+msgid "ناموجود"
+msgstr "Unavailable"
 
 #~ msgid "کوچک"
 #~ msgstr "Small"

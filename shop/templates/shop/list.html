@@ -457,11 +457,15 @@
                                     <div class="filter-price">
                                         <div class="filter-price-text">
                                             {% trans " : محدوده قیمت" %}
-                                            <span id="filter-price-range"></span>
+                                            <!-- <span id="filter-price-range"></span> -->
+                                            <form action="{% url 'shop:product_list' %}" method="GET">
+                                                {{ filter.form.as_p }}
+                                                <br><input type="submit" class="btn btn-outline-primary-2">
+                                            </form>
                                         </div>
                                         <!-- End .filter-price-text -->
 
-                                        <div id="price-slider"></div>
+                                        <!-- <div id="price-slider"></div> -->
                                         <!-- End #price-slider -->
                                     </div>
                                     <!-- End .filter-price -->

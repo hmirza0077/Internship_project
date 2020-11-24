@@ -1,13 +1,16 @@
+{% load i18n %}
 <aside class="col-md-4 col-lg-3">
     <ul class="nav nav-dashboard flex-column mb-3 mb-md-0" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="tab-dashboard-link" href="{% url 'user_profile:profile_detail_view' %}">{% trans "داشبورد" %}</a>
         </li>
+        {% comment %}          
         <li class="nav-item">
             <a class="nav-link" id="tab-orders-link" href="#tab-orders">{% trans "سفارشات" %}</a>
         </li>
+        {% endcomment %}
         <li class="nav-item">
-            <a class="nav-link" id="tab-downloads-link" href="#tab-downloads">{% trans "دانلود ها" %}</a>
+            <a class="nav-link" id="tab-downloads-link" href="{% url 'shop:wishlist' %}">{% trans "لیست علاقه مندی ها" %}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="tab-address-link" href="{% url 'password_change' %}">{% trans "تغییر رمز عبور" %}</a>
