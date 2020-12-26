@@ -70,6 +70,7 @@ def post_list(request, tag_slug=None, category_slug=None):
 
 def post_detail(request, year, month, day, post):
     language = request.LANGUAGE_CODE
+    print(language)
     posts = Post.objects.filter(status='published')[:10]   # Related posts in detail page
     post = get_object_or_404(Post, translations__slug=post, status='published',
                                publish__year=year, publish__month=month,

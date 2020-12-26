@@ -1,3 +1,4 @@
+from orders.models import OrderItem
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product, BookmarkProduct
 from cart.forms import CartAddProductForm
@@ -86,6 +87,8 @@ def product_detail(request, id, slug, color=None):
                                 translations__slug=slug,
                                 is_available=True)
 
+    is_there_any_order_with_this_product = OrderItem.objects.filter(product=product, order__first_name=request.user.first_name).exists()
+
     # The code below get next and previous object
     # and if the object does not exist, set it to None.
     try:
@@ -108,7 +111,7 @@ def product_detail(request, id, slug, color=None):
     r = Recommender()
     recommended_products = r.suggest_products_for([product], 6)
 
-    context = {'product': product, 'cart_product_form': cart_product_form, 'now': now(), 'template_name': 'shop/star_rate.html', 
+    context = {'product': product, 'cart_product_form': cart_product_form, 'now': now(), 'template_name': 'shop/star_rate.html', 'is_there_any_order':is_there_any_order_with_this_product,
                 'timedelta': timedelta(days=1), 'products': products, 'next_product': next_product,
                 'previous_product': previous_product, 'recommended_products': recommended_products,
                 'share_telegram': {'url': product.get_absolute_url, 'text': product.name, 'link_text': "<i title='Telegram' class='fa fa-telegram mr-3' style='font-size:24px;color:#2196F3;'></i>" },

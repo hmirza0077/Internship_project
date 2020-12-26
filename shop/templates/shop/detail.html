@@ -83,7 +83,11 @@
                                 <!-- <a class="ratings-text" href="#product-review-link" id="review-link">( 2 نظر
                                             )</a> -->
                                 <div class="text-right">
-                                    {% ratings product 20 20 False template_name %}
+                                    {% if is_there_any_order %}
+                                        {% ratings product 20 20 False template_name %}
+                                    {% else %}
+                                        {% ratings product 20 20 True template_name %}  
+                                    {% endif %}
                                     <!-- <div class="ratings-val" style="width: 80%;"></div> -->
                                 </div>
                             </div>

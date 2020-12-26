@@ -3,7 +3,8 @@ from orders.models import OrderItem
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from suds.client import Client
+from zeep import Client
+# from suds.client import Client
 
 MERCHANT = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
 client = Client('https://sandbox.zarinpal.com/pg/services/WebGate/wsdl')
@@ -11,9 +12,12 @@ amount = 1000 # Required
 description = 'پرداخت شما با موفقیت انجام شد'
 email = 'hmirza0077@yahoo.com' # Optional
 mobile = '09129618407' # Optional
-CallbackURL = 'http://localhost:8000/payment/verify/' #TODO: need to edit for realy server.
 
 def send_request(request):
+    if request.LANGUAGE_CODE == 'fa':
+        CallbackURL = 'http://localhost:8000/fa/payment/verify/' #TODO: need to edit for realy server.
+    else:
+        CallbackURL = 'http://localhost:8000/en/payment/verify/'
     order = get_object_or_404(OrderItem, order=request.session.get('order_id'))
     result = client.service.PaymentRequest(MERCHANT, order.price, description, email, mobile, CallbackURL)
     if result.Status == 100:
