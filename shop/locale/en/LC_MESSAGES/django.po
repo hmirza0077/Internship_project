@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-07 15:11+0330\n"
+"POT-Creation-Date: 2021-07-31 11:33+0430\n"
 "PO-Revision-Date: 2020-10-21 20:29+0326\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,7 +127,7 @@ msgstr "Created"
 msgid "تاریخ بروزرسانی"
 msgstr "Updated"
 
-#: shop/models.py:101 shop/templates/shop/detail.html:121
+#: shop/models.py:101 shop/templates/shop/detail.html:125
 #: shop/templates/shop/list.html:252
 msgid "سایز"
 msgstr "Size"
@@ -136,7 +136,7 @@ msgstr "Size"
 msgid "جنسیت"
 msgstr "Gender"
 
-#: shop/models.py:103 shop/templates/shop/detail.html:105
+#: shop/models.py:103 shop/templates/shop/detail.html:109
 #: shop/templates/shop/list.html:329
 msgid "رنگ"
 msgstr "Color"
@@ -185,93 +185,93 @@ msgstr "Prev"
 msgid "بعدی"
 msgstr "Next"
 
-#: shop/templates/shop/detail.html:93
+#: shop/templates/shop/detail.html:97
 msgid "تومان"
 msgstr "$"
 
-#: shop/templates/shop/detail.html:124
+#: shop/templates/shop/detail.html:128
 msgid "سایز را انتخاب کنید"
 msgstr "Please choose your size"
 
-#: shop/templates/shop/detail.html:139
+#: shop/templates/shop/detail.html:143
 msgid "راهنمای اندازه"
 msgstr "Size Menu:"
 
-#: shop/templates/shop/detail.html:145
+#: shop/templates/shop/detail.html:149
 msgid "تعداد"
 msgstr "Quantity"
 
-#: shop/templates/shop/detail.html:156 shop/templates/shop/detail.html:324
+#: shop/templates/shop/detail.html:160 shop/templates/shop/detail.html:328
 #: shop/templates/shop/wishlist.html:62
 msgid "افزودن به سبد خرید"
 msgstr "Add to Cart"
 
-#: shop/templates/shop/detail.html:164 shop/templates/shop/detail.html:318
+#: shop/templates/shop/detail.html:168 shop/templates/shop/detail.html:322
 #: shop/templates/shop/list.html:149
 msgid "افزودن به لیست علاقه مندی"
 msgstr "Add to Favorites"
 
-#: shop/templates/shop/detail.html:165
+#: shop/templates/shop/detail.html:169
 msgid "افزودن به لیست مقایسه"
 msgstr "Add to Compare list"
 
-#: shop/templates/shop/detail.html:173 shop/templates/shop/list.html:221
+#: shop/templates/shop/detail.html:177 shop/templates/shop/list.html:221
 msgid "دسته بندی"
 msgstr "Category"
 
-#: shop/templates/shop/detail.html:179
+#: shop/templates/shop/detail.html:183
 msgid "اشتراک گذاری"
 msgstr "Share"
 
-#: shop/templates/shop/detail.html:206
+#: shop/templates/shop/detail.html:210
 msgid "توضیحات"
 msgstr "Description"
 
-#: shop/templates/shop/detail.html:209
+#: shop/templates/shop/detail.html:213
 msgid "اطلاعات بیشتر"
 msgstr "More Information"
 
-#: shop/templates/shop/detail.html:212
+#: shop/templates/shop/detail.html:216
 msgid "نظرات "
 msgstr "Comments"
 
-#: shop/templates/shop/detail.html:218
+#: shop/templates/shop/detail.html:222
 msgid "اطلاعات محصول"
 msgstr "Product Description"
 
-#: shop/templates/shop/detail.html:226
+#: shop/templates/shop/detail.html:230
 msgid "اطلاعات"
 msgstr "Description"
 
-#: shop/templates/shop/detail.html:234
+#: shop/templates/shop/detail.html:238
 msgid "دیدگاهی موجود نیست"
 msgstr "No Comments"
 
-#: shop/templates/shop/detail.html:260
+#: shop/templates/shop/detail.html:264
 msgid "مثبت"
 msgstr "Like"
 
-#: shop/templates/shop/detail.html:261
+#: shop/templates/shop/detail.html:265
 msgid "منفی"
 msgstr "Dislike"
 
-#: shop/templates/shop/detail.html:281
+#: shop/templates/shop/detail.html:285
 msgid "محصولاتی که شاید بپسندید"
 msgstr "Products you may like"
 
-#: shop/templates/shop/detail.html:319 shop/templates/shop/list.html:136
+#: shop/templates/shop/detail.html:323 shop/templates/shop/list.html:136
 msgid "مشاهده سریع"
 msgstr "Show"
 
-#: shop/templates/shop/detail.html:320
+#: shop/templates/shop/detail.html:324
 msgid "لیست مقایسه"
 msgstr "Compare List"
 
-#: shop/templates/shop/detail.html:338
+#: shop/templates/shop/detail.html:342
 msgid "ت"
 msgstr "$"
 
-#: shop/templates/shop/detail.html:344
+#: shop/templates/shop/detail.html:348
 msgid "دیدگاه "
 msgstr "Comment "
 

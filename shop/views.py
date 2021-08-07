@@ -110,6 +110,7 @@ def product_detail(request, id, slug, color=None):
     # Recommendation System with Redis
     r = Recommender()
     recommended_products = r.suggest_products_for([product], 6)
+    print(recommended_products)
 
     context = {'product': product, 'cart_product_form': cart_product_form, 'now': now(), 'template_name': 'shop/star_rate.html', 'is_there_any_order':is_there_any_order_with_this_product,
                 'timedelta': timedelta(days=1), 'products': products, 'next_product': next_product,

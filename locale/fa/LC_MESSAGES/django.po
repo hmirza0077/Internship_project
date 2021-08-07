@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-07 15:11+0330\n"
+"POT-Creation-Date: 2021-07-31 11:33+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ikala/settings.py:140
+#: ikala/settings.py:142
 msgid "Persian"
 msgstr "فارسی"
 
-#: ikala/settings.py:141
+#: ikala/settings.py:143
 msgid "English"
 msgstr "انگلیسی"
 
